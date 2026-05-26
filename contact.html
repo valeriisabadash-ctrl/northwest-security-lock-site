@@ -4,49 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Northwest Security & Lock | Portland Locksmith</title>
-  <meta name="description" content="Call or request locksmith service from Northwest Security & Lock in Portland, Oregon.">
+  <meta name="description" content="Call or request locksmith service from Northwest Security & Lock in Portland for automotive, residential, commercial, and emergency locksmith work.">
   <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/lead-system.js"></script>
 </head>
 <body>
-  <header class="topbar"><div class="wrap topbar-inner"><span>Local locksmith shop in Portland, OR</span><a href="tel:+15037601402">(503) 760-1402</a></div></header>
-  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="index.html"><span>NW</span> Northwest Security & Lock</a><div class="links"><a href="services/automotive-locksmith.html">Automotive</a><a href="services/residential-locksmith.html">Residential</a><a href="services/commercial-locksmith.html">Commercial</a><a href="contact.html">Contact</a></div><a class="btn" href="tel:+15037601402">Call Now</a></div></nav>
-
-  <main>
-    <section class="page-hero">
-      <div class="wrap">
-        <div class="breadcrumb">Home / Contact</div>
-        <h1>Request locksmith service.</h1>
-        <p class="lead">Tell Northwest Security & Lock what you need. For urgent lockouts or car key issues, calling is usually fastest.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <form class="form" action="mailto:pnwlocksmithor@gmail.com" method="post" enctype="text/plain">
-          <div class="notice">This is a starter form. Replace it with a real CRM/AI receptionist form before publishing.</div>
-          <label for="name">Name</label>
-          <input id="name" name="name" required>
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" required>
-          <label for="service">Service needed</label>
-          <select id="service" name="service"><option>Car key / fob</option><option>Home rekey</option><option>Lockout</option><option>Commercial lock</option><option>Lock repair</option><option>Other</option></select>
-          <label for="message">What happened?</label>
-          <textarea id="message" name="message" placeholder="Example: Lost my 2018 Toyota Camry key and need a replacement."></textarea>
-          <br><br><button class="btn" type="submit">Send Request</button>
-        </form>
-
-        <div class="card">
-          <h2>Contact info</h2>
-          <p><strong>Phone:</strong> <a href="tel:+15037601402">(503) 760-1402</a></p>
-          <p><strong>Email:</strong> <a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a></p>
-          <p><strong>Address:</strong> 14750 SE Division St, Portland, OR 97236</p>
-          <p><strong>Hours:</strong> Shop hours shown online: Mon–Fri 9am–5pm. Call for mobile or emergency availability.</p>
-          <p><strong>Important:</strong> Confirm final hours, license wording, and pricing ranges with Andy before going live.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer"><div class="wrap footer-grid"><div><h4>Northwest Security & Lock</h4><p>Automotive, residential, and commercial locksmith services from a real local shop in Portland.</p></div><div><h4>Contact</h4><p><a href="tel:+15037601402">(503) 760-1402</a></p><p><a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a></p><p>14750 SE Division St, Portland, OR 97236</p></div></div></footer>
+  <div class="site-shell">
+    <header class="top-strip"><div class="wrap top-strip-inner"><p>Local locksmith shop on SE Division in Portland, Oregon</p><div><a href="tel:+15037601402">(503) 760-1402</a></div></div></header>
+    <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="index.html"><span class="brand-mark">NW</span><span class="brand-copy"><b>Northwest</b><em>Security & Lock</em></span></a><div class="nav-links"><a href="services/automotive-locksmith.html">Automotive</a><a href="services/residential-locksmith.html">Residential</a><a href="services/commercial-locksmith.html">Commercial</a><a href="emergency-locksmith.html">Emergency</a><a href="online-booking.html">Booking</a></div><a class="btn btn-call" href="tel:+15037601402">Call Now</a></div></nav>
+    <main>
+      <section class="page-hero"><div class="wrap"><div class="breadcrumb">Home / Contact</div><p class="eyebrow"><span></span> Call or send details</p><h1>Contact Northwest Security & Lock.</h1><p class="lead">For active lockouts or urgent car key problems, call first. For scheduled jobs, send the details so the shop can confirm service, availability, and pricing.</p><div class="hero-actions"><a class="btn btn-primary" href="tel:+15037601402">Call (503) 760-1402</a><a class="btn btn-ghost" href="online-booking.html">Request Service Online</a></div></div></section>
+      <section class="section"><div class="wrap service-layout"><div><form id="leadForm" class="form"><div class="notice">Demo mode: the form saves the lead into the local dashboard. Production should send it to SMS, email, CRM, and the AI receptionist flow.</div><label for="name">Name</label><input id="name" name="name" required><label for="phone">Phone</label><input id="phone" name="phone" required><label for="email">Email</label><input id="email" name="email" type="email"><label for="urgency">Urgency</label><select id="urgency" name="urgency"><option>Emergency / locked out now</option><option>Today</option><option>This week</option><option>Scheduled / not urgent</option></select><label for="category">Service category</label><select id="category" name="category"><option>Automotive</option><option>Residential</option><option>Commercial</option></select><label for="service">Service needed</label><select id="service" name="service"></select><label for="address">Service address / area</label><input id="address" name="address"><label for="vehicle">Vehicle info, if automotive</label><input id="vehicle" name="vehicle" placeholder="Year, make, model"><label for="business">Business name, if commercial</label><input id="business" name="business"><label for="message">Job details</label><textarea id="message" name="message"></textarea><br><br><button class="btn btn-dark" type="submit">Submit Request</button> <a id="smsLead" class="btn btn-primary" href="#" style="display:none">Text Lead Summary</a><p id="formSuccess" class="notice" style="display:none;margin-top:14px"></p></form></div><aside class="sidebar"><div class="card"><h2>Contact info</h2><p><strong>Phone:</strong><br><a href="tel:+15037601402">(503) 760-1402</a></p><p><strong>Email:</strong><br><a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a></p><p><strong>Address:</strong><br>14750 SE Division St, Portland, OR 97236</p><p><strong>Hours:</strong><br>Confirm final shop and emergency hours before publishing.</p><a class="btn btn-dark" href="lead-dashboard.html">View Lead Dashboard</a></div></aside></div></section>
+    </main>
+  </div>
 </body>
 </html>

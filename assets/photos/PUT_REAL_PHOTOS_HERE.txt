@@ -1,1 +1,0 @@
-Add real photos from the shoot here. Use the filenames listed in SHOT_LIST.md.

@@ -1,16 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 260" preserveAspectRatio="none">
-  <rect width="1600" height="260" fill="#f4ead8"/>
-  <path d="M0 192 L90 150 L160 166 L246 104 L340 152 L430 82 L520 160 L625 116 L710 148 L800 64 L900 150 L1010 102 L1105 158 L1210 76 L1310 146 L1405 118 L1600 176 L1600 260 L0 260 Z" fill="#c7a170"/>
-  <path d="M0 215 L130 160 L230 188 L345 112 L440 172 L555 126 L650 176 L775 92 L890 178 L1010 130 L1130 186 L1248 100 L1370 178 L1490 130 L1600 164 L1600 260 L0 260 Z" fill="#221f1c" opacity="0.92"/>
-  <path d="M230 188 L345 112 L382 151 L340 142 L300 174 Z M742 124 L800 64 L838 126 L802 112 L775 140 Z M1204 122 L1248 100 L1290 152 L1252 133 L1218 152 Z" fill="#f7efe1" opacity="0.9"/>
-  <path d="M0 220 C130 205 195 224 330 211 C510 194 635 226 810 206 C1010 184 1180 222 1600 198 L1600 260 L0 260 Z" fill="#050505"/>
-  <g fill="#050505">
-    <path d="M82 215 l18-58 l18 58 h-13 l18 35 h-46 l18-35z"/>
-    <path d="M128 218 l20-70 l22 70 h-16 l24 42 h-58 l24-42z"/>
-    <path d="M1375 202 l22-80 l24 80 h-17 l26 50 h-66 l27-50z"/>
-    <path d="M1436 210 l18-62 l19 62 h-14 l21 42 h-53 l22-42z"/>
-    <path d="M1510 215 l24-90 l25 90 h-18 l28 45 h-70 l29-45z"/>
-    <path d="M556 226 l14-48 l15 48 h-11 l17 30 h-42 l17-30z"/>
-    <path d="M1030 222 l16-56 l17 56 h-12 l18 34 h-48 l19-34z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 260" preserveAspectRatio="none" role="img" aria-label="Subtle Pacific Northwest mountain ridge">
+  <defs>
+    <linearGradient id="skyCream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7efe1"/>
+      <stop offset="1" stop-color="#ead2ad"/>
+    </linearGradient>
+    <linearGradient id="ridgeWarm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d7b16c"/>
+      <stop offset="1" stop-color="#8a612d"/>
+    </linearGradient>
+    <linearGradient id="ridgeDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1812"/>
+      <stop offset="1" stop-color="#0e0d0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="260" fill="url(#skyCream)"/>
+
+  <path d="M0 185
+           C78 164 112 132 176 145
+           C244 158 286 90 354 118
+           C420 146 468 72 536 104
+           C610 138 658 126 720 96
+           C782 66 846 142 914 121
+           C982 101 1018 72 1084 116
+           C1150 160 1208 76 1274 108
+           C1342 140 1400 104 1460 128
+           C1516 150 1560 154 1600 136
+           L1600 260 L0 260 Z"
+        fill="url(#ridgeWarm)" opacity=".64"/>
+
+  <path d="M0 214
+           C88 184 132 149 206 168
+           C280 188 328 102 392 134
+           C466 172 522 118 586 141
+           C652 166 712 83 784 112
+           C860 142 920 178 1000 134
+           C1072 94 1136 184 1202 146
+           C1272 104 1338 166 1408 140
+           C1480 114 1540 138 1600 164
+           L1600 260 L0 260 Z"
+        fill="url(#ridgeDark)" opacity=".94"/>
+
+  <path d="M330 131 L392 134 L356 154 L373 134 L349 145 Z
+           M740 118 L784 112 L804 136 L777 125 L760 142 Z
+           M1180 158 L1202 146 L1242 154 L1206 164 Z
+           M1268 112 L1298 126 L1278 134 Z"
+        fill="#fff8eb" opacity=".72"/>
+
+  <path d="M0 238
+           C150 222 254 232 384 221
+           C520 209 648 235 784 218
+           C920 201 1040 224 1168 214
+           C1324 201 1458 216 1600 205
+           L1600 260 L0 260 Z"
+        fill="#0e0d0b" opacity=".35"/>
 </svg>

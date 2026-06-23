@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: [WEBSITE URL]/sitemap.xml
+Sitemap: https://northwestsecurityandlock.com/sitemap.xml

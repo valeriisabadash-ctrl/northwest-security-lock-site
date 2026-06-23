@@ -3,114 +3,612 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Northwest Security & Lock | Portland Locksmith for Keys, Rekeys & Access Control</title>
-  <meta name="description" content="Northwest Security & Lock is a Portland locksmith shop for car keys, home rekeys, commercial door hardware, smart locks, and access control near SE Division.">
+  <title>Locksmith Portland Oregon | Northwest Security & Lock</title>
+  <meta name="description" content="Need a locksmith in Portland, Oregon? Northwest Security & Lock provides emergency lockout help, rekeying, lock installation, residential, commercial, automotive, and smart lock services.">
   <link rel="canonical" href="https://northwestsecurityandlock.com/">
-  <meta property="og:title" content="Northwest Security & Lock | Portland Locksmith">
-  <meta property="og:description" content="Portland locksmith shop for vehicle keys, residential locks, commercial hardware, and access control.">
+  <meta property="og:title" content="Locksmith Portland Oregon | Northwest Security & Lock">
+  <meta property="og:description" content="Emergency lockout help, rekeying, lock installation, residential, commercial, automotive, and smart lock services in Portland, Oregon.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northwestsecurityandlock.com/">
+  <meta name="theme-color" content="#10100d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
+
+  <!--
+    SEO / SCHEMA NOTES:
+    - Use Locksmith + LocalBusiness schema for the business.
+    - Add address only if this is a real public customer-facing address.
+    - Add sameAs links only when the Google Business Profile/social profiles are real.
+    - Add Review schema only after real reviews are collected. Do not mark placeholder reviews as real.
+    - Future schema expansion: Service, FAQPage, BreadcrumbList, OpeningHoursSpecification, areaServed, telephone.
+  -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Locksmith","name":"Northwest Security & Lock","telephone":"+15037601402","email":"pnwlocksmithor@gmail.com","address":{"@type":"PostalAddress","streetAddress":"14750 SE Division St","addressLocality":"Portland","addressRegion":"OR","postalCode":"97236","addressCountry":"US"},"areaServed":["Portland OR","SE Portland OR","Gresham OR","Happy Valley OR","Clackamas OR","Milwaukie OR"],"url":"https://northwestsecurityandlock.com/"}
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "Locksmith"],
+    "name": "Northwest Security & Lock",
+    "url": "https://northwestsecurityandlock.com/",
+    "telephone": "+15037601402",
+    "email": "pnwlocksmithor@gmail.com",
+    "description": "Portland, Oregon locksmith service for emergency lockouts, rekeying, lock installation, residential locksmith, commercial locksmith, automotive locksmith, and smart locks.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "14750 SE Division St",
+      "addressLocality": "Portland",
+      "addressRegion": "OR",
+      "postalCode": "97236",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Portland OR",
+      "Gresham OR",
+      "Beaverton OR",
+      "Clackamas OR",
+      "Happy Valley OR",
+      "Milwaukie OR",
+      "Lake Oswego OR",
+      "Tigard OR",
+      "Oregon City OR",
+      "Vancouver WA",
+      "Camas WA",
+      "Troutdale OR"
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How fast can a locksmith arrive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Arrival time depends on current availability, location, traffic, and the type of locksmith service needed. Call Northwest Security & Lock for the current availability and arrival estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you rekey my locks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rekeying changes the lock so old keys no longer work while keeping the existing hardware when it is in good condition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Northwest Security & Lock provides commercial locksmith service for business rekeys, commercial door hardware, lock repairs, lock installation, and security upgrades."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="topbar"><div class="container"><span><strong>Portland locksmith shop</strong> near SE Division</span><a href="tel:+15037601402">Call (503) 760-1402</a></div></div>
-  <header class="site-header">
+
+  <div class="topbar" role="note">
+    <div class="container topbar-row">
+      <span><strong>Portland locksmith service</strong> — call for current availability and arrival estimate</span>
+      <a href="tel:+15037601402" aria-label="Call Northwest Security and Lock">(503) 760-1402</a>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
     <div class="container header-row">
-      <a class="brand" href="index.html" aria-label="Northwest Security & Lock home"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-word"><strong>NORTHWEST</strong><em>Security and Lock</em></span></a>
-      <nav class="nav" data-nav aria-label="Main navigation"><a href="services/automotive-locksmith.html">Automotive</a><a href="services/residential-locksmith.html">Residential</a><a href="services/commercial-locksmith.html">Commercial</a><a href="services/access-control.html">Access Control</a><a href="service-area/portland-locksmith.html">Areas</a><a href="contact.html">Contact</a></nav>
-      <div class="header-actions"><a class="phone-link" href="tel:+15037601402">(503) 760-1402</a><a class="btn btn-black" href="contact.html">Request Service</a><button class="menu-button" data-menu-button aria-expanded="false" aria-label="Open menu">Menu</button></div>
+      <a class="brand" href="#top" aria-label="Northwest Security & Lock home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-word">
+          <strong>NORTHWEST</strong>
+          <em>Security &amp; Lock</em>
+        </span>
+      </a>
+
+      <nav class="nav" id="site-menu" data-nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#emergency">Emergency</a>
+        <a href="#residential">Residential</a>
+        <a href="#commercial">Commercial</a>
+        <a href="#areas">Areas</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="phone-link" href="tel:+15037601402">(503) 760-1402</a>
+        <a class="btn btn-dark header-cta" href="tel:+15037601402">Call Now</a>
+        <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="site-menu">Menu</button>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="container hero-layout">
+        <div class="hero-copy fade-up">
+          <p class="eyebrow">Locksmith Portland Oregon</p>
+          <h1>Portland Locksmith Service You Can Trust</h1>
+          <p class="hero-sub">
+            Northwest Security &amp; Lock helps Portland-area homeowners, drivers, property managers, and businesses with lockouts, rekeying, lock replacement, repairs, smart locks, commercial locksmith service, residential locksmith service, and automotive locksmith help.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+15037601402">Call Now</a>
+            <a class="btn btn-outline" href="#request-service">Request Service</a>
+          </div>
+
+          <div class="trust-badges" aria-label="Trust badges">
+            <span>Local Portland Locksmith</span>
+            <span>Emergency Service Available</span>
+            <span>Residential &amp; Commercial</span>
+            <span>Clean, Professional Work</span>
+          </div>
+        </div>
+
+        <aside class="request-panel fade-up" id="request-service" aria-label="Request locksmith service">
+          <div class="panel-head">
+            <p class="kicker">Request Service</p>
+            <h2>Send the basics. Keep it fast.</h2>
+            <p>For urgent lockouts, calling is fastest. For planned work, send details and photos if available.</p>
+          </div>
+
+          <form class="lead-form" data-lead-form>
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="Best callback number" required>
+            </label>
+            <label>
+              <span>Location</span>
+              <input type="text" name="location" autocomplete="street-address" placeholder="City / area" required>
+            </label>
+            <label>
+              <span>Service Needed</span>
+              <select name="service" required>
+                <option value="">Choose one</option>
+                <option>Emergency lockout</option>
+                <option>Residential locksmith</option>
+                <option>Commercial locksmith</option>
+                <option>Rekey locks</option>
+                <option>Lock installation</option>
+                <option>Lock repair</option>
+                <option>Automotive locksmith</option>
+                <option>Smart lock install</option>
+              </select>
+            </label>
+            <label class="full">
+              <span>Urgency</span>
+              <select name="urgency" required>
+                <option value="">Choose one</option>
+                <option>Emergency — call me now</option>
+                <option>Today if available</option>
+                <option>This week</option>
+                <option>Planning ahead</option>
+              </select>
+            </label>
+            <label class="full">
+              <span>Details</span>
+              <textarea name="details" rows="3" placeholder="Tell us what happened. No exact pricing is promised here."></textarea>
+            </label>
+            <button class="btn btn-primary full" type="submit">Prepare Request</button>
+            <p class="form-note" data-form-note>Submitting opens your email with the request details. Connect this to a real backend before launch.</p>
+          </form>
+        </aside>
+      </div>
+      <div class="hero-mountains" aria-hidden="true"></div>
+    </section>
+
+    <section class="emergency-strip" id="emergency">
+      <div class="container emergency-row">
         <div>
-          <p class="eyebrow">Portland Locksmith Shop</p>
-          <h1>Keys, locks, doors, and access control handled without the runaround.</h1>
-          <p class="hero-sub">Northwest Security & Lock helps Portland drivers, homeowners, property managers, storefronts, and offices get clear locksmith help from a real local shop.</p>
-          <div class="hero-actions"><a class="btn btn-gold" href="tel:+15037601402">Call (503) 760-1402</a><a class="btn btn-outline" href="contact.html">Send Job Details</a></div>
-          <div class="hero-proof"><div><b>14750</b><span>SE Division St</span></div><div><b>4</b><span>Core service lines</span></div><div><b>Local</b><span>Portland shop</span></div></div>
+          <p class="emergency-label">Need help right now?</p>
+          <h2>If you are locked out or dealing with an urgent lock issue, call directly for the fastest response.</h2>
+          <p>Call for current availability and arrival estimate. Don’t waste time filling out a long form if it is urgent.</p>
         </div>
-        <div class="hero-visual">
-          <div class="hero-frame"><img src="assets/images/hero-locksmith.svg" alt="Northwest Security & Lock locksmith service van and hardware illustration"></div>
-          <div class="hero-card"><b>Need the fastest answer?</b><p>Call with your service type, location, timing, and photos if you have them. For vehicle keys, have the year, make, and model ready.</p></div>
+        <div class="emergency-actions">
+          <a class="btn btn-light" href="tel:+15037601402">Call Emergency Locksmith</a>
+          <button class="btn btn-outline-light" type="button" data-open-chat>Chat With Us</button>
         </div>
       </div>
-      <div class="mountain-band" aria-hidden="true"></div>
     </section>
 
-    <div class="trustbar"><div class="container"><span>Vehicle keys</span><span>Home rekeys</span><span>Commercial hardware</span><span>Smart locks</span><span>Access control</span></div></div>
+    <section class="section" id="services">
+      <div class="container section-head fade-up">
+        <p class="kicker">Locksmith Services</p>
+        <h2>Clear help for the exact lock problem you have.</h2>
+        <p>
+          This homepage is built to rank naturally for emergency locksmith Portland, residential locksmith Portland, commercial locksmith Portland, rekey locks Portland, and lock installation Portland without sounding like keyword-stuffed junk.
+        </p>
+      </div>
 
-    <section class="section white">
-      <div class="container split-head"><div><p class="kicker">Choose the job type</p><h2>Don’t make customers dig for answers.</h2></div><p>This site now pushes people into the exact locksmith problem they have: car key, home lock, business door, or controlled entry. That is how you turn traffic into calls.</p></div>
       <div class="container service-grid">
-        <a class="service-card" href="services/automotive-locksmith.html"><span>01</span><h3>Automotive Locksmith</h3><p>Lost keys, spare keys, fobs, smart keys, transponders, ignition help, and vehicle lock issues.</p><b>Vehicle key help →</b></a>
-        <a class="service-card" href="services/residential-locksmith.html"><span>02</span><h3>Residential Locksmith</h3><p>Rekeys, deadbolts, smart locks, mailbox locks, gate locks, patio locks, and home door hardware.</p><b>Home lock service →</b></a>
-        <a class="service-card" href="services/commercial-locksmith.html"><span>03</span><h3>Commercial Locksmith</h3><p>Business rekeys, door closers, panic bars, storefront hardware, master keys, and office locks.</p><b>Business locksmith →</b></a>
-        <a class="service-card" href="services/access-control.html"><span>04</span><h3>Access Control</h3><p>Keypads, electric strikes, magnetic locks, fobs, card systems, and controlled entry hardware.</p><b>Control entry →</b></a>
+        <article class="service-card fade-up">
+          <div class="icon" aria-hidden="true">↯</div>
+          <h3>Emergency Lockout Service</h3>
+          <p>Locked out of a home, business, or vehicle? Call directly so the shop can confirm availability, location, and the fastest next step.</p>
+          <a href="tel:+15037601402">Call for emergency help</a>
+        </article>
+
+        <article class="service-card fade-up" id="residential">
+          <div class="icon" aria-hidden="true">⌂</div>
+          <h3>Residential Locksmith</h3>
+          <p>Home rekeys, deadbolts, mailbox locks, smart locks, repairs, and lock replacement for homeowners, renters, and property managers.</p>
+          <a href="#request-service">Request home service</a>
+        </article>
+
+        <article class="service-card fade-up" id="commercial">
+          <div class="icon" aria-hidden="true">▣</div>
+          <h3>Commercial Locksmith</h3>
+          <p>Commercial locks, business rekeys, door hardware, tenant turnover, storefront locks, and clean security upgrades for Portland businesses.</p>
+          <a href="#request-service">Request business service</a>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="icon" aria-hidden="true">⟳</div>
+          <h3>Rekeying</h3>
+          <p>Moved in, changed tenants, lost keys, or need old keys disabled? Rekey locks Portland customers already have when hardware is still solid.</p>
+          <a href="#faq">Learn about rekeying</a>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="icon" aria-hidden="true">▰</div>
+          <h3>Lock Installation</h3>
+          <p>New deadbolts, upgraded hardware, replacement locks, and secure lock installation Portland homeowners and businesses can trust.</p>
+          <a href="#request-service">Request install</a>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="icon" aria-hidden="true">◇</div>
+          <h3>Lock Repair</h3>
+          <p>Sticky locks, damaged hardware, loose handles, misaligned doors, broken cylinders, and lock issues that may not need full replacement.</p>
+          <a href="#request-service">Request repair</a>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="icon" aria-hidden="true">▸</div>
+          <h3>Automotive Locksmith</h3>
+          <p>Vehicle lock and key issues including car key help where applicable. Call with year, make, model, and whether a working key exists.</p>
+          <a href="tel:+15037601402">Call about car key help</a>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="icon" aria-hidden="true">◈</div>
+          <h3>Smart Locks</h3>
+          <p>Smart lock installation, replacement, setup guidance, and practical recommendations based on your door, hardware, and security needs.</p>
+          <a href="#request-service">Ask about smart locks</a>
+        </article>
       </div>
     </section>
 
-    <section class="section dark">
-      <div class="container conversion-grid">
-        <div class="black-card"><p class="kicker">Better intake</p><h2>Every call should start with useful details.</h2><p>Bad locksmith websites create confused calls. This one tells the customer exactly what to prepare before they call or email.</p></div>
-        <ul class="check-list">
-          <li>Vehicle jobs: year, make, model, key type, and whether a working key exists.</li>
-          <li>Residential jobs: photos of the lock, door, deadbolt, mailbox, gate, or patio hardware.</li>
-          <li>Commercial jobs: business name, door photos, hardware photos, and what is broken.</li>
-          <li>Access control jobs: number of doors, current hardware, and who needs entry access.</li>
-          <li>Service area jobs: location, timing, urgency, and whether it is shop or mobile service.</li>
-        </ul>
+    <section class="section dark-section">
+      <div class="container why-grid">
+        <div class="why-copy fade-up">
+          <p class="kicker">Why Choose Us</p>
+          <h2>Old-school locksmith skill. Modern security solutions.</h2>
+          <p>
+            The promise is not “cheap and fast.” That positioning attracts the worst customers and makes the brand look small. The stronger angle is secure work, clear communication, and professional service.
+          </p>
+        </div>
+
+        <div class="trust-list">
+          <article class="trust-item fade-up">
+            <span>01</span>
+            <h3>Local Portland-area locksmith service</h3>
+            <p>A real local brand with clear service areas, not a faceless lead-gen page pretending to be everywhere.</p>
+          </article>
+          <article class="trust-item fade-up">
+            <span>02</span>
+            <h3>Clear communication before work starts</h3>
+            <p>Customers should understand the situation, options, and next step before any work begins.</p>
+          </article>
+          <article class="trust-item fade-up">
+            <span>03</span>
+            <h3>Clean installs and careful repairs</h3>
+            <p>Locks and door hardware should look professional, function correctly, and match the security need.</p>
+          </article>
+          <article class="trust-item fade-up">
+            <span>04</span>
+            <h3>Options explained simply</h3>
+            <p>Rekeying, replacement, repair, and smart lock options should be explained without confusing jargon.</p>
+          </article>
+          <article class="trust-item fade-up">
+            <span>05</span>
+            <h3>Residential, commercial, automotive, emergency</h3>
+            <p>One strong intake flow routes the visitor to the right type of locksmith service.</p>
+          </article>
+          <article class="trust-item fade-up">
+            <span>06</span>
+            <h3>Security-focused recommendations</h3>
+            <p>No random upsells. Recommend what actually makes the property, door, or lock setup more secure.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section white">
-      <div class="container split-head"><div><p class="kicker">How it works</p><h2>Simple path from problem to service.</h2></div><p>Locksmith customers are usually stressed. The site has to be obvious, direct, and easy to act on from a phone.</p></div>
-      <div class="container process-grid">
-        <article class="process-card"><span>01</span><h3>Call or send details</h3><p class="muted">Start with the service type, location, timing, and photos if available.</p></article>
-        <article class="process-card"><span>02</span><h3>Confirm the job</h3><p class="muted">The shop checks what is needed before giving next steps.</p></article>
-        <article class="process-card"><span>03</span><h3>Get it handled</h3><p class="muted">Keys, locks, doors, rekeys, hardware, or access control work gets handled.</p></article>
+    <section class="section proof-section">
+      <div class="container section-head fade-up">
+        <p class="kicker">Proof / Gallery</p>
+        <h2>Replace these placeholders with real work photos before launch.</h2>
+        <p>Real truck, tool, lock, and job photos will beat fake stock images every time. This section exists to prove the company is real.</p>
+      </div>
+
+      <div class="container gallery-grid">
+        <div class="gallery-card large fade-up">
+          <span>Replace with real photo</span>
+          <h3>Truck photo</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Logo close-up</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Technician working on lock</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Rekeying setup</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Before / after hardware install</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Commercial door hardware</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Smart lock install</h3>
+        </div>
+        <div class="gallery-card fade-up">
+          <span>Replace with real photo</span>
+          <h3>Key machine / tools</h3>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container area-wrap">
-        <div class="map-visual"><b>NW</b></div>
-        <div><p class="kicker">Service Area</p><h2>Portland locksmith shop near SE Division.</h2><p class="muted">Serving Portland drivers, homeowners, property managers, offices, storefronts, and local businesses from 14750 SE Division St.</p><div class="city-list"><a href="service-area/portland-locksmith.html">Portland</a><a href="service-area/gresham-locksmith.html">Gresham</a><a href="service-area/happy-valley-locksmith.html">Happy Valley</a><a href="service-area/clackamas-locksmith.html">Clackamas</a><a href="service-area/milwaukie-locksmith.html">Milwaukie</a></div><div class="hero-actions"><a class="btn btn-black" href="service-area/portland-locksmith.html">View Areas</a><a class="btn btn-outline" href="contact.html">Contact Shop</a></div></div>
+    <section class="section area-section" id="areas">
+      <div class="container area-card fade-up">
+        <div class="area-map" aria-hidden="true">
+          <span>NW</span>
+        </div>
+        <div class="area-copy">
+          <p class="kicker">Service Area</p>
+          <h2>Serving Portland, Oregon and surrounding areas.</h2>
+          <p>
+            Northwest Security &amp; Lock serves Portland and nearby communities for emergency locksmith service, planned residential locksmith work, commercial locksmith support, rekeys, lock repair, and lock installation.
+          </p>
+          <div class="city-chips" aria-label="Service area cities">
+            <span>Portland</span>
+            <span>Gresham</span>
+            <span>Beaverton</span>
+            <span>Clackamas</span>
+            <span>Happy Valley</span>
+            <span>Milwaukie</span>
+            <span>Lake Oswego</span>
+            <span>Tigard</span>
+            <span>Oregon City</span>
+            <span>Vancouver</span>
+            <span>Camas</span>
+            <span>Troutdale</span>
+          </div>
+          <p class="launch-note">Confirm these service areas before launch. Do not publish cities they do not actually serve.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section white">
-      <div class="container split-head"><div><p class="kicker">Questions</p><h2>Answer the objections before they call.</h2></div><p>Customers want to know what to send, whether the shop handles their problem, and how to get a realistic next step.</p></div>
+    <section class="section reviews-section" id="reviews">
+      <div class="container section-head fade-up">
+        <p class="kicker">Reviews</p>
+        <h2>Placeholder testimonials — replace with real reviews.</h2>
+        <p>These are believable layout placeholders only. Do not launch these as real customer reviews.</p>
+      </div>
+
+      <!-- PLACEHOLDER REVIEWS ONLY — REPLACE WITH REAL CUSTOMER REVIEWS BEFORE LAUNCH. DO NOT ADD REVIEW SCHEMA FOR THESE. -->
+      <div class="container review-grid">
+        <article class="review-card fade-up">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>“They explained the difference between rekeying and replacing the lock, showed up professionally, and got everything working cleanly.”</p>
+          <span>Placeholder — Residential rekey</span>
+        </article>
+        <article class="review-card fade-up">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>“I needed locks changed after moving into a new place. The communication was clear and the work looked solid.”</p>
+          <span>Placeholder — Lock replacement</span>
+        </article>
+        <article class="review-card fade-up">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>“Helped with a business lock issue and made the process straightforward. Professional and easy to work with.”</p>
+          <span>Placeholder — Commercial service</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container section-head fade-up">
+        <p class="kicker">FAQ</p>
+        <h2>Questions people ask before calling a locksmith.</h2>
+        <p>Short answers. No fluff. No pricing promises the business has not approved.</p>
+      </div>
+
       <div class="container faq-grid">
-        <article class="faq-card"><h3>Do you make vehicle keys and fobs?</h3><p>Call with the year, make, model, key type, and whether you still have a working key.</p></article>
-        <article class="faq-card"><h3>Can you rekey a house after moving in?</h3><p>Yes. Rekeying is one of the clearest ways to clean up access when old keys should no longer work.</p></article>
-        <article class="faq-card"><h3>Do you work on commercial doors?</h3><p>The shop handles commercial locks, door hardware, panic bars, closers, master keys, and access control-related hardware.</p></article>
-        <article class="faq-card"><h3>What should I send before service?</h3><p>Send the location, timing, service type, clear photos, and the best phone number for follow-up.</p></article>
+        <details class="faq-item fade-up">
+          <summary>How fast can a locksmith arrive?</summary>
+          <p>Arrival depends on current availability, your location, traffic, and the type of service needed. Call for current availability and arrival estimate.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Can you rekey my locks?</summary>
+          <p>Yes. Rekeying changes the lock so old keys no longer work while keeping the existing hardware when it is in good condition.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Do I need to replace my locks or can they be rekeyed?</summary>
+          <p>If the lock hardware is still secure and working properly, rekeying may be enough. If the lock is damaged, worn, loose, or outdated, replacement may be the better option.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Do you work with businesses?</summary>
+          <p>Yes. Commercial locksmith service can include business rekeys, door hardware, lock repair, lock installation, storefront locks, tenant turnover support, and security upgrades.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Can you install smart locks?</summary>
+          <p>Yes. Smart lock installation depends on the door, hardware, and lock type. Send photos or call so the shop can confirm the right approach.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Do you offer emergency locksmith service?</summary>
+          <p>Emergency service may be available depending on timing, location, and current workload. If it is urgent, call directly instead of using the form.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Can I get a quote first?</summary>
+          <p>Yes. Pricing depends on the lock, location, time, and situation. The shop can give a quick estimate after a few details.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>Do you service cars and car keys?</summary>
+          <p>Automotive locksmith help may be available. Call with the vehicle year, make, model, key type, and whether you still have a working key.</p>
+        </details>
+        <details class="faq-item fade-up">
+          <summary>What areas do you serve?</summary>
+          <p>Northwest Security &amp; Lock serves Portland, Oregon and surrounding areas. Confirm your location when you call or request service.</p>
+        </details>
       </div>
     </section>
 
-    <section class="section final-cta">
-      <div class="container"><p class="kicker">Need Service?</p><h2>Call the shop before guessing.</h2><p>Tell Northwest Security & Lock what is happening with the vehicle, key, lock, door, safe, or commercial hardware.</p><div class="hero-actions" style="justify-content:center"><a class="btn btn-gold" href="tel:+15037601402">Call Now</a><a class="btn btn-outline" href="contact.html">Request Service</a></div></div>
+    <section class="final-cta">
+      <div class="container final-card fade-up">
+        <p class="kicker">Get Help Fast</p>
+        <h2>Need a locksmith in Portland?</h2>
+        <p>Call Northwest Security &amp; Lock or request service online.</p>
+        <div class="hero-actions center">
+          <a class="btn btn-primary" href="tel:+15037601402">Call Now</a>
+          <a class="btn btn-outline" href="#request-service">Request Service</a>
+          <button class="btn btn-secondary" type="button" data-open-chat>Open Chat</button>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
+    <div class="footer-mountains" aria-hidden="true"></div>
     <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-word"><strong>NORTHWEST</strong><em>Security and Lock</em></span></a><p>Portland locksmith and security services for automotive keys, residential locks, commercial hardware, and access control.</p></div>
-      <div><h3>Services</h3><a href="services/automotive-locksmith.html">Automotive Locksmith</a><a href="services/residential-locksmith.html">Residential Locksmith</a><a href="services/commercial-locksmith.html">Commercial Locksmith</a><a href="services/access-control.html">Access Control</a></div>
-      <div><h3>Company</h3><a href="service-area/portland-locksmith.html">Service Areas</a><a href="contact.html">Contact</a></div>
-      <div><h3>Contact</h3><a href="tel:+15037601402">(503) 760-1402</a><a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a><p>14750 SE Division St<br>Portland, OR 97236</p></div>
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Northwest Security & Lock home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-word">
+            <strong>NORTHWEST</strong>
+            <em>Security &amp; Lock</em>
+          </span>
+        </a>
+        <p>Professional Portland locksmith service for emergency help, homes, businesses, vehicles, rekeys, lock repairs, lock installation, and smart locks.</p>
+        <p class="footer-placeholder">License/trust info placeholder — add verified license, bond, insurance, or certification language only if true.</p>
+      </div>
+
+      <div>
+        <h3>Services</h3>
+        <a href="#emergency">Emergency Lockout Service</a>
+        <a href="#residential">Residential Locksmith</a>
+        <a href="#commercial">Commercial Locksmith</a>
+        <a href="#services">Rekeying</a>
+        <a href="#services">Lock Installation</a>
+        <a href="#services">Smart Locks</a>
+      </div>
+
+      <div>
+        <h3>Service Areas</h3>
+        <a href="#areas">Portland</a>
+        <a href="#areas">Gresham</a>
+        <a href="#areas">Beaverton</a>
+        <a href="#areas">Clackamas</a>
+        <a href="#areas">Vancouver</a>
+        <a href="#areas">Confirm before launch</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+15037601402">(503) 760-1402</a>
+        <a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a>
+        <p>Hours placeholder — add real hours before launch.</p>
+        <p>Google Business Profile placeholder</p>
+        <p>Social links placeholder</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year></span> Northwest Security &amp; Lock. All rights reserved.</span>
+      <span>Built for fast calls, local SEO, and trust.</span>
     </div>
   </footer>
-  <a class="float-call" href="tel:+15037601402">Call Now</a>
+
+  <div class="mobile-call-bar" aria-label="Mobile quick actions">
+    <a href="tel:+15037601402">Call Now</a>
+    <button type="button" data-open-chat>Get Help</button>
+  </div>
+
+  <section class="chat-widget" data-chat-widget aria-label="Quick Help Assistant">
+    <button class="chat-toggle" type="button" data-chat-toggle aria-expanded="false">
+      <span>Quick Help</span>
+      <strong>●</strong>
+    </button>
+
+    <div class="chat-panel" data-chat-panel hidden>
+      <div class="chat-head">
+        <div>
+          <p>Quick Help Assistant</p>
+          <span>Short questions. Fast routing.</span>
+        </div>
+        <button type="button" data-chat-close aria-label="Close chat">×</button>
+      </div>
+
+      <div class="chat-body" data-chat-body>
+        <div class="bot-message">
+          Hi — I can help figure out what locksmith service you need. If this is urgent or you are locked out right now, calling is fastest. What do you need help with?
+        </div>
+        <div class="chat-options" data-chat-options>
+          <button type="button" data-service="Locked out">Locked out</button>
+          <button type="button" data-service="Rekey locks">Rekey locks</button>
+          <button type="button" data-service="Replace lock">Replace lock</button>
+          <button type="button" data-service="Car key / vehicle issue">Car key / vehicle issue</button>
+          <button type="button" data-service="Business lock service">Business lock service</button>
+          <button type="button" data-service="Smart lock install">Smart lock install</button>
+          <button type="button" data-service="Something else">Something else</button>
+        </div>
+      </div>
+
+      <form class="chat-lead-form" data-chat-form hidden>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" placeholder="Best number" required>
+        </label>
+        <label>
+          <span>Location</span>
+          <input type="text" name="location" placeholder="Portland / nearby city" required>
+        </label>
+        <label>
+          <span>Urgency</span>
+          <select name="urgency" required>
+            <option value="">Choose urgency</option>
+            <option>Emergency — I need help now</option>
+            <option>Today</option>
+            <option>This week</option>
+            <option>Planning ahead</option>
+          </select>
+        </label>
+        <button class="btn btn-primary full" type="submit">Prepare Chat Lead</button>
+        <a class="chat-call" href="tel:+15037601402">Urgent? Call now: (503) 760-1402</a>
+      </form>
+    </div>
+  </section>
+
   <script src="assets/main.js" defer></script>
 </body>
 </html>

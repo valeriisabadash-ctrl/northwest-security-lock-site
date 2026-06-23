@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>[WEBSITE URL]/</loc></url><url><loc>[WEBSITE URL]/services.html</loc></url><url><loc>[WEBSITE URL]/residential.html</loc></url><url><loc>[WEBSITE URL]/commercial.html</loc></url><url><loc>[WEBSITE URL]/automotive.html</loc></url><url><loc>[WEBSITE URL]/emergency.html</loc></url><url><loc>[WEBSITE URL]/safes.html</loc></url><url><loc>[WEBSITE URL]/access-control.html</loc></url><url><loc>[WEBSITE URL]/rekey.html</loc></url><url><loc>[WEBSITE URL]/service-areas.html</loc></url><url><loc>[WEBSITE URL]/portland-locksmith.html</loc></url><url><loc>[WEBSITE URL]/gresham-locksmith.html</loc></url><url><loc>[WEBSITE URL]/beaverton-locksmith.html</loc></url><url><loc>[WEBSITE URL]/milwaukie-locksmith.html</loc></url><url><loc>[WEBSITE URL]/happy-valley-locksmith.html</loc></url><url><loc>[WEBSITE URL]/about.html</loc></url><url><loc>[WEBSITE URL]/reviews.html</loc></url><url><loc>[WEBSITE URL]/contact.html</loc></url><url><loc>[WEBSITE URL]/quote.html</loc></url>
+  <url><loc>https://northwestsecurityandlock.com/</loc></url>
+  <url><loc>https://northwestsecurityandlock.com/services/automotive-locksmith.html</loc></url>
+  <url><loc>https://northwestsecurityandlock.com/services/residential-locksmith.html</loc></url>
+  <url><loc>https://northwestsecurityandlock.com/services/commercial-locksmith.html</loc></url>
+  <url><loc>https://northwestsecurityandlock.com/service-area/portland-locksmith.html</loc></url>
+  <url><loc>https://northwestsecurityandlock.com/contact.html</loc></url>
 </urlset>

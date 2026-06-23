@@ -1,29 +1,25 @@
-# Northwest Security and Lock Website
+# Northwest Security & Lock Website
 
-Production static website for Northwest Security and Lock in Portland, Oregon.
+Static website for Northwest Security & Lock in Portland, Oregon.
 
-## Built pages
-- index.html
-- services.html
-- residential.html
-- commercial.html
-- automotive.html
-- emergency.html
-- safes.html
-- access-control.html
-- rekey.html
-- service-areas.html
-- portland-locksmith.html
-- gresham-locksmith.html
-- beaverton-locksmith.html
-- milwaukie-locksmith.html
-- happy-valley-locksmith.html
-- about.html
-- reviews.html
-- contact.html
-- quote.html
-- sitemap.xml
-- robots.txt
+## Active public pages
+- `index.html`
+- `contact.html`
+- `services/automotive-locksmith.html`
+- `services/residential-locksmith.html`
+- `services/commercial-locksmith.html`
+- `services/access-control.html`
+- `service-area/portland-locksmith.html`
+- `service-area/gresham-locksmith.html`
+- `service-area/happy-valley-locksmith.html`
+- `service-area/clackamas-locksmith.html`
+- `service-area/milwaukie-locksmith.html`
+- `sitemap.xml`
+- `robots.txt`
 
-## Before launch
-Replace [INSERT PHONE], [INSERT EMAIL], [INSERT LICENSE #], [WEBSITE URL], [LOGO URL], pricing placeholders, badges, and Google review placeholders. Do not publish fake reviews or fake license wording.
+## Notes before final launch
+- Replace the CSS lock mark with the final official logo file when available.
+- Add real shop, truck, and technician photos when the client has them.
+- Add real Google reviews only after pulling actual customer review text.
+- Add license or credential wording only if the client confirms the exact wording.
+- If a real backend is added later, replace the mailto lead form with CRM/email submission.

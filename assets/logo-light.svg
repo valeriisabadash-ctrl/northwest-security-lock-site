@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-labelledby="title desc">
+  <title id="title">Northwest Security and Lock Portland Oregon</title>
+  <desc id="desc">Mountain, padlock, and wordmark logo for Northwest Security and Lock.</desc>
+  <defs>
+    <style>
+      .ink{fill:#f8f1df}.gold{fill:#c18b32}.line{stroke:#c18b32;stroke-width:6;stroke-linecap:round}.outline{stroke:#f8f1df;stroke-width:6;stroke-linejoin:round;fill:none}.small{font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:8px}.wide{font-family:Georgia,'Times New Roman',serif;font-weight:900;letter-spacing:2px}.sub{font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:14px}
+    </style>
+  </defs>
+  <rect width="720" height="330" fill="transparent"/>
+  <g transform="translate(18 8)">
+    <text x="40" y="58" class="ink small" font-size="18">EST.</text>
+    <text x="632" y="58" text-anchor="end" class="ink small" font-size="18">1985</text>
+    <path d="M18 75h74M608 75h74M18 119h74M608 119h74" class="line"/>
+    <path class="ink" d="M120 156 240 64l24 42 25-24 32 44 28-34 32 40 32-46 32 32 58-62 154 100-96-24-59-45-46 72-31-27-50 47-45-48-36 38-36-46-28 36-36-58-78 85z"/>
+    <path fill="#111616" d="M260 98l-20 58 38-44 23 28-4-31-20-21zM506 86l-20 71 40-48 34 35-12-40-18 12z" opacity=".72"/>
+    <path class="ink" d="M214 151h44l-22-52zM558 152h42l-21-48zM232 114h10v45h-10zM576 115h9v44h-9z"/>
+    <g transform="translate(306 28)">
+      <path class="outline" d="M28 83V48c0-28 22-48 52-48s52 20 52 48v35"/>
+      <rect x="12" y="74" width="136" height="92" rx="16" class="ink"/>
+      <circle cx="80" cy="116" r="19" fill="#111616"/>
+      <path d="M72 128h16l9 31H63z" fill="#111616"/>
+    </g>
+    <text x="342" y="248" text-anchor="middle" class="ink wide" font-size="100">NORTHWEST</text>
+    <path d="M130 272h86M504 272h86" class="line"/>
+    <text x="342" y="286" text-anchor="middle" class="ink sub" font-size="34">SECURITY AND LOCK</text>
+    <path d="M190 313h72M422 313h72" class="line"/>
+    <text x="342" y="321" text-anchor="middle" class="gold sub" font-size="20">PORTLAND, OREGON</text>
+  </g>
+</svg>

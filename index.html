@@ -2,30 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Northwest Security & Lock</title>
+  <meta name="description" content="Northwest Security & Lock provides locksmith service in Portland, Oregon.">
+  <meta name="theme-color" content="#071011">
   <style>
     *{box-sizing:border-box}
-    html,body{margin:0;background:#071011;color:#fff;min-height:100%;font-family:Arial,sans-serif}
-    main{min-height:100vh;background:#071011}
-    img{display:block;width:100%;height:auto;margin:0 auto;background:#071011}
-    .loading{min-height:100vh;display:grid;place-items:center;color:#d6a646;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:14px}
-    body.ready .loading{display:none}
-    body:not(.ready) img{display:none}
+    html{scroll-behavior:smooth;background:#071011}
+    body{margin:0;background:#071011;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    .site{position:relative;width:100%;max-width:1400px;margin:0 auto;background:#071011}
+    .design{display:block;width:100%;height:auto;margin:0}
+    .hotspot{position:absolute;z-index:5;border:0;background:transparent;padding:0;cursor:pointer;text-decoration:none}
+    .hotspot:focus-visible{outline:3px solid #f1b545;outline-offset:2px}
+    .nav-services{left:27.7%;top:1.55%;width:7.7%;height:2.3%}
+    .nav-emergency{left:36.2%;top:1.55%;width:8.2%;height:2.3%}
+    .nav-residential{left:44.5%;top:1.55%;width:8.2%;height:2.3%}
+    .nav-commercial{left:52.8%;top:1.55%;width:8.3%;height:2.3%}
+    .nav-areas{left:61.4%;top:1.55%;width:5.9%;height:2.3%}
+    .nav-reviews{left:67.3%;top:1.55%;width:6.4%;height:2.3%}
+    .phone-top{left:73.4%;top:1.25%;width:14.2%;height:2.65%}
+    .call-top{left:87.7%;top:1.15%;width:8.8%;height:2.8%}
+    .call-hero{left:4.4%;top:26.3%;width:12.4%;height:2.75%}
+    .request-hero{left:17.9%;top:26.3%;width:13.2%;height:2.75%}
+    .request-card{left:60.6%;top:4.75%;width:36.3%;height:23.9%}
+    .call-emergency{left:56.2%;top:33.25%;width:24.6%;height:3.25%}
+    .chat-emergency{left:82.0%;top:33.25%;width:14.4%;height:3.25%}
+    .services-block{left:4.1%;top:41.8%;width:91.4%;height:17.4%}
+    .reviews-block{left:50.7%;top:78.0%;width:44.0%;height:9.8%}
+    .bottom-call{left:78.5%;top:88.0%;width:16.8%;height:3.1%}
+    .modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}
+    .modal[hidden]{display:none}
+    .panel{width:min(540px,100%);max-height:92vh;overflow:auto;background:#0b1314;border:1px solid rgba(222,164,56,.58);border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.65);padding:24px}
+    .panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+    .panel h2{margin:0;color:#fff6e8;font-size:26px;line-height:1.05;text-transform:uppercase;letter-spacing:.02em}
+    .panel p{margin:7px 0 0;color:#d5cab8;line-height:1.5}
+    .close{width:40px;height:40px;flex:0 0 40px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fff;font-size:24px;cursor:pointer}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{display:grid;gap:6px;color:#dda843;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    label.full{grid-column:1/-1}
+    input,select,textarea{width:100%;border:1px solid rgba(255,255,255,.2);border-radius:5px;background:#071011;color:#fff;padding:12px;font:inherit;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#dfaa43;box-shadow:0 0 0 3px rgba(223,170,67,.15)}
+    textarea{min-height:92px;resize:vertical}
+    .submit{grid-column:1/-1;border:0;border-radius:5px;padding:14px 18px;background:linear-gradient(180deg,#e8b950,#bd7d1f);color:#171006;font-weight:900;text-transform:uppercase;letter-spacing:.07em;cursor:pointer}
+    .call-direct{display:block;margin-top:14px;text-align:center;color:#efb84e;font-weight:900;text-decoration:none}
+    .chat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+    .chat-grid button{border:1px solid rgba(222,164,56,.45);border-radius:6px;background:#111b1c;color:#fff2dc;padding:14px 10px;font-weight:800;cursor:pointer}
+    .fallback{display:none;min-height:100vh;place-items:center;padding:30px;text-align:center;color:#e6ad41;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    body.image-failed .site{display:none}
+    body.image-failed .fallback{display:grid}
+    @media(max-width:640px){
+      .site{width:100%;max-width:none}
+      .panel{padding:19px}
+      .panel h2{font-size:22px}
+      form{grid-template-columns:1fr}
+      label.full,.submit{grid-column:1}
+      .chat-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
-  <main aria-label="Northwest Security & Lock homepage design">
-    <div class="loading">Loading preview</div>
-    <img id="mockup" alt="Northwest Security & Lock homepage design">
+  <div class="fallback">The website image failed to load.</div>
+  <main class="site" aria-label="Northwest Security & Lock website">
+    <img class="design" src="/api/mockup" alt="Northwest Security & Lock homepage" onerror="document.body.classList.add('image-failed')">
+
+    <button class="hotspot nav-services" type="button" data-scroll="610" aria-label="Services"></button>
+    <button class="hotspot nav-emergency" type="button" data-scroll="500" aria-label="Emergency"></button>
+    <button class="hotspot nav-residential" type="button" data-open-request aria-label="Residential locksmith"></button>
+    <button class="hotspot nav-commercial" type="button" data-open-request aria-label="Commercial locksmith"></button>
+    <button class="hotspot nav-areas" type="button" data-scroll="1200" aria-label="Service areas"></button>
+    <button class="hotspot nav-reviews" type="button" data-scroll="1200" aria-label="Reviews"></button>
+
+    <a class="hotspot phone-top" href="tel:+15037601402" aria-label="Call Northwest Security and Lock"></a>
+    <a class="hotspot call-top" href="tel:+15037601402" aria-label="Call now"></a>
+    <a class="hotspot call-hero" href="tel:+15037601402" aria-label="Call now"></a>
+    <button class="hotspot request-hero" type="button" data-open-request aria-label="Request service"></button>
+    <button class="hotspot request-card" type="button" data-open-request aria-label="Open locksmith service request form"></button>
+    <a class="hotspot call-emergency" href="tel:+15037601402" aria-label="Call emergency locksmith"></a>
+    <button class="hotspot chat-emergency" type="button" data-open-chat aria-label="Chat with us"></button>
+    <button class="hotspot services-block" type="button" data-open-request aria-label="Choose a locksmith service"></button>
+    <button class="hotspot reviews-block" type="button" data-scroll="1360" aria-label="Read customer reviews"></button>
+    <a class="hotspot bottom-call" href="tel:+15037601402" aria-label="Call 503 760 1402"></a>
   </main>
+
+  <section class="modal" data-request-modal hidden role="dialog" aria-modal="true" aria-labelledby="request-title">
+    <div class="panel">
+      <div class="panel-head">
+        <div><h2 id="request-title">Request Locksmith Service</h2><p>Tell us what happened and we’ll get back to you quickly.</p></div>
+        <button class="close" type="button" data-close aria-label="Close">×</button>
+      </div>
+      <form data-lead-form>
+        <label>Full Name<input name="name" autocomplete="name" required></label>
+        <label>Phone Number<input name="phone" type="tel" autocomplete="tel" required></label>
+        <label>Service Address<input name="location" autocomplete="street-address" required></label>
+        <label>Service Needed<select name="service" required><option value="">Choose one</option><option>Emergency lockout</option><option>Residential locksmith</option><option>Commercial locksmith</option><option>Rekeying</option><option>Lock installation</option><option>Lock repair</option><option>Automotive locksmith</option><option>Smart locks</option></select></label>
+        <label class="full">Urgency<select name="urgency" required><option value="">Choose one</option><option>Emergency — call me now</option><option>Today</option><option>This week</option><option>Planning ahead</option></select></label>
+        <label class="full">Details<textarea name="details" placeholder="Tell us what happened."></textarea></label>
+        <button class="submit" type="submit">Get Help Now</button>
+      </form>
+      <a class="call-direct" href="tel:+15037601402">Urgent? Call (503) 760-1402</a>
+    </div>
+  </section>
+
+  <section class="modal" data-chat-modal hidden role="dialog" aria-modal="true" aria-labelledby="chat-title">
+    <div class="panel">
+      <div class="panel-head">
+        <div><h2 id="chat-title">Quick Help</h2><p>Choose what you need help with.</p></div>
+        <button class="close" type="button" data-close aria-label="Close">×</button>
+      </div>
+      <div class="chat-grid">
+        <button type="button" data-service="Emergency lockout">Emergency lockout</button>
+        <button type="button" data-service="Rekeying">Rekey locks</button>
+        <button type="button" data-service="Lock repair">Lock repair</button>
+        <button type="button" data-service="Automotive locksmith">Vehicle service</button>
+        <button type="button" data-service="Commercial locksmith">Business locks</button>
+        <button type="button" data-service="Smart locks">Smart lock install</button>
+      </div>
+      <a class="call-direct" href="tel:+15037601402">For immediate help, call (503) 760-1402</a>
+    </div>
+  </section>
+
   <script>
     (function(){
-      var img=document.getElementById('mockup');
-      fetch('assets/exact-mockup/00.txt',{cache:'no-store'})
-        .then(function(r){return r.text();})
-        .then(function(t){img.src='data:image/webp;base64,'+t.trim();document.body.className='ready';})
-        .catch(function(){document.querySelector('.loading').textContent='Preview failed to load';});
+      var requestModal=document.querySelector('[data-request-modal]');
+      var chatModal=document.querySelector('[data-chat-modal]');
+      var form=document.querySelector('[data-lead-form]');
+      function openModal(modal){modal.hidden=false;document.body.style.overflow='hidden';}
+      function closeModal(modal){modal.hidden=true;document.body.style.overflow='';}
+      document.querySelectorAll('[data-open-request]').forEach(function(el){el.addEventListener('click',function(){openModal(requestModal);});});
+      document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(){openModal(chatModal);});});
+      document.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',function(){closeModal(el.closest('.modal'));});});
+      document.querySelectorAll('.modal').forEach(function(modal){modal.addEventListener('click',function(event){if(event.target===modal)closeModal(modal);});});
+      document.addEventListener('keydown',function(event){if(event.key==='Escape'){document.querySelectorAll('.modal:not([hidden])').forEach(closeModal);}});
+      document.querySelectorAll('[data-scroll]').forEach(function(el){el.addEventListener('click',function(){var y=Number(el.getAttribute('data-scroll'))||0;var scale=document.querySelector('.site').clientWidth/1024;window.scrollTo({top:y*scale,behavior:'smooth'});});});
+      document.querySelectorAll('[data-service]').forEach(function(el){el.addEventListener('click',function(){closeModal(chatModal);openModal(requestModal);var select=form.querySelector('[name="service"]');select.value=el.getAttribute('data-service');});});
+      form.addEventListener('submit',function(event){
+        event.preventDefault();
+        var data=new FormData(form);
+        var body=['New locksmith service request','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Address: '+data.get('location'),'Service: '+data.get('service'),'Urgency: '+data.get('urgency'),'Details: '+data.get('details')].join('\n');
+        window.location.href='mailto:pnwlocksmithor@gmail.com?subject='+encodeURIComponent('Website locksmith request')+'&body='+encodeURIComponent(body);
+      });
     })();
   </script>
 </body>

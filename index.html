@@ -2,146 +2,578 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Northwest Security & Lock</title>
-  <meta name="description" content="Northwest Security & Lock provides locksmith service in Portland, Oregon.">
-  <meta name="theme-color" content="#071011">
-  <style>
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:#071011}
-    body{margin:0;background:#071011;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-    .site{position:relative;width:100%;max-width:1400px;margin:0 auto;background:#071011}
-    .design{display:block;width:100%;height:auto;margin:0}
-    .hotspot{position:absolute;z-index:5;border:0;background:transparent;padding:0;cursor:pointer;text-decoration:none}
-    .hotspot:focus-visible{outline:3px solid #f1b545;outline-offset:2px}
-    .nav-services{left:27.7%;top:1.55%;width:7.7%;height:2.3%}
-    .nav-emergency{left:36.2%;top:1.55%;width:8.2%;height:2.3%}
-    .nav-residential{left:44.5%;top:1.55%;width:8.2%;height:2.3%}
-    .nav-commercial{left:52.8%;top:1.55%;width:8.3%;height:2.3%}
-    .nav-areas{left:61.4%;top:1.55%;width:5.9%;height:2.3%}
-    .nav-reviews{left:67.3%;top:1.55%;width:6.4%;height:2.3%}
-    .phone-top{left:73.4%;top:1.25%;width:14.2%;height:2.65%}
-    .call-top{left:87.7%;top:1.15%;width:8.8%;height:2.8%}
-    .call-hero{left:4.4%;top:26.3%;width:12.4%;height:2.75%}
-    .request-hero{left:17.9%;top:26.3%;width:13.2%;height:2.75%}
-    .request-card{left:60.6%;top:4.75%;width:36.3%;height:23.9%}
-    .call-emergency{left:56.2%;top:33.25%;width:24.6%;height:3.25%}
-    .chat-emergency{left:82.0%;top:33.25%;width:14.4%;height:3.25%}
-    .services-block{left:4.1%;top:41.8%;width:91.4%;height:17.4%}
-    .reviews-block{left:50.7%;top:78.0%;width:44.0%;height:9.8%}
-    .bottom-call{left:78.5%;top:88.0%;width:16.8%;height:3.1%}
-    .modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}
-    .modal[hidden]{display:none}
-    .panel{width:min(540px,100%);max-height:92vh;overflow:auto;background:#0b1314;border:1px solid rgba(222,164,56,.58);border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.65);padding:24px}
-    .panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
-    .panel h2{margin:0;color:#fff6e8;font-size:26px;line-height:1.05;text-transform:uppercase;letter-spacing:.02em}
-    .panel p{margin:7px 0 0;color:#d5cab8;line-height:1.5}
-    .close{width:40px;height:40px;flex:0 0 40px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fff;font-size:24px;cursor:pointer}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    label{display:grid;gap:6px;color:#dda843;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
-    label.full{grid-column:1/-1}
-    input,select,textarea{width:100%;border:1px solid rgba(255,255,255,.2);border-radius:5px;background:#071011;color:#fff;padding:12px;font:inherit;outline:none}
-    input:focus,select:focus,textarea:focus{border-color:#dfaa43;box-shadow:0 0 0 3px rgba(223,170,67,.15)}
-    textarea{min-height:92px;resize:vertical}
-    .submit{grid-column:1/-1;border:0;border-radius:5px;padding:14px 18px;background:linear-gradient(180deg,#e8b950,#bd7d1f);color:#171006;font-weight:900;text-transform:uppercase;letter-spacing:.07em;cursor:pointer}
-    .call-direct{display:block;margin-top:14px;text-align:center;color:#efb84e;font-weight:900;text-decoration:none}
-    .chat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-    .chat-grid button{border:1px solid rgba(222,164,56,.45);border-radius:6px;background:#111b1c;color:#fff2dc;padding:14px 10px;font-weight:800;cursor:pointer}
-    .fallback{display:none;min-height:100vh;place-items:center;padding:30px;text-align:center;color:#e6ad41;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-    body.image-failed .site{display:none}
-    body.image-failed .fallback{display:grid}
-    @media(max-width:640px){
-      .site{width:100%;max-width:none}
-      .panel{padding:19px}
-      .panel h2{font-size:22px}
-      form{grid-template-columns:1fr}
-      label.full,.submit{grid-column:1}
-      .chat-grid{grid-template-columns:1fr}
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Northwest Security & Lock | Portland Locksmith</title>
+  <meta name="description" content="24/7 locksmith service for homes, businesses, vehicles, lockouts, rekeying, lock repair, lock installation and smart locks across Portland and nearby areas.">
+  <meta name="theme-color" content="#071113">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="/styles.css?v=20260710-real-site-1">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Northwest Security & Lock",
+      "description": "Residential, commercial and automotive locksmith service in the Portland area.",
+      "telephone": "+1-503-760-1402",
+      "email": "pnwlocksmithor@gmail.com",
+      "priceRange": "$$",
+      "areaServed": ["Portland", "Gresham", "Beaverton", "Tigard", "Lake Oswego", "Milwaukie", "Vancouver"],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }]
     }
-  </style>
+  </script>
 </head>
 <body>
-  <div class="fallback">The website image failed to load.</div>
-  <main class="site" aria-label="Northwest Security & Lock website">
-    <img class="design" src="/api/mockup?v=20260710-4" alt="Northwest Security & Lock homepage" onerror="document.body.classList.add('image-failed')">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <button class="hotspot nav-services" type="button" data-scroll="610" aria-label="Services"></button>
-    <button class="hotspot nav-emergency" type="button" data-scroll="500" aria-label="Emergency"></button>
-    <button class="hotspot nav-residential" type="button" data-open-request aria-label="Residential locksmith"></button>
-    <button class="hotspot nav-commercial" type="button" data-open-request aria-label="Commercial locksmith"></button>
-    <button class="hotspot nav-areas" type="button" data-scroll="1200" aria-label="Service areas"></button>
-    <button class="hotspot nav-reviews" type="button" data-scroll="1200" aria-label="Reviews"></button>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="icon-lock" viewBox="0 0 24 24">
+      <rect x="5" y="10" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M6.6 3.8 9 3.2l2 4.3-1.8 1.4c1 2.2 2.7 3.9 4.9 4.9l1.4-1.8 4.3 2-.6 2.4c-.4 1.5-1.8 2.5-3.3 2.3-6.8-.9-12.2-6.3-13.1-13.1-.2-1.5.8-2.9 2.3-3.3l1.5-.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3 5 6v5c0 4.7 2.8 8 7 10 4.2-2 7-5.3 7-10V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="9" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24">
+      <path d="m13 2-8 12h6l-1 8 9-13h-6V2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24">
+      <path d="m3 11 9-8 9 8M5 10v10h14V10M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24">
+      <path d="M4 21V5l8-3v19M12 8h8v13M7 7h2M7 11h2M7 15h2M15 11h2M15 15h2M15 19h2M2 21h20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-key" viewBox="0 0 24 24">
+      <circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 12h9M17 12v3M20 12v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-wrench" viewBox="0 0 24 24">
+      <path d="M14.5 6.5A5 5 0 0 0 7.2 12L3 16.2 7.8 21l4.2-4.2a5 5 0 0 0 5.5-7.3l-3 3-3-3 3-3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-car" viewBox="0 0 24 24">
+      <path d="m5 11 1.7-5h10.6l1.7 5M4 11h16v7H4zM7 18v2M17 18v2M7 14h.01M17 14h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-wifi" viewBox="0 0 24 24">
+      <path d="M4 9a12 12 0 0 1 16 0M7 12.5a7.5 7.5 0 0 1 10 0M10 16a3 3 0 0 1 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="12" cy="19" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24">
+      <path d="M4 5h16v12H9l-5 4V5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8 9h8M8 13h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="m12 2.8 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2-4.5-4.4 6.3-.9L12 2.8Z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
 
-    <a class="hotspot phone-top" href="tel:+15037601402" aria-label="Call Northwest Security and Lock"></a>
-    <a class="hotspot call-top" href="tel:+15037601402" aria-label="Call now"></a>
-    <a class="hotspot call-hero" href="tel:+15037601402" aria-label="Call now"></a>
-    <button class="hotspot request-hero" type="button" data-open-request aria-label="Request service"></button>
-    <button class="hotspot request-card" type="button" data-open-request aria-label="Open locksmith service request form"></button>
-    <a class="hotspot call-emergency" href="tel:+15037601402" aria-label="Call emergency locksmith"></a>
-    <button class="hotspot chat-emergency" type="button" data-open-chat aria-label="Chat with us"></button>
-    <button class="hotspot services-block" type="button" data-open-request aria-label="Choose a locksmith service"></button>
-    <button class="hotspot reviews-block" type="button" data-scroll="1360" aria-label="Read customer reviews"></button>
-    <a class="hotspot bottom-call" href="tel:+15037601402" aria-label="Call 503 760 1402"></a>
+  <header class="site-header" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Northwest Security and Lock home">
+        <span class="brand-mark"><svg><use href="#icon-lock"></use></svg></span>
+        <span class="brand-copy">
+          <strong>NORTHWEST SECURITY &amp; LOCK</strong>
+          <span>Portland Locksmith Experts</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" data-nav aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#emergency">Emergency</a>
+        <a href="#residential">Residential</a>
+        <a href="#commercial">Commercial</a>
+        <a href="#areas">Areas</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="phone-link" href="tel:+15037601402">
+          <svg><use href="#icon-phone"></use></svg>
+          <span>(503) 760-1402</span>
+        </a>
+        <a class="btn btn-primary" href="tel:+15037601402">Call now</a>
+      </div>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation menu">
+        <svg><use href="#icon-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Local, fast, professional</p>
+          <h1>Locked Out?<br>Need a Locksmith Fast?<span>Northwest Security &amp; Lock is ready to help.</span></h1>
+          <p>Fast locksmith service for homes, businesses, vehicles and emergency lockouts across Portland and nearby areas.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+15037601402">
+              <svg><use href="#icon-phone"></use></svg>
+              Call now
+            </a>
+            <button class="btn btn-secondary" type="button" data-request-service="Emergency Lockout">Request service</button>
+          </div>
+          <ul class="trust-list" aria-label="Company benefits">
+            <li><svg><use href="#icon-pin"></use></svg>Local &amp; Portland-based</li>
+            <li><svg><use href="#icon-clock"></use></svg>24/7 emergency service</li>
+            <li><svg><use href="#icon-shield"></use></svg>Licensed, bonded &amp; insured</li>
+            <li><svg><use href="#icon-check"></use></svg>Clean, professional work</li>
+          </ul>
+        </div>
+
+        <aside class="hero-form-card" aria-labelledby="request-title">
+          <h2 id="request-title">Request Locksmith Service</h2>
+          <p>Tell us what happened and we will get back to you quickly.</p>
+          <form class="lead-form" id="service-form">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" autocomplete="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(503) 000-0000">
+            </div>
+            <div class="field">
+              <label for="location">Service address or area</label>
+              <input id="location" name="location" autocomplete="street-address" required placeholder="City or address">
+            </div>
+            <div class="field">
+              <label for="service">Service needed</label>
+              <select id="service" name="service" required>
+                <option value="">Choose one</option>
+                <option>Emergency Lockout</option>
+                <option>Residential Locksmith</option>
+                <option>Commercial Locksmith</option>
+                <option>Rekeying</option>
+                <option>Lock Installation</option>
+                <option>Lock Repair</option>
+                <option>Automotive Locksmith</option>
+                <option>Smart Locks</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="urgency">Urgency</label>
+              <select id="urgency" name="urgency" required>
+                <option value="">Choose one</option>
+                <option>Emergency — call me now</option>
+                <option>Today</option>
+                <option>This week</option>
+                <option>Planning ahead</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="details">Details</label>
+              <textarea id="details" name="details" placeholder="Tell us what happened."></textarea>
+            </div>
+            <button class="btn btn-primary form-submit" type="submit">Get help now</button>
+            <p class="form-note">Submitting opens a prefilled text or email to the locksmith.</p>
+            <p class="form-status" aria-live="polite" data-form-status></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="emergency-bar" id="emergency">
+      <div class="container emergency-inner">
+        <div class="emergency-copy">
+          <span class="emergency-icon"><svg><use href="#icon-bolt"></use></svg></span>
+          <div>
+            <strong>Need immediate help?</strong>
+            <p>Our locksmiths are available 24/7. Call now for fast, dependable service.</p>
+          </div>
+        </div>
+        <div class="emergency-actions">
+          <a class="btn btn-primary" href="tel:+15037601402">
+            <svg><use href="#icon-phone"></use></svg>
+            Call emergency locksmith
+          </a>
+          <button class="btn btn-secondary" type="button" data-open-chat>Chat with us</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Our services</p>
+          <h2>Solutions for every lock and security need.</h2>
+          <p>From a late-night lockout to a complete commercial access upgrade, choose the service you need and send the details directly to our team.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-bolt"></use></svg></span>
+            <h3>Emergency Lockout</h3>
+            <p>Locked out of your home, business or vehicle? We will work to get you back in quickly, day or night.</p>
+            <button type="button" data-request-service="Emergency Lockout">Get emergency help →</button>
+          </article>
+
+          <article class="service-card" id="residential">
+            <span class="service-icon"><svg><use href="#icon-home"></use></svg></span>
+            <h3>Residential Locksmith</h3>
+            <p>Rekeying, lock installation, lock repair and security upgrades that protect your home and family.</p>
+            <button type="button" data-request-service="Residential Locksmith">Secure your home →</button>
+          </article>
+
+          <article class="service-card" id="commercial">
+            <span class="service-icon"><svg><use href="#icon-building"></use></svg></span>
+            <h3>Commercial Locksmith</h3>
+            <p>High-security solutions, access control, master key systems and more for Portland businesses.</p>
+            <button type="button" data-request-service="Commercial Locksmith">Protect your business →</button>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-key"></use></svg></span>
+            <h3>Rekeying</h3>
+            <p>Moving in, changing tenants or losing keys? Rekey your locks and keep the old keys from working.</p>
+            <button type="button" data-request-service="Rekeying">Request rekeying →</button>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-lock"></use></svg></span>
+            <h3>Lock Installation</h3>
+            <p>Expert installation of deadbolts, smart locks, keypads and other lock hardware.</p>
+            <button type="button" data-request-service="Lock Installation">View options →</button>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-wrench"></use></svg></span>
+            <h3>Lock Repair</h3>
+            <p>Sticky locks, broken keys, alignment issues and damaged hardware repaired correctly.</p>
+            <button type="button" data-request-service="Lock Repair">Request repair →</button>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-car"></use></svg></span>
+            <h3>Automotive Locksmith</h3>
+            <p>Late-night lockouts, lost keys and vehicle access help when you need it most.</p>
+            <button type="button" data-request-service="Automotive Locksmith">Get back on the road →</button>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-wifi"></use></svg></span>
+            <h3>Smart Locks</h3>
+            <p>Upgrade to smart locks and keyless entry systems with professional installation and setup.</p>
+            <button type="button" data-request-service="Smart Locks">Explore smart locks →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="container why-grid">
+        <div class="why-intro">
+          <p class="eyebrow">Why choose Northwest Security &amp; Lock?</p>
+          <h2>Old-school skill.<br>Modern security.<br>Local commitment.</h2>
+          <p>We combine hands-on locksmith experience with current security solutions to protect what matters most.</p>
+        </div>
+
+        <div class="why-points">
+          <article class="why-point">
+            <svg><use href="#icon-pin"></use></svg>
+            <h3>Local Portland Locksmith</h3>
+            <p>We live and work here, with faster response times when you need us.</p>
+          </article>
+          <article class="why-point">
+            <svg><use href="#icon-phone"></use></svg>
+            <h3>Clear Communication</h3>
+            <p>Upfront pricing and honest recommendations without pressure.</p>
+          </article>
+          <article class="why-point">
+            <svg><use href="#icon-shield"></use></svg>
+            <h3>Clean, Reliable Work</h3>
+            <p>Professional service that protects your property and solves the problem.</p>
+          </article>
+          <article class="why-point">
+            <svg><use href="#icon-key"></use></svg>
+            <h3>Options That Make Sense</h3>
+            <p>We explain your choices so you can pick what fits your needs and budget.</p>
+          </article>
+          <article class="why-point">
+            <svg><use href="#icon-home"></use></svg>
+            <h3>Residential &amp; Commercial</h3>
+            <p>Solutions for homeowners, property managers and businesses across the Portland area.</p>
+          </article>
+          <article class="why-point">
+            <svg><use href="#icon-wifi"></use></svg>
+            <h3>Security-Focused Solutions</h3>
+            <p>Better hardware and upgrades that help you stay secure with confidence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Locksmith work gallery">
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1100&q=80" alt="Professional locksmith service vehicle" loading="lazy">
+          <figcaption class="gallery-label">Mobile locksmith service</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=850&q=80" alt="Technician working with door hardware" loading="lazy">
+          <figcaption class="gallery-label">Professional installation</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=850&q=80" alt="Modern keypad smart lock" loading="lazy">
+          <figcaption class="gallery-label">Smart lock upgrades</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1000&q=80" alt="Secure commercial door lock" loading="lazy">
+          <figcaption class="gallery-label">Commercial security</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="areas" id="areas">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Service area</p>
+          <h2>Proudly serving Portland and surrounding areas.</h2>
+          <p>Fast, dependable locksmith service across the Portland metro area and nearby communities.</p>
+        </div>
+
+        <div class="areas-grid">
+          <div class="area-panel">
+            <h3>Local coverage</h3>
+            <p>Not sure whether you are in our service area? Call and tell us where you are. We will give you a straight answer.</p>
+            <div class="area-tags" aria-label="Cities served">
+              <span>Portland</span>
+              <span>Gresham</span>
+              <span>Beaverton</span>
+              <span>Tigard</span>
+              <span>Lake Oswego</span>
+              <span>Milwaukie</span>
+              <span>Happy Valley</span>
+              <span>Clackamas</span>
+              <span>Vancouver</span>
+              <span>Surrounding areas</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-dark" href="tel:+15037601402">Check your location</a>
+            </div>
+          </div>
+
+          <div class="map-card" role="img" aria-label="Portland metro service area">
+            <div class="map-pin">
+              <svg><use href="#icon-pin"></use></svg>
+              <strong>PDX</strong>
+              <span>Portland metro coverage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What customers say</p>
+          <h2>Fast help. Clear communication. Work done right.</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg>
+            </div>
+            <blockquote>“They arrived in minutes and had me back in my house so quickly. Professional, friendly and fairly priced.”</blockquote>
+            <footer><span class="review-avatar">S</span><span><strong>Sarah M.</strong>Portland</span></footer>
+          </article>
+
+          <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg>
+            </div>
+            <blockquote>“Rekeyed our new home and installed smart deadbolts. Excellent communication from start to finish.”</blockquote>
+            <footer><span class="review-avatar">J</span><span><strong>James L.</strong>Beaverton</span></footer>
+          </article>
+
+          <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg><svg><use href="#icon-star"></use></svg>
+            </div>
+            <blockquote>“Helped us upgrade our business locks and set up keyless entry. Highly recommended.”</blockquote>
+            <footer><span class="review-avatar">M</span><span><strong>Megan C.</strong>Gresham</span></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Common questions</p>
+          <h2>Answers before you call.</h2>
+          <p>Locksmith work depends on the lock, property and situation. Call with the details for the most accurate answer.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>How fast can a locksmith arrive?</summary>
+            <p>Response time depends on your location, traffic and the current service schedule. Call with your exact area and urgency so we can give you the most accurate estimate.</p>
+          </details>
+          <details>
+            <summary>Do you replace locks, or can they be rekeyed?</summary>
+            <p>Many locks can be rekeyed without replacing the full hardware. We will inspect the condition and explain whether rekeying, repair or replacement makes the most sense.</p>
+          </details>
+          <details>
+            <summary>Can you install smart locks?</summary>
+            <p>Yes. We can help with smart locks, keypad locks and keyless entry systems, including professional installation and setup.</p>
+          </details>
+          <details>
+            <summary>Can you rekey my locks?</summary>
+            <p>Yes. Rekeying is a common solution after moving, changing tenants, losing keys or wanting old keys to stop working.</p>
+          </details>
+          <details>
+            <summary>Do you work with businesses?</summary>
+            <p>Yes. Commercial services include lock repair and installation, master key systems, access upgrades and other business security solutions.</p>
+          </details>
+          <details>
+            <summary>Do you offer emergency locksmith service?</summary>
+            <p>Yes. Call (503) 760-1402 for emergency lockout help and tell us your location, what you are locked out of and whether there are any urgent safety concerns.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <p class="eyebrow">Need a locksmith now?</p>
+            <h2>Call now for immediate assistance.</h2>
+            <p>Tell us what happened, where you are and how urgent it is.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="tel:+15037601402">
+              <svg><use href="#icon-phone"></use></svg>
+              Call (503) 760-1402
+            </a>
+            <button class="btn btn-secondary" type="button" data-open-chat>Quick help</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <section class="modal" data-request-modal hidden role="dialog" aria-modal="true" aria-labelledby="request-title">
-    <div class="panel">
-      <div class="panel-head">
-        <div><h2 id="request-title">Request Locksmith Service</h2><p>Tell us what happened and we’ll get back to you quickly.</p></div>
-        <button class="close" type="button" data-close aria-label="Close">×</button>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <span class="brand-mark"><svg><use href="#icon-lock"></use></svg></span>
+            <span class="brand-copy">
+              <strong>NORTHWEST SECURITY &amp; LOCK</strong>
+              <span>Portland Locksmith Experts</span>
+            </span>
+          </a>
+          <p>Professional locksmith service for homes, businesses and vehicles across Portland and nearby areas.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#services">Emergency lockout</a></li>
+            <li><a href="#residential">Residential locksmith</a></li>
+            <li><a href="#commercial">Commercial locksmith</a></li>
+            <li><a href="#services">Rekeying</a></li>
+            <li><a href="#services">Lock installation</a></li>
+            <li><a href="#services">Smart locks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Service areas</h3>
+          <ul>
+            <li>Portland</li>
+            <li>Gresham</li>
+            <li>Beaverton</li>
+            <li>Tigard</li>
+            <li>Lake Oswego</li>
+            <li>Vancouver</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact us</h3>
+          <ul class="footer-contact">
+            <li><svg><use href="#icon-phone"></use></svg><a href="tel:+15037601402">(503) 760-1402</a></li>
+            <li><svg><use href="#icon-mail"></use></svg><a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a></li>
+            <li><svg><use href="#icon-clock"></use></svg><span>Emergency service available 24/7</span></li>
+            <li><svg><use href="#icon-pin"></use></svg><span>Portland, Oregon</span></li>
+          </ul>
+        </div>
       </div>
-      <form data-lead-form>
-        <label>Full Name<input name="name" autocomplete="name" required></label>
-        <label>Phone Number<input name="phone" type="tel" autocomplete="tel" required></label>
-        <label>Service Address<input name="location" autocomplete="street-address" required></label>
-        <label>Service Needed<select name="service" required><option value="">Choose one</option><option>Emergency lockout</option><option>Residential locksmith</option><option>Commercial locksmith</option><option>Rekeying</option><option>Lock installation</option><option>Lock repair</option><option>Automotive locksmith</option><option>Smart locks</option></select></label>
-        <label class="full">Urgency<select name="urgency" required><option value="">Choose one</option><option>Emergency — call me now</option><option>Today</option><option>This week</option><option>Planning ahead</option></select></label>
-        <label class="full">Details<textarea name="details" placeholder="Tell us what happened."></textarea></label>
-        <button class="submit" type="submit">Get Help Now</button>
-      </form>
-      <a class="call-direct" href="tel:+15037601402">Urgent? Call (503) 760-1402</a>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Northwest Security &amp; Lock. All rights reserved.</span>
+        <span class="license-badge">Licensed · Bonded · Insured</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="Quick contact actions">
+    <button class="icon-button" type="button" data-open-chat aria-label="Open quick help">
+      <svg><use href="#icon-chat"></use></svg>
+    </button>
+    <a class="icon-button primary" href="tel:+15037601402" aria-label="Call Northwest Security and Lock">
+      <svg><use href="#icon-phone"></use></svg>
+    </a>
+  </div>
+
+  <div class="mobile-call-bar" aria-label="Mobile contact actions">
+    <a class="btn btn-primary" href="tel:+15037601402">Call now</a>
+    <button class="btn btn-secondary" type="button" data-open-chat>Quick help</button>
+  </div>
+
+  <section class="chat-modal" data-chat-modal hidden role="dialog" aria-modal="true" aria-labelledby="chat-title">
+    <div class="chat-panel">
+      <div class="chat-head">
+        <div>
+          <h2 id="chat-title">What do you need help with?</h2>
+          <p>Choose a service and we will fill it into the request form.</p>
+        </div>
+        <button class="chat-close" type="button" data-close-chat aria-label="Close quick help">×</button>
+      </div>
+      <div class="chat-options">
+        <button class="chat-option" type="button" data-chat-service="Emergency Lockout">Emergency lockout</button>
+        <button class="chat-option" type="button" data-chat-service="Rekeying">Rekey locks</button>
+        <button class="chat-option" type="button" data-chat-service="Lock Repair">Repair a lock</button>
+        <button class="chat-option" type="button" data-chat-service="Automotive Locksmith">Vehicle service</button>
+        <button class="chat-option" type="button" data-chat-service="Commercial Locksmith">Business locks</button>
+        <button class="chat-option" type="button" data-chat-service="Smart Locks">Smart lock install</button>
+      </div>
+      <a class="btn btn-primary" href="tel:+15037601402">For immediate help, call now</a>
     </div>
   </section>
 
-  <section class="modal" data-chat-modal hidden role="dialog" aria-modal="true" aria-labelledby="chat-title">
-    <div class="panel">
-      <div class="panel-head">
-        <div><h2 id="chat-title">Quick Help</h2><p>Choose what you need help with.</p></div>
-        <button class="close" type="button" data-close aria-label="Close">×</button>
-      </div>
-      <div class="chat-grid">
-        <button type="button" data-service="Emergency lockout">Emergency lockout</button>
-        <button type="button" data-service="Rekeying">Rekey locks</button>
-        <button type="button" data-service="Lock repair">Lock repair</button>
-        <button type="button" data-service="Automotive locksmith">Vehicle service</button>
-        <button type="button" data-service="Commercial locksmith">Business locks</button>
-        <button type="button" data-service="Smart locks">Smart lock install</button>
-      </div>
-      <a class="call-direct" href="tel:+15037601402">For immediate help, call (503) 760-1402</a>
-    </div>
-  </section>
-
-  <script>
-    (function(){
-      var requestModal=document.querySelector('[data-request-modal]');
-      var chatModal=document.querySelector('[data-chat-modal]');
-      var form=document.querySelector('[data-lead-form]');
-      function openModal(modal){modal.hidden=false;document.body.style.overflow='hidden';}
-      function closeModal(modal){modal.hidden=true;document.body.style.overflow='';}
-      document.querySelectorAll('[data-open-request]').forEach(function(el){el.addEventListener('click',function(){openModal(requestModal);});});
-      document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(){openModal(chatModal);});});
-      document.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',function(){closeModal(el.closest('.modal'));});});
-      document.querySelectorAll('.modal').forEach(function(modal){modal.addEventListener('click',function(event){if(event.target===modal)closeModal(modal);});});
-      document.addEventListener('keydown',function(event){if(event.key==='Escape'){document.querySelectorAll('.modal:not([hidden])').forEach(closeModal);}});
-      document.querySelectorAll('[data-scroll]').forEach(function(el){el.addEventListener('click',function(){var y=Number(el.getAttribute('data-scroll'))||0;var scale=document.querySelector('.site').clientWidth/1024;window.scrollTo({top:y*scale,behavior:'smooth'});});});
-      document.querySelectorAll('[data-service]').forEach(function(el){el.addEventListener('click',function(){closeModal(chatModal);openModal(requestModal);var select=form.querySelector('[name="service"]');select.value=el.getAttribute('data-service');});});
-      form.addEventListener('submit',function(event){
-        event.preventDefault();
-        var data=new FormData(form);
-        var body=['New locksmith service request','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Address: '+data.get('location'),'Service: '+data.get('service'),'Urgency: '+data.get('urgency'),'Details: '+data.get('details')].join('\n');
-        window.location.href='mailto:pnwlocksmithor@gmail.com?subject='+encodeURIComponent('Website locksmith request')+'&body='+encodeURIComponent(body);
-      });
-    })();
-  </script>
+  <script src="/script.js?v=20260710-real-site-1" defer></script>
 </body>
 </html>

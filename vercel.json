@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/mockup.js": {
+      "includeFiles": "assets/exact-mockup/00.txt"
+    }
+  }
+}

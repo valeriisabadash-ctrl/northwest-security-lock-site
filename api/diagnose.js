@@ -6,7 +6,7 @@ module.exports = function handler(req, res) {
   try {
     const dir = path.join(process.cwd(), 'assets', 'exact-mockup');
     const files = fs.readdirSync(dir)
-      .filter((name) => /^\d{2}\.txt$/.test(name))
+      .filter((name) => /^\d{2}[a-z]?\.txt$/.test(name))
       .sort();
 
     const details = files.map((name) => {

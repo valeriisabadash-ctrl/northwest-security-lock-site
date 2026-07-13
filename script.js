@@ -2,49 +2,53 @@
   const header = document.querySelector('[data-header]');
   const menuButton = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-nav]');
-  const chatModal = document.querySelector('[data-chat-modal]');
   const leadForm = document.querySelector('#service-form');
   const serviceField = leadForm?.querySelector('[name="service"]');
   const formStatus = leadForm?.querySelector('[data-form-status]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const setHeaderState = () => {
-    header?.classList.toggle('scrolled', window.scrollY > 18);
+  const updateHeader = () => {
+    header?.classList.toggle('scrolled', window.scrollY > 12);
   };
 
   const closeMenu = () => {
     nav?.classList.remove('open');
     menuButton?.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-label', 'Open navigation menu');
     document.body.classList.remove('menu-open');
   };
 
-  const openChat = () => {
-    if (!chatModal) return;
-    chatModal.hidden = false;
-    document.body.classList.add('modal-open');
-    chatModal.querySelector('.chat-close')?.focus();
-  };
-
-  const closeChat = () => {
-    if (!chatModal) return;
-    chatModal.hidden = true;
-    document.body.classList.remove('modal-open');
-  };
-
-  const scrollToForm = (service = '') => {
-    closeChat();
+  const openRequest = (service = '') => {
     closeMenu();
-    if (serviceField && service) serviceField.value = service;
-    leadForm?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    window.setTimeout(() => leadForm?.querySelector('input')?.focus(), 500);
+
+    if (serviceField && service) {
+      const matchingOption = Array.from(serviceField.options).find((option) => {
+        const optionValue = option.value.toLowerCase();
+        const requestedValue = service.toLowerCase();
+        return optionValue === requestedValue || optionValue.includes(requestedValue) || requestedValue.includes(optionValue);
+      });
+
+      if (matchingOption) serviceField.value = matchingOption.value;
+    }
+
+    document.querySelector('#request-service')?.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start'
+    });
+
+    window.setTimeout(() => {
+      leadForm?.querySelector('input')?.focus({ preventScroll: true });
+    }, reduceMotion ? 0 : 650);
   };
 
-  setHeaderState();
-  window.addEventListener('scroll', setHeaderState, { passive: true });
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 
   menuButton?.addEventListener('click', () => {
     const willOpen = !nav?.classList.contains('open');
     nav?.classList.toggle('open', willOpen);
     menuButton.setAttribute('aria-expanded', String(willOpen));
+    menuButton.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
     document.body.classList.toggle('menu-open', willOpen);
   });
 
@@ -52,35 +56,14 @@
     link.addEventListener('click', closeMenu);
   });
 
-  document.querySelectorAll('[data-open-chat]').forEach((button) => {
-    button.addEventListener('click', openChat);
-  });
-
-  document.querySelectorAll('[data-close-chat]').forEach((button) => {
-    button.addEventListener('click', closeChat);
-  });
-
-  chatModal?.addEventListener('click', (event) => {
-    if (event.target === chatModal) closeChat();
-  });
-
   document.querySelectorAll('[data-request-service]').forEach((button) => {
     button.addEventListener('click', () => {
-      scrollToForm(button.dataset.requestService || '');
-    });
-  });
-
-  document.querySelectorAll('[data-chat-service]').forEach((button) => {
-    button.addEventListener('click', () => {
-      scrollToForm(button.dataset.chatService || '');
+      openRequest(button.dataset.requestService || '');
     });
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeMenu();
-      closeChat();
-    }
+    if (event.key === 'Escape') closeMenu();
   });
 
   leadForm?.addEventListener('submit', (event) => {
@@ -89,25 +72,27 @@
     if (!leadForm.reportValidity()) return;
 
     const data = new FormData(leadForm);
-    const name = String(data.get('name') || '').trim();
-    const phone = String(data.get('phone') || '').trim();
-    const location = String(data.get('location') || '').trim();
-    const service = String(data.get('service') || '').trim();
-    const urgency = String(data.get('urgency') || '').trim();
-    const details = String(data.get('details') || '').trim();
+    const clean = (value) => String(value || '').trim();
+    const name = clean(data.get('name'));
+    const phone = clean(data.get('phone'));
+    const location = clean(data.get('location'));
+    const service = clean(data.get('service'));
+    const urgency = clean(data.get('urgency'));
+    const details = clean(data.get('details'));
 
     const message = [
       'New website locksmith request',
+      '',
       `Name: ${name}`,
       `Phone: ${phone}`,
-      `Address/area: ${location}`,
       `Service: ${service}`,
-      `Urgency: ${urgency}`,
+      `Timing: ${urgency}`,
+      `Location: ${location}`,
       `Details: ${details || 'Not provided'}`
     ].join('\n');
 
     if (formStatus) {
-      formStatus.textContent = 'Opening your message app with the request filled in…';
+      formStatus.textContent = 'Opening your message with the request filled in…';
     }
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -119,4 +104,21 @@
   });
 
   document.querySelector('[data-year]')?.replaceChildren(String(new Date().getFullYear()));
+
+  const revealItems = document.querySelectorAll('.reveal');
+
+  if (!reduceMotion && 'IntersectionObserver' in window && revealItems.length) {
+    document.body.classList.add('motion-ready');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px' });
+
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
 })();

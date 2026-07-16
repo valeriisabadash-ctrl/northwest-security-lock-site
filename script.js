@@ -28,24 +28,25 @@
     }
   });
 
-  nav?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeNavigation);
-  });
+  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNavigation));
+
+  const chooseService = (service = '') => {
+    if (!serviceSelect || !service) return;
+    const normalized = service.toLowerCase();
+    const option = Array.from(serviceSelect.options).find((item) => {
+      const text = item.text.toLowerCase();
+      return text === normalized || text.includes(normalized) || normalized.includes(text);
+    });
+    if (option) serviceSelect.value = option.value;
+  };
 
   const openModal = (service = '') => {
     if (!modal) return;
+    chooseService(service);
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     body.classList.add('modal-open');
-
-    if (service && serviceSelect) {
-      const option = Array.from(serviceSelect.options).find((item) => item.text === service);
-      if (option) serviceSelect.value = option.value;
-    }
-
-    window.setTimeout(() => {
-      modal.querySelector('input, select, textarea, button')?.focus();
-    }, 80);
+    window.setTimeout(() => modal.querySelector('input, select, textarea, button')?.focus(), 80);
   };
 
   const closeModal = () => {
@@ -58,10 +59,7 @@
   document.querySelectorAll('.open-request').forEach((button) => {
     button.addEventListener('click', () => openModal(button.dataset.service || ''));
   });
-
-  document.querySelectorAll('[data-close-modal]').forEach((element) => {
-    element.addEventListener('click', closeModal);
-  });
+  document.querySelectorAll('[data-close-modal]').forEach((element) => element.addEventListener('click', closeModal));
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
@@ -72,7 +70,6 @@
 
   requestForm?.addEventListener('submit', (event) => {
     event.preventDefault();
-
     if (!requestForm.checkValidity()) {
       requestForm.reportValidity();
       return;
@@ -92,14 +89,15 @@
       'Details:',
       String(data.get('details') || '')
     ];
-
-    const mailto = `mailto:pnwlocksmithor@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-    window.location.href = mailto;
+    window.location.href = `mailto:pnwlocksmithor@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
   });
 
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('request') === '1') {
+    window.setTimeout(() => openModal(params.get('service') || ''), 180);
+  }
+
   window.addEventListener('resize', () => {
-    if (!window.matchMedia('(max-width: 900px)').matches) {
-      closeNavigation();
-    }
+    if (!window.matchMedia('(max-width: 900px)').matches) closeNavigation();
   });
 })();

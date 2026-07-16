@@ -3,7 +3,7 @@
   if (!existingMobileStyles) {
     const mobileStyles = document.createElement('link');
     mobileStyles.rel = 'stylesheet';
-    mobileStyles.href = 'mobile.css?v=20260716-8';
+    mobileStyles.href = 'mobile.css?v=20260716-9';
     mobileStyles.dataset.mobileLayout = 'true';
     document.head.appendChild(mobileStyles);
   }

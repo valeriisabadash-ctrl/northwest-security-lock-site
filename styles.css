@@ -105,14 +105,14 @@ button{color:inherit}
 .trust-bar p{margin:0;color:rgba(255,255,255,.58);font-size:12px;line-height:1.5}
 .trust-bar strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}
 
-.emergency-strip{position:relative;z-index:1;isolation:isolate;background-image:linear-gradient(90deg,rgba(3,8,12,.97) 0%,rgba(4,10,14,.91) 28%,rgba(4,10,14,.30) 44%,rgba(4,10,14,.42) 58%,rgba(4,10,14,.92) 74%,rgba(3,8,12,.98) 100%),linear-gradient(180deg,rgba(2,6,9,.28) 0%,rgba(2,6,9,.18) 48%,rgba(2,6,9,.76) 100%),url("mountain.png");background-position:center center,center center,45% 54%;background-size:cover,cover,clamp(470px,39vw,640px) auto;background-repeat:no-repeat;color:#fff;border-top:1px solid rgba(255,255,255,.24);border-bottom:0;box-shadow:inset 0 20px 42px rgba(0,0,0,.28)}
+.emergency-strip{position:relative;z-index:1;isolation:isolate;background-image:linear-gradient(90deg,rgba(3,8,12,.82) 0%,rgba(4,10,14,.68) 28%,rgba(4,10,14,.26) 44%,rgba(4,10,14,.34) 58%,rgba(4,10,14,.70) 74%,rgba(3,8,12,.84) 100%),linear-gradient(180deg,rgba(2,6,9,.20) 0%,rgba(2,6,9,.12) 48%,rgba(2,6,9,.60) 100%),url("mountain.png");background-position:center center,center center,center 26%;background-size:cover,cover,cover;background-repeat:no-repeat;color:#fff;border-top:1px solid rgba(255,255,255,.24);border-bottom:0;box-shadow:inset 0 20px 42px rgba(0,0,0,.28)}
 .emergency-strip:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 30%),radial-gradient(circle at 45% 86%,rgba(222,157,45,.055),transparent 28%);pointer-events:none}
 .emergency-strip-inner{min-height:155px;display:flex;align-items:center;justify-content:space-between;gap:40px}
 .emergency-strip h2{margin:0;font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(1.6rem,3vw,2.75rem)}
 .emergency-strip-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:flex-end}
 
 @media(max-width:1100px){
-  .emergency-strip{background-position:center center,center center,68% 50%;background-size:cover,cover,clamp(440px,58vw,620px) auto}
+  .emergency-strip{background-position:center center,center center,center 28%;background-size:cover,cover,cover}
 }
 
 .divisions{background:var(--cream)}

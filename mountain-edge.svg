@@ -1,17 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 130" preserveAspectRatio="none" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 180" preserveAspectRatio="none" aria-hidden="true">
   <defs>
     <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#faf6ee"/>
+      <stop offset="0" stop-color="#fbf7ef"/>
       <stop offset="1" stop-color="#f3eee4"/>
     </linearGradient>
-    <filter id="shadow" x="-10%" y="-30%" width="120%" height="170%">
-      <feGaussianBlur stdDeviation="3"/>
+    <linearGradient id="ridgeShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#081016" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#081016" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-30%" width="120%" height="170%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="paperNoise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="11" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="gray"/>
+      <feComponentTransfer in="gray" result="faded"><feFuncA type="table" tableValues="0 .045"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="faded" mode="multiply"/>
     </filter>
   </defs>
-
-  <path d="M0 83 L34 78 L62 70 L90 75 L116 63 L145 70 L175 60 L207 69 L236 58 L266 66 L297 52 L323 60 L350 41 L371 51 L395 36 L418 48 L441 43 L465 58 L491 52 L518 64 L545 51 L569 61 L597 47 L621 58 L647 53 L675 67 L703 59 L730 64 L758 48 L783 57 L810 39 L833 50 L858 28 L882 42 L909 35 L934 53 L959 47 L986 61 L1012 52 L1039 63 L1064 48 L1089 58 L1116 43 L1141 55 L1168 50 L1195 66 L1222 57 L1249 64 L1277 49 L1301 59 L1328 44 L1353 53 L1379 47 L1406 62 L1433 54 L1460 64 L1488 52 L1516 60 L1544 51 L1572 59 L1600 55 V130 H0 Z" fill="#000" opacity=".22" filter="url(#shadow)" transform="translate(0 7)"/>
-
-  <path d="M0 78 L30 72 L55 62 L82 69 L108 57 L137 65 L165 52 L194 63 L223 50 L250 59 L279 43 L304 52 L330 32 L350 45 L371 25 L392 40 L416 34 L441 52 L465 46 L491 60 L518 50 L544 62 L570 46 L595 58 L621 52 L648 66 L675 57 L702 63 L729 46 L753 56 L779 37 L802 49 L827 24 L850 38 L876 31 L902 51 L928 44 L954 60 L980 51 L1007 63 L1032 48 L1057 58 L1083 41 L1108 55 L1134 48 L1160 65 L1187 56 L1214 63 L1240 46 L1265 58 L1291 42 L1316 53 L1343 47 L1369 62 L1396 53 L1423 64 L1450 51 L1477 60 L1505 50 L1532 59 L1560 48 L1580 56 L1600 52 V130 H0 Z" fill="url(#paper)"/>
-
-  <path d="M0 78 L30 72 L55 62 L82 69 L108 57 L137 65 L165 52 L194 63 L223 50 L250 59 L279 43 L304 52 L330 32 L350 45 L371 25 L392 40 L416 34 L441 52 L465 46 L491 60 L518 50 L544 62 L570 46 L595 58 L621 52 L648 66 L675 57 L702 63 L729 46 L753 56 L779 37 L802 49 L827 24 L850 38 L876 31 L902 51 L928 44 L954 60 L980 51 L1007 63 L1032 48 L1057 58 L1083 41 L1108 55 L1134 48 L1160 65 L1187 56 L1214 63 L1240 46 L1265 58 L1291 42 L1316 53 L1343 47 L1369 62 L1396 53 L1423 64 L1450 51 L1477 60 L1505 50 L1532 59 L1560 48 L1580 56 L1600 52" fill="none" stroke="#fff" stroke-opacity=".34" stroke-width="2"/>
+  <path d="M0 118 L70 108 L132 100 L195 109 L255 93 L318 101 L376 79 L425 92 L476 58 L522 76 L566 48 L611 66 L651 42 L696 70 L738 54 L784 84 L832 69 L879 92 L924 71 L969 51 L1011 76 L1054 62 L1097 91 L1142 74 L1190 103 L1244 87 L1301 106 L1362 94 L1421 111 L1482 101 L1542 114 L1600 106 V180 H0 Z" fill="#000" opacity=".28" filter="url(#softShadow)" transform="translate(0 9)"/>
+  <path d="M0 113 L68 105 L128 97 L191 106 L250 89 L312 98 L369 75 L418 89 L469 53 L515 73 L559 42 L604 63 L645 35 L690 67 L733 50 L779 81 L828 64 L875 89 L920 67 L965 45 L1008 73 L1051 58 L1094 88 L1139 70 L1187 100 L1241 83 L1298 102 L1359 90 L1418 108 L1479 97 L1539 111 L1600 103 V180 H0 Z" fill="url(#paper)" filter="url(#paperNoise)"/>
+  <path d="M0 113 L68 105 L128 97 L191 106 L250 89 L312 98 L369 75 L418 89 L469 53 L515 73 L559 42 L604 63 L645 35 L690 67 L733 50 L779 81 L828 64 L875 89 L920 67 L965 45 L1008 73 L1051 58 L1094 88 L1139 70 L1187 100 L1241 83 L1298 102 L1359 90 L1418 108 L1479 97 L1539 111 L1600 103" fill="none" stroke="#fff" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M369 75 L392 64 L408 70 L418 89 M469 53 L486 42 L500 49 L515 73 M559 42 L578 28 L593 40 L604 63 M645 35 L665 19 L678 31 L690 67 M733 50 L751 37 L766 50 L779 81 M920 67 L944 55 L955 59 L965 45 M965 45 L985 32 L996 41 L1008 73 M1051 58 L1070 45 L1084 59 L1094 88" fill="none" stroke="#d8d0c2" stroke-opacity=".46" stroke-width="1.4"/>
+  <path d="M0 129 C180 116 310 123 454 111 C620 97 747 110 908 103 C1080 95 1220 113 1398 108 C1485 106 1548 111 1600 109 V180 H0 Z" fill="url(#ridgeShade)" opacity=".12"/>
 </svg>

@@ -1,5 +1,105 @@
-const premiumStylesheet=document.createElement('link');premiumStylesheet.rel='stylesheet';premiumStylesheet.href='premium.css';document.head.appendChild(premiumStylesheet);const mountainEdgeStylesheet=document.createElement('link');mountainEdgeStylesheet.rel='stylesheet';mountainEdgeStylesheet.href='mountain-edge.css';document.head.appendChild(mountainEdgeStylesheet);const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(menuButton&&nav){menuButton.addEventListener('click',()=>{nav.classList.toggle('open');});}const form=document.querySelector('.service-form');if(form){form.addEventListener('submit',event=>{event.preventDefault();const button=form.querySelector('button[type="submit"]');button.textContent='Request Received';button.disabled=true;setTimeout(()=>{button.textContent='Get Help Now';button.disabled=false;form.reset();},2500);});}const galleryVan=document.querySelector('.gallery-van img');if(galleryVan){galleryVan.src='data:image/jpeg;base64,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...';galleryVan.alt='Northwest Security and Lock service van';galleryVan.style.objectPosition='center center';}
+(() => {
+  const body = document.body;
+  const menuButton = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  const dropdown = document.querySelector('.nav-dropdown');
+  const dropdownButton = document.querySelector('.nav-dropdown-toggle');
+  const modal = document.querySelector('#request-modal');
+  const requestForm = document.querySelector('#service-request-form');
+  const serviceSelect = requestForm?.querySelector('[name="service"]');
 
-const mapPlaceholder=document.querySelector('.map-placeholder');if(mapPlaceholder){mapPlaceholder.className='real-map-card';mapPlaceholder.innerHTML='<iframe title="Northwest Security and Lock location at 14750 SE Division St, Portland, Oregon" src="https://www.google.com/maps?q=14750%20SE%20Division%20St%2C%20Portland%2C%20OR%2097236&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><div class="map-location-bar"><div><strong>Northwest Security & Lock</strong><span>14750 SE Division St<br>Portland, OR 97236</span></div><a href="https://www.google.com/maps/dir/?api=1&destination=14750%20SE%20Division%20St%2C%20Portland%2C%20OR%2097236" target="_blank" rel="noopener noreferrer">Get Directions</a></div>';}
-const footerLocation=[...document.querySelectorAll('.site-footer span')].find(item=>item.textContent.trim()==='Portland, Oregon');if(footerLocation){footerLocation.innerHTML='14750 SE Division St<br>Portland, OR 97236';}
-const mapStyles=document.createElement('style');mapStyles.textContent='.real-map-card{position:relative;min-height:270px;border:1px solid #cfc5b5;border-radius:10px;overflow:hidden;background:#ddd;box-shadow:0 14px 34px rgba(32,26,18,.14)}.real-map-card iframe{display:block;width:100%;height:100%;min-height:270px;border:0;filter:saturate(.88) contrast(1.04)}.map-location-bar{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px;background:rgba(10,17,22,.93);border:1px solid rgba(255,255,255,.18);border-radius:8px;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.3);backdrop-filter:blur(9px)}.map-location-bar strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:17px;text-transform:uppercase;letter-spacing:.7px;color:#f0b642}.map-location-bar span{display:block;margin-top:3px;font-size:12px;line-height:1.35;color:#e8e5df}.map-location-bar a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:5px;background:linear-gradient(180deg,#f0b642,#d79a2d);color:#111;text-decoration:none;text-transform:uppercase;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:.8px;white-space:nowrap}@media(max-width:700px){.real-map-card,.real-map-card iframe{min-height:340px}.map-location-bar{align-items:flex-start;flex-direction:column}.map-location-bar a{width:100%}}';document.head.appendChild(mapStyles);
+  const closeNavigation = () => {
+    nav?.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    dropdown?.classList.remove('open');
+    dropdownButton?.setAttribute('aria-expanded', 'false');
+  };
+
+  menuButton?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('open') ?? false;
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  dropdownButton?.addEventListener('click', (event) => {
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      event.preventDefault();
+      const isOpen = dropdown?.classList.toggle('open') ?? false;
+      dropdownButton.setAttribute('aria-expanded', String(isOpen));
+    }
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNavigation);
+  });
+
+  const openModal = (service = '') => {
+    if (!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    body.classList.add('modal-open');
+
+    if (service && serviceSelect) {
+      const option = Array.from(serviceSelect.options).find((item) => item.text === service);
+      if (option) serviceSelect.value = option.value;
+    }
+
+    window.setTimeout(() => {
+      modal.querySelector('input, select, textarea, button')?.focus();
+    }, 80);
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    body.classList.remove('modal-open');
+  };
+
+  document.querySelectorAll('.open-request').forEach((button) => {
+    button.addEventListener('click', () => openModal(button.dataset.service || ''));
+  });
+
+  document.querySelectorAll('[data-close-modal]').forEach((element) => {
+    element.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal();
+      closeNavigation();
+    }
+  });
+
+  requestForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!requestForm.checkValidity()) {
+      requestForm.reportValidity();
+      return;
+    }
+
+    const data = new FormData(requestForm);
+    const subject = `Locksmith service request — ${data.get('service')}`;
+    const bodyLines = [
+      'Northwest Security & Lock service request',
+      '',
+      `Name: ${data.get('name')}`,
+      `Phone: ${data.get('phone')}`,
+      `City / ZIP: ${data.get('location')}`,
+      `Service: ${data.get('service')}`,
+      `Urgency: ${data.get('urgency')}`,
+      '',
+      'Details:',
+      String(data.get('details') || '')
+    ];
+
+    const mailto = `mailto:pnwlocksmithor@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    window.location.href = mailto;
+  });
+
+  window.addEventListener('resize', () => {
+    if (!window.matchMedia('(max-width: 900px)').matches) {
+      closeNavigation();
+    }
+  });
+})();

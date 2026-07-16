@@ -76,8 +76,9 @@ button{color:inherit}
 .section-heading h2,.capability-copy h2,.proof-copy h2,.location-copy h2,.faq-intro h2,.final-cta h2{font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(2.35rem,4.2vw,4.5rem);line-height:1.09;letter-spacing:-.035em;margin:0}
 .section-heading>p{margin:0;color:var(--muted);font-size:1.04rem}
 
-.hero{position:relative;isolation:isolate;min-height:720px;display:flex;align-items:center;background:url("hero-bg-premium.png") center 46%/cover no-repeat;color:#fff;overflow:hidden}
-.hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(3,8,11,.97) 0%,rgba(4,9,12,.86) 47%,rgba(4,9,12,.36) 100%),linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.7))}
+.hero{position:relative;isolation:isolate;min-height:720px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(4,9,13,.78) 0%,rgba(4,9,13,.52) 43%,rgba(4,9,13,.42) 100%),linear-gradient(180deg,rgba(4,9,13,.10) 0%,rgba(4,9,13,.42) 100%),url("hero-bg-premium.png") center 48%/cover no-repeat;color:#fff;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -90px 120px rgba(0,0,0,.28)}
+.hero-overlay{position:absolute;inset:0;z-index:-1;background:transparent}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 28% 42%,rgba(215,154,45,.18),transparent 34%);pointer-events:none}
 .hero:after{content:"";position:absolute;z-index:-1;width:620px;height:620px;right:-180px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(210,154,53,.22),transparent 67%)}
 .hero-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.72fr);gap:72px;align-items:center;padding:78px 0 88px}
 .hero-copy h1{max-width:880px;margin:0;font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(3.2rem,6vw,6.4rem);line-height:1.015;letter-spacing:-.055em;text-shadow:0 12px 40px rgba(0,0,0,.42)}

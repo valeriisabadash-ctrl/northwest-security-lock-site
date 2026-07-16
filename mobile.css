@@ -144,14 +144,15 @@
   /* Homepage hero */
   .hero {
     min-height: auto;
-    background: #071015 !important;
+    background:
+      linear-gradient(90deg, rgba(4, 9, 13, 0.78) 0%, rgba(4, 9, 13, 0.52) 43%, rgba(4, 9, 13, 0.42) 100%),
+      linear-gradient(180deg, rgba(4, 9, 13, 0.1) 0%, rgba(4, 9, 13, 0.42) 100%),
+      url("hero-bg-premium.png") 58% center / cover no-repeat !important;
     overflow: hidden;
   }
 
   .hero-overlay {
-    background:
-      radial-gradient(circle at 84% 18%, rgba(210, 154, 53, 0.14), transparent 34%),
-      linear-gradient(180deg, #071015 0%, #091218 100%);
+    background: transparent;
   }
 
   .hero:after {

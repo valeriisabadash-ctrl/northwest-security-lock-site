@@ -73,12 +73,32 @@
 
     <section class="emergency-bar" id="emergency">
       <div class="container emergency-inner">
-        <div class="emergency-message"><span class="siren">🚨</span><div><strong>Need Immediate Help?</strong><p>Our locksmiths are available 24/7. Call now for fast, dependable service.</p></div></div>
-        <div class="emergency-actions"><a class="btn btn-gold" href="tel:+15037601402">☎ Call Emergency Locksmith</a><button class="btn btn-outline" type="button">Chat With Us</button></div>
+        <div class="emergency-message">
+          <span class="emergency-siren" aria-hidden="true">
+            <svg viewBox="0 0 88 88" role="img">
+              <path d="M27 58V38c0-11 7-20 17-20s17 9 17 20v20" />
+              <path d="M21 58h46l7 10H14l7-10Z" />
+              <path d="M23 72h42" />
+              <path d="M44 7V0M18 18l-6-6M70 18l6-6M9 42H0M88 42h-9" />
+              <path d="M33 39c0-7 4-12 11-12" />
+            </svg>
+          </span>
+          <div class="emergency-copy">
+            <strong>Need Immediate Help?</strong>
+            <p>Our locksmiths are available 24/7.<br>Call now for fast, dependable service.</p>
+          </div>
+        </div>
+        <div class="emergency-actions">
+          <a class="btn btn-gold emergency-call" href="tel:+15037601402">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5 10 6.8 8.4 9.3c1.2 2.5 3.1 4.4 5.6 5.6l2.5-1.6 3.3 2.8c.5.4.6 1.1.3 1.7-.8 1.6-2.3 2.6-4.1 2.4C9.3 19.4 4.6 14.7 3.8 8c-.2-1.8.8-3.3 2.4-4.1.5-.3 1.2-.2 1.7.3Z" /></svg>
+            Call Emergency Locksmith
+          </a>
+          <button class="btn btn-outline emergency-chat" type="button">Chat With Us</button>
+        </div>
       </div>
     </section>
 
-    <section class="section light" id="services">
+    <section class="section light services-section" id="services">
       <div class="container">
         <p class="eyebrow">Our Services</p>
         <h2 class="section-title">Solutions for Every Lock & Security Need</h2>

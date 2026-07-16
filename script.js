@@ -1,4 +1,11 @@
 (() => {
+  if (!document.querySelector('link[href="mobile.css"]')) {
+    const mobileStyles = document.createElement('link');
+    mobileStyles.rel = 'stylesheet';
+    mobileStyles.href = 'mobile.css';
+    document.head.appendChild(mobileStyles);
+  }
+
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
@@ -13,11 +20,13 @@
     menuButton?.setAttribute('aria-expanded', 'false');
     dropdown?.classList.remove('open');
     dropdownButton?.setAttribute('aria-expanded', 'false');
+    body.classList.remove('menu-open');
   };
 
   menuButton?.addEventListener('click', () => {
     const isOpen = nav?.classList.toggle('open') ?? false;
     menuButton.setAttribute('aria-expanded', String(isOpen));
+    body.classList.toggle('menu-open', isOpen);
   });
 
   dropdownButton?.addEventListener('click', (event) => {
@@ -42,6 +51,7 @@
 
   const openModal = (service = '') => {
     if (!modal) return;
+    closeNavigation();
     chooseService(service);
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');

@@ -3,18 +3,9 @@
   if (!existingMobileStyles) {
     const mobileStyles = document.createElement('link');
     mobileStyles.rel = 'stylesheet';
-    mobileStyles.href = 'mobile.css?v=20260716-5';
+    mobileStyles.href = 'mobile.css?v=20260716-6';
     mobileStyles.dataset.mobileLayout = 'true';
     document.head.appendChild(mobileStyles);
-  }
-
-  const existingCallButtonStyles = document.querySelector('link[data-call-button]');
-  if (!existingCallButtonStyles) {
-    const callButtonStyles = document.createElement('link');
-    callButtonStyles.rel = 'stylesheet';
-    callButtonStyles.href = 'call-button.css?v=20260716-1';
-    callButtonStyles.dataset.callButton = 'true';
-    document.head.appendChild(callButtonStyles);
   }
 
   const body = document.body;

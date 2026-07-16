@@ -8,6 +8,15 @@
     document.head.appendChild(mobileStyles);
   }
 
+  const existingCallButtonStyles = document.querySelector('link[data-call-button]');
+  if (!existingCallButtonStyles) {
+    const callButtonStyles = document.createElement('link');
+    callButtonStyles.rel = 'stylesheet';
+    callButtonStyles.href = 'call-button.css?v=20260716-1';
+    callButtonStyles.dataset.callButton = 'true';
+    document.head.appendChild(callButtonStyles);
+  }
+
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');

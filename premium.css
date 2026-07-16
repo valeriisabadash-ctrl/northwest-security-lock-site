@@ -3,19 +3,19 @@
 .hero-copy{text-shadow:0 3px 18px rgba(0,0,0,.75)}
 .service-form{background:linear-gradient(180deg,rgba(8,14,18,.88),rgba(8,14,18,.80));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:rgba(255,255,255,.30);box-shadow:0 28px 80px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.06)}
 
-.emergency-bar{position:relative;z-index:1;isolation:isolate;background:linear-gradient(90deg,rgba(4,10,14,.90),rgba(6,13,18,.72) 42%,rgba(4,10,14,.90)),linear-gradient(180deg,rgba(3,8,12,.22),rgba(3,8,12,.72)),url("hero-bg-premium.png") center 64%/cover no-repeat;border-top:1px solid rgba(255,255,255,.24);border-bottom:0;box-shadow:inset 0 24px 46px rgba(0,0,0,.24)}
-.emergency-bar:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 46% 92%,rgba(214,151,43,.08),transparent 32%);pointer-events:none}
-.emergency-inner{min-height:132px;padding:21px 0 38px;display:grid;grid-template-columns:minmax(360px,1fr) auto;align-items:center;gap:48px}
-.emergency-message{display:grid;grid-template-columns:74px minmax(0,1fr);align-items:center;gap:20px}
-.emergency-siren{display:grid;place-items:center;width:74px;height:74px;color:#e0a238;filter:drop-shadow(0 3px 10px rgba(222,157,45,.22))}
+.emergency-bar{position:relative;z-index:1;isolation:isolate;background-image:linear-gradient(90deg,rgba(3,8,12,.97) 0%,rgba(4,10,14,.91) 28%,rgba(4,10,14,.30) 44%,rgba(4,10,14,.42) 58%,rgba(4,10,14,.92) 74%,rgba(3,8,12,.98) 100%),linear-gradient(180deg,rgba(2,6,9,.28) 0%,rgba(2,6,9,.18) 48%,rgba(2,6,9,.76) 100%),url("mountain.png");background-position:center center,center center,45% 54%;background-size:cover,cover,clamp(470px,39vw,640px) auto;background-repeat:no-repeat;border-top:1px solid rgba(255,255,255,.24);border-bottom:0;box-shadow:inset 0 20px 42px rgba(0,0,0,.28)}
+.emergency-bar:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 30%),radial-gradient(circle at 45% 86%,rgba(222,157,45,.055),transparent 28%);pointer-events:none}
+.emergency-inner{min-height:128px;padding:18px 0 36px;display:grid;grid-template-columns:minmax(350px,1fr) auto;align-items:center;gap:48px}
+.emergency-message{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:18px}
+.emergency-siren{display:grid;place-items:center;width:72px;height:72px;color:#e0a238;filter:drop-shadow(0 3px 10px rgba(222,157,45,.24))}
 .emergency-siren svg{display:block;width:100%;height:100%;overflow:visible;fill:none;stroke:currentColor;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-.emergency-copy strong{display:block;margin:0 0 3px;font-family:'Barlow Condensed',sans-serif;font-size:21px;line-height:1;text-transform:uppercase;letter-spacing:1.35px;color:#fff}
-.emergency-copy p{margin:0;color:#f0eee9;font-size:14px;line-height:1.43;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+.emergency-copy strong{display:block;margin:0 0 4px;font-family:'Barlow Condensed',sans-serif;font-size:21px;line-height:1;text-transform:uppercase;letter-spacing:1.35px;color:#fff}
+.emergency-copy p{margin:0;color:#f0eee9;font-size:14px;line-height:1.42;text-shadow:0 2px 10px rgba(0,0,0,.78)}
 .emergency-actions{display:flex;align-items:center;gap:20px}
-.emergency-actions .btn{height:52px;min-height:52px;border-radius:6px;font-size:16px;letter-spacing:.9px;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.emergency-actions .btn{height:52px;min-height:52px;border-radius:6px;font-size:16px;letter-spacing:.9px;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.28)}
 .emergency-call{min-width:292px;gap:12px;border:1px solid rgba(255,221,143,.55)}
 .emergency-call svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.emergency-chat{min-width:174px;background:rgba(8,14,18,.54);border-color:rgba(255,255,255,.72);color:#fff}
+.emergency-chat{min-width:174px;background:rgba(5,11,15,.62);border-color:rgba(255,255,255,.72);color:#fff}
 .emergency-chat:hover{background:rgba(255,255,255,.08)}
 
 .services-section{position:relative;z-index:2;margin-top:-1px;padding-top:30px;background:radial-gradient(circle at 18% 10%,rgba(255,255,255,.72),transparent 26%),linear-gradient(180deg,#f6f1e8 0%,#f3eee4 100%);overflow:visible}
@@ -38,6 +38,7 @@
 .gallery-panel:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 24px rgba(0,0,0,.10)}
 
 @media(max-width:1100px){
+  .emergency-bar{background-position:center center,center center,68% 50%;background-size:cover,cover,clamp(440px,58vw,620px) auto}
   .emergency-inner{grid-template-columns:1fr;gap:18px;padding:22px 0 42px}
   .emergency-actions{justify-content:flex-start}
   .project-strip{grid-template-columns:46.6fr 23.2fr 14.4fr 17.4fr;height:360px}
@@ -51,6 +52,7 @@
 
 @media(max-width:700px){
   .hero{background-position:58% center;min-height:auto}
+  .emergency-bar{background-position:center center,center center,center 44%;background-size:cover,cover,620px auto}
   .emergency-inner{display:flex;flex-direction:column;align-items:stretch;gap:18px;padding:20px 0 42px}
   .emergency-message{grid-template-columns:60px 1fr;gap:14px}
   .emergency-siren{width:60px;height:60px}

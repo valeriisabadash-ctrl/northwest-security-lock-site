@@ -1,30 +1,37 @@
 (() => {
-  const existingMobileStyles = document.querySelector('link[data-mobile-layout]');
-  if (!existingMobileStyles) {
-    const mobileStyles = document.createElement('link');
-    mobileStyles.rel = 'stylesheet';
-    mobileStyles.href = 'mobile.css?v=20260716-9';
-    mobileStyles.dataset.mobileLayout = 'true';
-    document.head.appendChild(mobileStyles);
-  }
+  const addStylesheet = (selector, href, datasetKey) => {
+    if (document.querySelector(selector)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.dataset[datasetKey] = 'true';
+    document.head.appendChild(link);
+  };
 
-  const existingFinalCtaFix = document.querySelector('link[data-final-cta-fix]');
-  if (!existingFinalCtaFix) {
-    const finalCtaFix = document.createElement('link');
-    finalCtaFix.rel = 'stylesheet';
-    finalCtaFix.href = 'final-cta-fix.css?v=20260723-1';
-    finalCtaFix.dataset.finalCtaFix = 'true';
-    document.head.appendChild(finalCtaFix);
-  }
+  addStylesheet('link[data-mobile-layout]', 'mobile.css?v=20260716-9', 'mobileLayout');
+  addStylesheet('link[data-final-cta-fix]', 'final-cta-fix.css?v=20260723-1', 'finalCtaFix');
 
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
+  const seoNav = document.querySelector('.seo-links');
   const dropdown = document.querySelector('.nav-dropdown');
   const dropdownButton = document.querySelector('.nav-dropdown-toggle');
   const modal = document.querySelector('#request-modal');
   const requestForm = document.querySelector('#service-request-form');
   const serviceSelect = requestForm?.querySelector('[name="service"]');
+
+  const addFaqLink = (navigation) => {
+    if (!navigation || navigation.querySelector('a[href="/faq"]')) return;
+    const faqLink = document.createElement('a');
+    faqLink.href = '/faq';
+    faqLink.textContent = 'FAQ';
+    const contactLink = navigation.querySelector('a[href="/contact"]');
+    navigation.insertBefore(faqLink, contactLink || null);
+  };
+
+  addFaqLink(nav);
+  addFaqLink(seoNav);
 
   const replaceShopHours = () => {
     const replacements = new Map([
@@ -96,7 +103,9 @@
     }
   });
 
-  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNavigation));
+  document.querySelectorAll('.main-nav a, .seo-links a').forEach((link) => {
+    link.addEventListener('click', closeNavigation);
+  });
 
   const chooseService = (service = '') => {
     if (!serviceSelect || !service) return;
@@ -128,7 +137,9 @@
   document.querySelectorAll('.open-request').forEach((button) => {
     button.addEventListener('click', () => openModal(button.dataset.service || ''));
   });
-  document.querySelectorAll('[data-close-modal]').forEach((element) => element.addEventListener('click', closeModal));
+  document.querySelectorAll('[data-close-modal]').forEach((element) => {
+    element.addEventListener('click', closeModal);
+  });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {

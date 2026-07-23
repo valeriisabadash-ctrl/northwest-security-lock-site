@@ -8,6 +8,15 @@
     document.head.appendChild(mobileStyles);
   }
 
+  const existingFinalCtaFix = document.querySelector('link[data-final-cta-fix]');
+  if (!existingFinalCtaFix) {
+    const finalCtaFix = document.createElement('link');
+    finalCtaFix.rel = 'stylesheet';
+    finalCtaFix.href = 'final-cta-fix.css?v=20260723-1';
+    finalCtaFix.dataset.finalCtaFix = 'true';
+    document.head.appendChild(finalCtaFix);
+  }
+
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');

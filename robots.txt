@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://northwest-security-lock-redesign-pr.vercel.app/sitemap.xml
+Sitemap: https://www.northwestsecurityandlock.com/sitemap.xml

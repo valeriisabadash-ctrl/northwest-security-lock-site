@@ -17,6 +17,54 @@
   const requestForm = document.querySelector('#service-request-form');
   const serviceSelect = requestForm?.querySelector('[name="service"]');
 
+  const replaceShopHours = () => {
+    const replacements = new Map([
+      ['Mon–Sat: 7:00 AM–6:00 PM', 'Monday–Friday: 9:00 AM–5:00 PM'],
+      ['Mon-Sat: 7:00 AM-6:00 PM', 'Monday-Friday: 9:00 AM-5:00 PM'],
+      ['Monday through Saturday 7:00 AM–6:00 PM', 'Monday through Friday 9:00 AM–5:00 PM']
+    ]);
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      let updated = node.nodeValue;
+      replacements.forEach((replacement, original) => {
+        updated = updated.replaceAll(original, replacement);
+      });
+      if (updated !== node.nodeValue) node.nodeValue = updated;
+    }
+
+    document.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
+      try {
+        const data = JSON.parse(script.textContent);
+        const updateHours = (value) => {
+          if (!value || typeof value !== 'object') return;
+          if (Array.isArray(value)) {
+            value.forEach(updateHours);
+            return;
+          }
+          if (value.openingHoursSpecification) {
+            const specs = Array.isArray(value.openingHoursSpecification)
+              ? value.openingHoursSpecification
+              : [value.openingHoursSpecification];
+            specs.forEach((spec) => {
+              spec.dayOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+              spec.opens = '09:00';
+              spec.closes = '17:00';
+            });
+          }
+          Object.values(value).forEach(updateHours);
+        };
+        updateHours(data);
+        script.textContent = JSON.stringify(data);
+      } catch (_) {
+        // Leave unrelated or malformed structured data untouched.
+      }
+    });
+  };
+
+  replaceShopHours();
+
   const closeNavigation = () => {
     nav?.classList.remove('open');
     menuButton?.setAttribute('aria-expanded', 'false');

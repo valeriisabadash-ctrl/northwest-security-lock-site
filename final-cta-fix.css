@@ -72,12 +72,4 @@
     box-shadow:0 12px 30px rgba(0,0,0,.42) !important;
     transform:none !important;
   }
-
-  .mobile-call::before{
-    content:"☎";
-    margin-right:8px;
-    font-family:Arial,sans-serif;
-    font-size:18px;
-    line-height:1;
-  }
 }

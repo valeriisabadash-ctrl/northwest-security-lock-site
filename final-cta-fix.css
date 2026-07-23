@@ -1,8 +1,45 @@
-.final-cta{
+.final-cta,
+.cta-band{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background-color:#081014 !important;
   background-image:
-    linear-gradient(90deg,rgba(4,10,13,.92) 0%,rgba(5,12,15,.72) 48%,rgba(4,10,13,.9) 100%),
-    url("mountain.png");
-  background-position:center center,center 42%;
-  background-size:cover,cover;
-  background-repeat:no-repeat;
+    linear-gradient(90deg,rgba(4,10,13,.90) 0%,rgba(5,12,15,.68) 48%,rgba(4,10,13,.88) 100%),
+    url("mountain.png") !important;
+  background-position:center center,center center !important;
+  background-size:cover,cover !important;
+  background-repeat:no-repeat,no-repeat !important;
+}
+
+.final-cta::before,
+.cta-band::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.16));
+  pointer-events:none;
+}
+
+.final-cta-inner,
+.cta-band>.container{
+  position:relative;
+  z-index:1;
+}
+
+@media (max-width:900px){
+  .final-cta,
+  .cta-band{
+    background-position:center center,58% center !important;
+    background-size:cover,cover !important;
+  }
+}
+
+@media (max-width:640px){
+  .final-cta,
+  .cta-band{
+    background-position:center center,62% center !important;
+    background-size:cover,cover !important;
+  }
 }

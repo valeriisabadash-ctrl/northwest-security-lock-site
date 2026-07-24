@@ -20,6 +20,58 @@
   const modal = document.querySelector('#request-modal');
   const requestForm = document.querySelector('#service-request-form');
   const serviceSelect = requestForm?.querySelector('[name="service"]');
+  const submitButton = requestForm?.querySelector('button[type="submit"]');
+  const modalIntro = modal?.querySelector('.modal-intro');
+  const formActions = requestForm?.querySelector('.request-form-actions');
+  let formStatus = requestForm?.querySelector('.form-status');
+
+  const defaultSubmitLabel = 'Submit Service Request';
+  const formEndpoint = 'https://formsubmit.co/ajax/pnwlocksmithor@gmail.com';
+
+  if (modalIntro) {
+    modalIntro.textContent = 'For an emergency, call now. For non-emergency service, complete the form and the request will be sent directly to Northwest Security & Lock.';
+  }
+
+  if (submitButton) submitButton.textContent = defaultSubmitLabel;
+
+  if (requestForm && !formStatus) {
+    formStatus = document.createElement('p');
+    formStatus.className = 'modal-intro form-status';
+    formStatus.setAttribute('role', 'status');
+    formStatus.setAttribute('aria-live', 'polite');
+    formStatus.hidden = true;
+    formStatus.style.margin = '14px 0 0';
+    requestForm.insertBefore(formStatus, formActions || null);
+  }
+
+  const honeyField = requestForm?.querySelector('[name="_honey"]') || (() => {
+    if (!requestForm) return null;
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = '_honey';
+    input.tabIndex = -1;
+    input.autocomplete = 'off';
+    input.setAttribute('aria-hidden', 'true');
+    input.style.position = 'absolute';
+    input.style.left = '-9999px';
+    requestForm.appendChild(input);
+    return input;
+  })();
+
+  const setFormStatus = (message = '', type = '') => {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.hidden = !message;
+    formStatus.style.color = type === 'error' ? '#9f2f24' : type === 'success' ? '#27643a' : '';
+    formStatus.style.fontWeight = message ? '700' : '';
+  };
+
+  const resetSubmitButton = () => {
+    if (!submitButton) return;
+    submitButton.disabled = false;
+    submitButton.removeAttribute('aria-busy');
+    submitButton.textContent = defaultSubmitLabel;
+  };
 
   const addFaqLink = (navigation) => {
     if (!navigation || navigation.querySelector('a[href="/faq"]')) return;
@@ -120,6 +172,8 @@
   const openModal = (service = '') => {
     if (!modal) return;
     closeNavigation();
+    setFormStatus();
+    resetSubmitButton();
     chooseService(service);
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
@@ -148,28 +202,60 @@
     }
   });
 
-  requestForm?.addEventListener('submit', (event) => {
+  requestForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
+    setFormStatus();
+
     if (!requestForm.checkValidity()) {
       requestForm.reportValidity();
       return;
     }
 
+    if (honeyField?.value) return;
+
     const data = new FormData(requestForm);
-    const subject = `Locksmith service request — ${data.get('service')}`;
-    const bodyLines = [
-      'Northwest Security & Lock service request',
-      '',
-      `Name: ${data.get('name')}`,
-      `Phone: ${data.get('phone')}`,
-      `City / ZIP: ${data.get('location')}`,
-      `Service: ${data.get('service')}`,
-      `Urgency: ${data.get('urgency')}`,
-      '',
-      'Details:',
-      String(data.get('details') || '')
-    ];
-    window.location.href = `mailto:pnwlocksmithor@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    const service = String(data.get('service') || 'General Locksmith Service');
+    const urgency = String(data.get('urgency') || 'Not specified');
+
+    data.set('_subject', `New website service request — ${service}`);
+    data.set('_template', 'table');
+    data.set('_captcha', 'false');
+    data.set('Submitted from', window.location.href);
+    data.set('Request summary', `${service} — ${urgency}`);
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.textContent = 'Sending Request...';
+    }
+
+    try {
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+
+      let result = {};
+      try {
+        result = await response.json();
+      } catch (_) {
+        // A successful response can still be accepted even when the body is empty.
+      }
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || 'The request could not be sent.');
+      }
+
+      requestForm.reset();
+      setFormStatus('Request sent successfully. Northwest Security & Lock will contact you as soon as possible.', 'success');
+      if (submitButton) submitButton.textContent = 'Request Sent';
+      window.setTimeout(resetSubmitButton, 2500);
+    } catch (error) {
+      console.error('Service request submission failed:', error);
+      setFormStatus('The form could not send right now. Please call (503) 760-1402 so the request is not missed.', 'error');
+      resetSubmitButton();
+    }
   });
 
   const params = new URLSearchParams(window.location.search);

@@ -1,4 +1,16 @@
 (() => {
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+
+  if (!document.querySelector('script[data-vercel-analytics]')) {
+    const analyticsScript = document.createElement('script');
+    analyticsScript.defer = true;
+    analyticsScript.src = '/_vercel/insights/script.js';
+    analyticsScript.dataset.vercelAnalytics = 'true';
+    document.head.appendChild(analyticsScript);
+  }
+
   window.si = window.si || function () {
     (window.siq = window.siq || []).push(arguments);
   };

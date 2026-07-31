@@ -1,4 +1,16 @@
 (() => {
+  window.si = window.si || function () {
+    (window.siq = window.siq || []).push(arguments);
+  };
+
+  if (!document.querySelector('script[data-vercel-speed-insights]')) {
+    const speedInsightsScript = document.createElement('script');
+    speedInsightsScript.defer = true;
+    speedInsightsScript.src = '/_vercel/speed-insights/script.js';
+    speedInsightsScript.dataset.vercelSpeedInsights = 'true';
+    document.head.appendChild(speedInsightsScript);
+  }
+
   const addStylesheet = (selector, href, datasetKey) => {
     if (document.querySelector(selector)) return;
     const link = document.createElement('link');

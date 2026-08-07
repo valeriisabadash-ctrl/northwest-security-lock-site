@@ -6,7 +6,7 @@
 .reviews-home-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:34px}
 .reviews-home-head h2{margin:0;font-size:clamp(2.35rem,4.3vw,4.6rem);line-height:1.04;max-width:800px}
 .reviews-home-head p:last-child{max-width:430px;margin:0 0 8px;color:rgba(255,255,255,.64);font-size:1rem;line-height:1.75}
-.review-summary{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}.review-stars{color:#f0a91f;letter-spacing:.09em;font-size:18px;text-shadow:0 0 24px rgba(240,169,31,.22)}.review-summary strong{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:14px}.review-summary span{color:rgba(255,255,255,.52);font-size:13px}
+.review-summary{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}.review-stars{color:#f0a91f;letter-spacing:.09em;font-size:18px}.review-summary strong{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:14px}.review-summary span{color:rgba(255,255,255,.52);font-size:13px}
 
 .home-review-grid{display:flex;gap:18px;width:max-content;max-width:none;animation:reviewsAutoDrift 28s ease-in-out infinite alternate;will-change:transform}
 .home-review-grid:hover,.home-review-grid:focus-within{animation-play-state:paused}
@@ -40,13 +40,18 @@
 .hero .open-request:hover{background:linear-gradient(180deg,#ffd074,#e5a63a);box-shadow:0 22px 58px rgba(0,0,0,.42),0 0 0 6px rgba(240,187,88,.12)}
 .hero .open-request:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
-/* Force every rating star to render as a solid yellow star, including Safari/WebKit. */
+/* Solid yellow stars only — no glow, bubble, shadow, background, or outline. */
 .review-stars{
   color:#ffb400!important;
   -webkit-text-fill-color:#ffb400!important;
   font-family:Arial,"Arial Unicode MS",sans-serif!important;
   font-weight:900!important;
-  text-shadow:0 0 18px rgba(255,180,0,.32)!important;
+  text-shadow:none!important;
+  background:none!important;
+  box-shadow:none!important;
+  border:0!important;
+  outline:0!important;
+  filter:none!important;
 }
 
 @media(max-width:950px){.reviews-grid{grid-template-columns:repeat(2,1fr)}.reviews-grid.filtered{grid-template-columns:repeat(2,1fr);max-width:none}.reviews-home-head,.reviews-cta{align-items:flex-start;flex-direction:column}.reviews-toolbar{top:74px}.home-review-grid{animation-duration:34s}}

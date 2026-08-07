@@ -3,6 +3,15 @@
   body { -webkit-text-size-adjust: 100%; padding-bottom: calc(88px + env(safe-area-inset-bottom)) !important; }
   .container { width: min(calc(100% - 28px), var(--max)); }
 
+  /* Let fixed homepage actions escape the hero stacking context. */
+  .hero {
+    overflow: visible !important;
+    isolation: auto !important;
+    transform: none !important;
+    filter: none !important;
+    contain: none !important;
+  }
+
   /* Cleaner spacing and typography */
   .section { padding: 48px 0 !important; }
   .eyebrow { font-size: 10px !important; letter-spacing: .16em !important; margin-bottom: 8px !important; }
@@ -90,12 +99,12 @@
   .seo-footer { padding: 38px 0 88px !important; }
   .seo-footer-grid { grid-template-columns: 1fr !important; gap: 22px !important; }
 
-  /* Compact fixed actions — stay visible above page imagery and iPhone safe area */
+  /* Compact fixed actions — force them above every image/card stacking layer. */
   .hero .open-request,
   .mobile-call {
     position: fixed !important;
     bottom: calc(14px + env(safe-area-inset-bottom)) !important;
-    z-index: 1200 !important;
+    z-index: 2147483646 !important;
     min-height: 48px !important;
     height: 48px !important;
     margin: 0 !important;
@@ -105,6 +114,8 @@
     font-size: 13px !important;
     letter-spacing: .07em !important;
     white-space: nowrap !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
   }
   .hero .open-request {
     left: 14px !important;

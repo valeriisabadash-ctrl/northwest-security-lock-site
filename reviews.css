@@ -1,0 +1,49 @@
+.reviews-home{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 8%,rgba(240,187,88,.11),transparent 28%),linear-gradient(180deg,#071014 0%,#0a151b 100%);color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.reviews-home:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(240,187,88,.04),transparent 24%,transparent 76%,rgba(240,187,88,.035))}
+.reviews-home .container{position:relative;z-index:1}
+.reviews-home .eyebrow{color:#f0bb58}
+.reviews-home h2,.reviews-page-hero h1,.reviews-page h2{font-family:"Libre Baskerville",Georgia,serif;letter-spacing:-.04em}
+.reviews-home-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:34px}
+.reviews-home-head h2{margin:0;font-size:clamp(2.35rem,4.3vw,4.6rem);line-height:1.04;max-width:800px}
+.reviews-home-head p:last-child{max-width:430px;margin:0 0 8px;color:rgba(255,255,255,.64);font-size:1rem;line-height:1.75}
+.review-summary{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}.review-stars{color:#f0a91f;letter-spacing:.09em;font-size:18px}.review-summary strong{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:14px}.review-summary span{color:rgba(255,255,255,.52);font-size:13px}
+
+.home-review-grid{display:flex;gap:18px;width:max-content;max-width:none;animation:reviewsAutoDrift 28s ease-in-out infinite alternate;will-change:transform}
+.home-review-grid:hover,.home-review-grid:focus-within{animation-play-state:paused}
+.home-review-grid .review-card{width:min(390px,82vw);flex:0 0 min(390px,82vw)}
+@keyframes reviewsAutoDrift{from{transform:translateX(0)}to{transform:translateX(calc(-100% + min(1220px,100vw - 40px)))}}
+@media(prefers-reduced-motion:reduce){.home-review-grid{animation:none}}
+
+.review-card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(22,31,36,.98),rgba(11,19,24,.98));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.22);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.review-card:before{content:"“";position:absolute;right:18px;top:6px;color:rgba(240,187,88,.13);font-family:Georgia,serif;font-size:78px;line-height:1;pointer-events:none}
+.review-card:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(240,187,88,.045),transparent 40%)}
+.review-card:hover{transform:translateY(-5px);border-color:rgba(240,187,88,.3);box-shadow:0 30px 80px rgba(0,0,0,.32)}
+.review-card>.review-stars{position:relative;z-index:1;font-size:17px}
+.review-card blockquote{position:relative;z-index:1;margin:16px 0 26px;color:rgba(255,255,255,.88);font-size:15px;line-height:1.78;font-weight:500}
+.review-card-footer{position:relative;z-index:1;display:flex;justify-content:space-between;gap:16px;align-items:end;border-top:1px solid rgba(255,255,255,.09);padding-top:17px}.review-card-footer strong{display:block;color:#fff;font-size:14px}.review-card-footer span{display:block;margin-top:2px;color:rgba(255,255,255,.48);font-size:11px}.google-mark{font-family:"Barlow Condensed",sans-serif!important;font-size:10px!important;font-weight:800;letter-spacing:.13em;color:#f0bb58!important;text-transform:uppercase;white-space:nowrap}.reviews-home-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+
+.reviews-page-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 15% 20%,rgba(240,187,88,.16),transparent 28%),linear-gradient(90deg,rgba(3,8,12,.96),rgba(5,12,16,.82)),url("hero-bg-premium.png") center/cover no-repeat;color:#fff;padding:104px 0 86px;border-bottom:1px solid rgba(255,255,255,.08)}
+.reviews-page-hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(240,187,88,.12);border-radius:50%;right:-150px;bottom:-260px;box-shadow:0 0 0 55px rgba(240,187,88,.025),0 0 0 110px rgba(240,187,88,.015)}
+.reviews-page-hero .container{position:relative;z-index:1}
+.reviews-page-hero h1{margin:0;max-width:900px;font-size:clamp(3.1rem,6.2vw,6.3rem);line-height:1.01;text-shadow:0 15px 45px rgba(0,0,0,.32)}
+.reviews-page-hero>div>p:not(.eyebrow){max-width:760px;color:rgba(255,255,255,.69);font-size:1.08rem;line-height:1.75}
+
+.reviews-page{background:#071014;color:#fff;border-top:1px solid rgba(255,255,255,.06)}
+.reviews-page .container{position:relative}
+.reviews-toolbar{position:sticky;top:82px;z-index:20;display:flex;justify-content:space-between;gap:20px;align-items:center;margin:0 0 34px;padding:13px 16px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(9,19,24,.9);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.22);flex-wrap:wrap}
+.review-filters{display:flex;gap:8px;flex-wrap:wrap}.review-filter{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;border-radius:999px;padding:10px 17px;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:800;letter-spacing:.045em;text-transform:uppercase;cursor:pointer;transition:.2s ease}.review-filter:hover{border-color:#f0bb58;color:#f0bb58;transform:translateY(-1px)}.review-filter.active{background:linear-gradient(180deg,#f0bb58,#d29a35);color:#11171a;border-color:#d29a35;box-shadow:0 8px 22px rgba(210,154,53,.2)}.reviews-count{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:#f0bb58;font-size:13px;padding-right:6px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}.reviews-grid.filtered{grid-template-columns:repeat(2,minmax(0,1fr));max-width:930px;margin-inline:auto}.reviews-page .review-card{color:#fff;min-height:315px;display:flex;flex-direction:column;background:linear-gradient(145deg,#101c22,#0a1318);border-color:rgba(255,255,255,.1)}.reviews-page .review-card blockquote{flex:1;font-size:15.5px}.review-card[hidden]{display:none!important}.load-more-wrap{text-align:center;margin-top:38px}.load-more-wrap:has(.button[hidden]){display:none}.load-more-wrap .button{min-width:230px;background:linear-gradient(180deg,#f0bb58,#d29a35);color:#11171a;border:0}.load-more-wrap .button:hover{box-shadow:0 16px 34px rgba(210,154,53,.22)}
+.reviews-cta{position:relative;overflow:hidden;margin-top:70px;padding:42px;border-radius:20px;background:linear-gradient(135deg,#101d24,#0a1318);border:1px solid rgba(255,255,255,.1);color:#fff;display:flex;justify-content:space-between;gap:30px;align-items:center;box-shadow:0 26px 70px rgba(0,0,0,.26)}.reviews-cta:after{content:"★★★★★";position:absolute;right:24px;bottom:-10px;color:rgba(240,187,88,.08);font-size:70px;letter-spacing:.03em;white-space:nowrap}.reviews-cta>div,.reviews-cta>a{position:relative;z-index:1}.reviews-cta h2{margin:0 0 8px;font-size:clamp(1.8rem,3vw,3rem)}.reviews-cta p{margin:0;color:rgba(255,255,255,.62)}
+
+.hero .open-request{position:fixed;right:22px;bottom:22px;z-index:160;min-width:210px;min-height:62px;padding:9px 22px 8px;background:linear-gradient(180deg,#f0bb58,#d29a35);border:1px solid rgba(255,255,255,.28);color:#10161a;box-shadow:0 18px 48px rgba(0,0,0,.34),0 0 0 5px rgba(240,187,88,.08);font-size:17px;line-height:1.05}
+.hero .open-request:before{content:"Need a locksmith?";display:block;margin-right:10px;font-family:Inter,system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:none;opacity:.72}
+.hero .open-request:hover{background:linear-gradient(180deg,#ffd074,#e5a63a);box-shadow:0 22px 58px rgba(0,0,0,.42),0 0 0 6px rgba(240,187,88,.12)}
+.hero .open-request:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+.review-stars{color:#ffb400!important;-webkit-text-fill-color:#ffb400!important;font-family:Arial,"Arial Unicode MS",sans-serif!important;font-weight:900!important;text-shadow:none!important;background:none!important;box-shadow:none!important;border:0!important;outline:0!important;filter:none!important}
+
+/* Use the client's real key-fob photo for the automotive service card. */
+.division-auto>img{content:url("https://raw.githubusercontent.com/valeriisabadash-ctrl/northwest-security-lock-site/main/automotive-key-fob.webp");object-fit:cover;object-position:center}
+
+@media(max-width:950px){.reviews-grid{grid-template-columns:repeat(2,1fr)}.reviews-grid.filtered{grid-template-columns:repeat(2,1fr);max-width:none}.reviews-home-head,.reviews-cta{align-items:flex-start;flex-direction:column}.reviews-toolbar{top:74px}.home-review-grid{animation-duration:34s}}
+@media(max-width:620px){.reviews-grid,.reviews-grid.filtered{grid-template-columns:1fr}.review-card{padding:21px}.reviews-page-hero{padding:72px 0 60px}.reviews-page-hero h1{font-size:clamp(2.7rem,12vw,4.5rem)}.reviews-home-head{gap:18px}.reviews-cta{padding:28px}.review-summary{gap:9px}.reviews-toolbar{position:relative;top:auto;margin:0 0 24px;padding:0;border:0;background:transparent;backdrop-filter:none;box-shadow:none}.review-filters{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}.review-filters::-webkit-scrollbar{display:none}.review-filter{white-space:nowrap}.home-review-grid .review-card{width:84vw;flex-basis:84vw}.home-review-grid{animation-duration:30s}.hero .open-request{left:12px;right:12px;bottom:12px;width:auto;min-height:56px;border-radius:10px}.hero .open-request:before{display:inline}}

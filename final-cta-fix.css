@@ -43,6 +43,13 @@
   background:#081014;
 }
 
+/* Any use of the service van across the site should show the full vehicle. */
+img[src*="01_service_van_4x.png"]{
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#081014;
+}
+
 @media (max-width:900px){
   .final-cta,
   .cta-band{

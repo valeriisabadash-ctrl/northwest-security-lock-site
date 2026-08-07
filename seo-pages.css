@@ -2,3 +2,11 @@
 @import url("seo-pages-original.css");
 @import url("final-cta-fix.css");
 @import url("mobile-polish.css?v=20260807-1");
+
+@media (max-width:640px){
+  .page-hero{
+    background-image:url("assets/hero-bg.svg") !important;
+    background-position:center center !important;
+    background-size:cover !important;
+  }
+}

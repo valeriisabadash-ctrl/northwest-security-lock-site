@@ -136,7 +136,7 @@
           <div>
             <p class="eyebrow">Customer reviews</p>
             <h2>Portland customers keep coming back for a reason.</h2>
-            <div class="review-summary"><span class="review-stars" aria-label="Five stars">★★★★★</span><strong>Hundreds of Google reviews</strong><span>Real local customer feedback</span></div>
+            <div class="review-summary"><span class="review-stars" aria-label="Five stars">★★★★★</span><strong>400+ reviews</strong><span>Real local customer feedback</span></div>
           </div>
           <p>From hard-to-copy keys to commercial rekeys and car-key programming, these reviews show the kind of problems our team solves every day.</p>
         </div>
@@ -195,9 +195,7 @@
         };
         updateHours(data);
         script.textContent = JSON.stringify(data);
-      } catch (_) {
-        // Leave unrelated or malformed structured data untouched.
-      }
+      } catch (_) {}
     });
   };
 
@@ -225,9 +223,7 @@
     }
   });
 
-  document.querySelectorAll('.main-nav a, .seo-links a').forEach((link) => {
-    link.addEventListener('click', closeNavigation);
-  });
+  document.querySelectorAll('.main-nav a, .seo-links a').forEach((link) => link.addEventListener('click', closeNavigation));
 
   const chooseService = (service = '') => {
     if (!serviceSelect || !service) return;
@@ -258,12 +254,8 @@
     body.classList.remove('modal-open');
   };
 
-  document.querySelectorAll('.open-request').forEach((button) => {
-    button.addEventListener('click', () => openModal(button.dataset.service || ''));
-  });
-  document.querySelectorAll('[data-close-modal]').forEach((element) => {
-    element.addEventListener('click', closeModal);
-  });
+  document.querySelectorAll('.open-request').forEach((button) => button.addEventListener('click', () => openModal(button.dataset.service || '')));
+  document.querySelectorAll('[data-close-modal]').forEach((element) => element.addEventListener('click', closeModal));
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
@@ -275,48 +267,29 @@
   requestForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
     setFormStatus();
-
     if (!requestForm.checkValidity()) {
       requestForm.reportValidity();
       return;
     }
-
     if (honeyField?.value) return;
-
     const data = new FormData(requestForm);
     const service = String(data.get('service') || 'General Locksmith Service');
     const urgency = String(data.get('urgency') || 'Not specified');
-
     data.set('_subject', `New website service request — ${service}`);
     data.set('_template', 'table');
     data.set('_captcha', 'false');
     data.set('Submitted from', window.location.href);
     data.set('Request summary', `${service} — ${urgency}`);
-
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.setAttribute('aria-busy', 'true');
       submitButton.textContent = 'Sending Request...';
     }
-
     try {
-      const response = await fetch(formEndpoint, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      });
-
+      const response = await fetch(formEndpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
       let result = {};
-      try {
-        result = await response.json();
-      } catch (_) {
-        // A successful response can still be accepted even when the body is empty.
-      }
-
-      if (!response.ok || result.success === false) {
-        throw new Error(result.message || 'The request could not be sent.');
-      }
-
+      try { result = await response.json(); } catch (_) {}
+      if (!response.ok || result.success === false) throw new Error(result.message || 'The request could not be sent.');
       requestForm.reset();
       setFormStatus('Request sent successfully. Northwest Security & Lock will contact you as soon as possible.', 'success');
       if (submitButton) submitButton.textContent = 'Request Sent';
@@ -329,10 +302,7 @@
   });
 
   const params = new URLSearchParams(window.location.search);
-  if (params.get('request') === '1') {
-    window.setTimeout(() => openModal(params.get('service') || ''), 180);
-  }
-
+  if (params.get('request') === '1') window.setTimeout(() => openModal(params.get('service') || ''), 180);
   window.addEventListener('resize', () => {
     if (!window.matchMedia('(max-width: 900px)').matches) closeNavigation();
   });

@@ -35,7 +35,14 @@
   addStylesheet('link[data-mobile-layout]', 'mobile.css?v=20260716-9', 'mobileLayout');
   addStylesheet('link[data-final-cta-fix]', 'final-cta-fix.css?v=20260723-1', 'finalCtaFix');
   addStylesheet('link[data-reviews-layout]', 'reviews.css?v=20260806-1', 'reviewsLayout');
-  addStylesheet('link[data-mobile-polish]', 'mobile-polish.css?v=20260806-1', 'mobilePolish');
+  addStylesheet('link[data-mobile-polish]', 'mobile-polish.css?v=20260806-3', 'mobilePolish');
+
+  if (!document.querySelector('script[data-mobile-actions-fix]')) {
+    const mobileActionsScript = document.createElement('script');
+    mobileActionsScript.src = 'mobile-actions.js?v=20260806-2';
+    mobileActionsScript.dataset.mobileActionsFix = 'true';
+    document.head.appendChild(mobileActionsScript);
+  }
 
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');

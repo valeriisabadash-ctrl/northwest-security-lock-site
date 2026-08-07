@@ -50,6 +50,25 @@ img[src*="01_service_van_4x.png"]{
   background:#081014;
 }
 
+/* Gallery: make the van tile wide enough to show the whole vehicle without a giant empty block. */
+.gallery-grid .gallery-large{
+  grid-column:span 2 !important;
+  grid-row:span 1 !important;
+}
+
+.gallery-grid .gallery-large img[src*="01_service_van_4x.png"]{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+/* Gallery: show the full before/after lock photos instead of blowing them up and chopping them off. */
+.gallery-grid img[src*="07_before_lock_hd.png"],
+.gallery-grid img[src*="08_after_lock_hd.png"]{
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#081014;
+}
+
 @media (max-width:900px){
   .final-cta,
   .cta-band{
@@ -64,6 +83,11 @@ img[src*="01_service_van_4x.png"]{
   .stacked-media .media-float{
     width:70% !important;
     height:auto !important;
+  }
+
+  .gallery-grid .gallery-large{
+    grid-column:span 2 !important;
+    grid-row:span 1 !important;
   }
 }
 
@@ -81,6 +105,15 @@ img[src*="01_service_van_4x.png"]{
   .stacked-media .media-float{
     width:72% !important;
     height:auto !important;
+  }
+
+  .gallery-grid .gallery-large{
+    grid-column:auto !important;
+    grid-row:auto !important;
+  }
+
+  .gallery-grid .gallery-large img[src*="01_service_van_4x.png"]{
+    object-fit:contain !important;
   }
 
   .mobile-call{

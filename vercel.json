@@ -6,6 +6,21 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/project/intercom-systems",
+      "destination": "/access-control-portland",
+      "permanent": true
+    },
+    {
+      "source": "/project/padlocks",
+      "destination": "/commercial-locksmith-portland",
+      "permanent": true
+    },
+    {
+      "source": "/project/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [

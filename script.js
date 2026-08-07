@@ -35,6 +35,7 @@
   addStylesheet('link[data-mobile-layout]', 'mobile.css?v=20260716-9', 'mobileLayout');
   addStylesheet('link[data-final-cta-fix]', 'final-cta-fix.css?v=20260723-1', 'finalCtaFix');
   addStylesheet('link[data-reviews-layout]', 'reviews.css?v=20260806-1', 'reviewsLayout');
+  addStylesheet('link[data-mobile-polish]', 'mobile-polish.css?v=20260806-1', 'mobilePolish');
 
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');

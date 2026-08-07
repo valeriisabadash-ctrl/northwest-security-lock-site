@@ -33,6 +33,16 @@
   object-position:86% center !important;
 }
 
+/* Show the complete service van instead of cropping the front/rear off. */
+.stacked-media .media-float{
+  width:68% !important;
+  height:auto !important;
+  aspect-ratio:952 / 484;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:#081014;
+}
+
 @media (max-width:900px){
   .final-cta,
   .cta-band{
@@ -42,6 +52,11 @@
 
   .division-commercial img{
     object-position:72% center !important;
+  }
+
+  .stacked-media .media-float{
+    width:70% !important;
+    height:auto !important;
   }
 }
 
@@ -54,6 +69,11 @@
 
   .division-commercial img{
     object-position:68% center !important;
+  }
+
+  .stacked-media .media-float{
+    width:72% !important;
+    height:auto !important;
   }
 
   .mobile-call{

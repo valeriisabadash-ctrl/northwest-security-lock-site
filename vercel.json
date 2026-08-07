@@ -2,7 +2,30 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "images": {
+    "sizes": [320, 480, 640, 828, 1080, 1280, 1600, 1920],
+    "localPatterns": [
+      {
+        "pathname": "^/.*\\.(png|webp|jpg|jpeg)$",
+        "search": ""
+      }
+    ],
+    "minimumCacheTTL": 2678400,
+    "qualities": [60, 72, 80, 90],
+    "formats": ["image/avif", "image/webp"],
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+    "contentDispositionType": "inline"
+  },
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "header", "key": "host", "value": "northwestsecurityandlock.com" }
+      ],
+      "destination": "https://www.northwestsecurityandlock.com/:path*",
+      "permanent": true
+    },
     {
       "source": "/index.html",
       "destination": "/",

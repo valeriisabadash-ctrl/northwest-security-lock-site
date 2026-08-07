@@ -3,7 +3,6 @@
   body { -webkit-text-size-adjust: 100%; padding-bottom: calc(88px + env(safe-area-inset-bottom)) !important; }
   .container { width: min(calc(100% - 28px), var(--max)); }
 
-  /* Cleaner spacing and typography */
   .section { padding: 48px 0 !important; }
   .eyebrow { font-size: 10px !important; letter-spacing: .16em !important; margin-bottom: 8px !important; }
   .section-heading h2,
@@ -15,14 +14,12 @@
   .cta-band h2 { font-size: clamp(2rem, 9.8vw, 2.8rem) !important; line-height: 1.04 !important; letter-spacing: -.04em !important; }
   p { overflow-wrap: anywhere; }
 
-  /* Homepage hero */
   .hero-layout { padding: 32px 0 26px !important; }
   .hero-copy h1 { font-size: clamp(2.42rem, 11vw, 3.1rem) !important; line-height: 1.01 !important; }
   .hero-lead { max-width: 34rem; font-size: 14px !important; line-height: 1.55 !important; }
   .hero-actions { gap: 10px !important; }
   .hero-actions .button { min-height: 52px; border-radius: 10px; }
 
-  /* Service cards */
   .division-grid { display: grid !important; grid-template-columns: 1fr !important; gap: 14px !important; }
   .division-card { min-height: 360px !important; border-radius: 16px !important; }
   .division-card img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
@@ -30,7 +27,6 @@
   .division-card h3 { font-size: 1.72rem !important; line-height: 1.06 !important; }
   .division-card p:not(.card-kicker) { font-size: 13px !important; line-height: 1.5 !important; }
 
-  /* Reviews homepage */
   .reviews-home { padding: 48px 0 52px !important; }
   .reviews-home-head { display: block !important; margin-bottom: 24px !important; }
   .reviews-home-head > p { margin-top: 14px !important; font-size: 13px !important; line-height: 1.55 !important; }
@@ -38,16 +34,15 @@
   .review-summary .review-stars { font-size: 15px !important; }
   .review-summary strong { font-size: 12px !important; }
   .review-summary > span:last-child { width: 100%; font-size: 11px !important; }
-  .home-review-grid { gap: 12px !important; animation: none !important; width: 100% !important; overflow-x: auto; padding: 2px 14px 8px 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .home-review-grid { gap: 12px !important; animation: reviewsAutoDrift 34s linear infinite alternate !important; width: max-content !important; overflow: visible !important; padding: 2px 14px 8px 0; scroll-snap-type: none !important; scrollbar-width: none; will-change: transform !important; }
   .home-review-grid::-webkit-scrollbar { display: none; }
-  .home-review-grid .review-card { flex: 0 0 86vw !important; width: 86vw !important; min-height: 280px !important; padding: 22px !important; scroll-snap-align: start; border-radius: 16px !important; }
+  .home-review-grid .review-card { flex: 0 0 86vw !important; width: 86vw !important; min-height: 280px !important; padding: 22px !important; scroll-snap-align: none !important; border-radius: 16px !important; }
   .review-card blockquote { font-size: 14px !important; line-height: 1.62 !important; margin: 14px 0 22px !important; }
   .review-card-footer { gap: 10px !important; }
   .google-mark { font-size: 9px !important; }
   .reviews-home-actions { display: grid !important; gap: 9px !important; margin-top: 24px !important; }
   .reviews-home-actions .button { width: 100% !important; }
 
-  /* Full reviews page */
   .reviews-page-hero { padding: 58px 0 48px !important; }
   .reviews-page-hero > .container > p:not(.eyebrow) { font-size: 14px !important; line-height: 1.55 !important; }
   .reviews-page { padding-top: 28px !important; }
@@ -60,7 +55,6 @@
   .reviews-cta { margin-top: 38px !important; padding: 24px !important; border-radius: 16px !important; }
   .reviews-cta .button { width: 100%; }
 
-  /* Internal/SEO pages */
   .seo-nav { min-height: 68px !important; gap: 8px !important; }
   .seo-logo img { width: 126px !important; height: 54px !important; }
   .seo-call { min-height: 42px !important; padding: 0 10px !important; font-size: 11px !important; border-radius: 9px !important; }
@@ -90,81 +84,22 @@
   .seo-footer { padding: 38px 0 88px !important; }
   .seo-footer-grid { grid-template-columns: 1fr !important; gap: 22px !important; }
 
-  /* One top-level mobile action dock. It is a direct body child, so service images cannot cover it. */
   .hero .open-request,
   .mobile-call { display: none !important; }
-
-  .mobile-action-dock {
-    position: fixed !important;
-    left: 12px !important;
-    right: 12px !important;
-    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
-    z-index: 2147483647 !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 116px !important;
-    gap: 8px !important;
-    width: auto !important;
-    height: 50px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    pointer-events: auto !important;
-    transform: none !important;
-    filter: none !important;
-    isolation: auto !important;
-    contain: none !important;
-  }
-
+  .mobile-action-dock { position: fixed !important; left: 12px !important; right: 12px !important; bottom: calc(12px + env(safe-area-inset-bottom)) !important; z-index: 2147483647 !important; display: grid !important; grid-template-columns: minmax(0, 1fr) 116px !important; gap: 8px !important; width: auto !important; height: 50px !important; margin: 0 !important; padding: 0 !important; pointer-events: auto !important; transform: none !important; filter: none !important; isolation: auto !important; contain: none !important; }
   .mobile-action-dock[hidden] { display: none !important; }
-
   .mobile-request-trigger,
-  .mobile-call-trigger {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 50px !important;
-    min-height: 50px !important;
-    margin: 0 !important;
-    padding: 0 14px !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(255,255,255,.16) !important;
-    font-family: "Barlow Condensed", sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 800 !important;
-    letter-spacing: .075em !important;
-    line-height: 1 !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 12px 28px rgba(0,0,0,.32) !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-  }
-
-  .mobile-request-trigger {
-    background: #0b171b !important;
-    color: #fff !important;
-  }
-
-  .mobile-call-trigger {
-    background: linear-gradient(180deg, var(--gold-light), var(--gold)) !important;
-    color: #111 !important;
-  }
-
-  /* Prevent card/image compositing from ever painting over the fixed dock on iOS Safari. */
+  .mobile-call-trigger { display: inline-flex !important; align-items: center !important; justify-content: center !important; height: 50px !important; min-height: 50px !important; margin: 0 !important; padding: 0 14px !important; border-radius: 12px !important; border: 1px solid rgba(255,255,255,.16) !important; font-family: "Barlow Condensed", sans-serif !important; font-size: 13px !important; font-weight: 800 !important; letter-spacing: .075em !important; line-height: 1 !important; text-transform: uppercase !important; text-decoration: none !important; white-space: nowrap !important; box-shadow: 0 12px 28px rgba(0,0,0,.32) !important; -webkit-appearance: none !important; appearance: none !important; }
+  .mobile-request-trigger { background: #0b171b !important; color: #fff !important; }
+  .mobile-call-trigger { background: linear-gradient(180deg, var(--gold-light), var(--gold)) !important; color: #111 !important; }
   .division-card,
   .division-card img,
   .capability-media,
   .capability-media img,
   .gallery-grid,
   .gallery-grid figure,
-  .gallery-grid img {
-    z-index: auto !important;
-    transform: none !important;
-    filter: none !important;
-    will-change: auto !important;
-  }
+  .gallery-grid img { z-index: auto !important; transform: none !important; filter: none !important; will-change: auto !important; }
 
-  /* Service request modal */
   .request-dialog { max-height: 94dvh !important; padding: 24px 16px calc(22px + env(safe-area-inset-bottom)) !important; border-radius: 18px 18px 0 0 !important; }
   .request-dialog h2, .request-dialog h1 { font-size: 2rem !important; line-height: 1.05 !important; }
   .request-form-grid { gap: 10px !important; }

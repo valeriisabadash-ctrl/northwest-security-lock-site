@@ -1,6 +1,6 @@
 @media (max-width: 720px) {
   html, body { overflow-x: hidden; }
-  body { -webkit-text-size-adjust: 100%; }
+  body { -webkit-text-size-adjust: 100%; padding-bottom: calc(88px + env(safe-area-inset-bottom)) !important; }
   .container { width: min(calc(100% - 28px), var(--max)); }
 
   /* Cleaner spacing and typography */
@@ -90,9 +90,40 @@
   .seo-footer { padding: 38px 0 88px !important; }
   .seo-footer-grid { grid-template-columns: 1fr !important; gap: 22px !important; }
 
-  /* Fixed actions */
-  .mobile-call { left: 12px !important; right: 12px !important; bottom: calc(10px + env(safe-area-inset-bottom)) !important; width: auto !important; min-height: 54px !important; border-radius: 11px !important; font-size: 16px !important; }
-  .hero .open-request { left: 12px !important; right: 12px !important; bottom: calc(74px + env(safe-area-inset-bottom)) !important; width: auto !important; min-height: 50px !important; border-radius: 10px !important; }
+  /* Compact fixed actions — stay visible above page imagery and iPhone safe area */
+  .hero .open-request,
+  .mobile-call {
+    position: fixed !important;
+    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    z-index: 1200 !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    margin: 0 !important;
+    padding: 0 14px !important;
+    border-radius: 11px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.34) !important;
+    font-size: 13px !important;
+    letter-spacing: .07em !important;
+    white-space: nowrap !important;
+  }
+  .hero .open-request {
+    left: 14px !important;
+    right: auto !important;
+    width: 56% !important;
+    max-width: 230px !important;
+    background: #0b171b !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.17) !important;
+  }
+  .hero .open-request:before { display: none !important; content: none !important; }
+  .mobile-call {
+    left: auto !important;
+    right: 14px !important;
+    width: 34% !important;
+    max-width: 145px !important;
+    background: linear-gradient(180deg, var(--gold-light), var(--gold)) !important;
+    color: #111 !important;
+  }
 
   /* Service request modal */
   .request-dialog { max-height: 94dvh !important; padding: 24px 16px calc(22px + env(safe-area-inset-bottom)) !important; border-radius: 18px 18px 0 0 !important; }
@@ -107,4 +138,6 @@
   .seo-call { font-size: 10px !important; padding: 0 8px !important; }
   .hero-copy h1 { font-size: 2.3rem !important; }
   .home-review-grid .review-card { flex-basis: 88vw !important; width: 88vw !important; }
+  .hero .open-request { width: 55% !important; }
+  .mobile-call { width: 35% !important; }
 }

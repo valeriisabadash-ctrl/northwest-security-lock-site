@@ -90,48 +90,78 @@
   .seo-footer { padding: 38px 0 88px !important; }
   .seo-footer-grid { grid-template-columns: 1fr !important; gap: 22px !important; }
 
-  /* Compact fixed actions. Request Service is moved to body by mobile-actions.js,
-     so neither button can be trapped behind hero/card stacking contexts. */
-  .mobile-request-fab,
-  .mobile-call {
+  /* One top-level mobile action dock. It is a direct body child, so service images cannot cover it. */
+  .hero .open-request,
+  .mobile-call { display: none !important; }
+
+  .mobile-action-dock {
     position: fixed !important;
-    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
-    z-index: 2147483000 !important;
-    min-height: 48px !important;
-    height: 48px !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    z-index: 2147483647 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 116px !important;
+    gap: 8px !important;
+    width: auto !important;
+    height: 50px !important;
     margin: 0 !important;
-    padding: 0 14px !important;
-    border-radius: 11px !important;
-    box-shadow: 0 12px 30px rgba(0,0,0,.34) !important;
-    font-size: 13px !important;
-    letter-spacing: .07em !important;
-    white-space: nowrap !important;
-    transform: translateZ(0) !important;
-    isolation: isolate !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    filter: none !important;
+    isolation: auto !important;
+    contain: none !important;
   }
-  .mobile-request-fab {
+
+  .mobile-action-dock[hidden] { display: none !important; }
+
+  .mobile-request-trigger,
+  .mobile-call-trigger {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    left: 14px !important;
-    right: auto !important;
-    width: 56% !important;
-    max-width: 230px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 14px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+    font-family: "Barlow Condensed", sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: .075em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,.32) !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  .mobile-request-trigger {
     background: #0b171b !important;
     color: #fff !important;
-    border: 1px solid rgba(255,255,255,.17) !important;
-    font-family: "Barlow Condensed", sans-serif !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
   }
-  .mobile-request-fab:before { display: none !important; content: none !important; }
-  .mobile-call {
-    left: auto !important;
-    right: 14px !important;
-    width: 34% !important;
-    max-width: 145px !important;
+
+  .mobile-call-trigger {
     background: linear-gradient(180deg, var(--gold-light), var(--gold)) !important;
     color: #111 !important;
+  }
+
+  /* Prevent card/image compositing from ever painting over the fixed dock on iOS Safari. */
+  .division-card,
+  .division-card img,
+  .capability-media,
+  .capability-media img,
+  .gallery-grid,
+  .gallery-grid figure,
+  .gallery-grid img {
+    z-index: auto !important;
+    transform: none !important;
+    filter: none !important;
+    will-change: auto !important;
   }
 
   /* Service request modal */
@@ -147,6 +177,5 @@
   .seo-call { font-size: 10px !important; padding: 0 8px !important; }
   .hero-copy h1 { font-size: 2.3rem !important; }
   .home-review-grid .review-card { flex-basis: 88vw !important; width: 88vw !important; }
-  .mobile-request-fab { width: 55% !important; }
-  .mobile-call { width: 35% !important; }
+  .mobile-action-dock { grid-template-columns: minmax(0, 1fr) 108px !important; }
 }

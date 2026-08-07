@@ -26,6 +26,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css?v=20260807-1" data-mobile-layout>
+  <link rel="stylesheet" href="final-cta-fix.css?v=20260807-1" data-final-cta-fix>
+  <link rel="stylesheet" href="reviews.css?v=20260807-1" data-reviews-layout>
+  <link rel="stylesheet" href="mobile-polish.css?v=20260807-1" data-mobile-polish>
+  <script defer src="mobile-actions.js?v=20260807-1" data-mobile-actions-fix></script>
+  <script defer src="/_vercel/insights/script.js" data-vercel-analytics></script>
+  <script defer src="/_vercel/speed-insights/script.js" data-vercel-speed-insights></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -42,8 +49,8 @@
         "priceRange":"$$",
         "address":{"@type":"PostalAddress","streetAddress":"14750 SE Division St","addressLocality":"Portland","addressRegion":"OR","postalCode":"97236","addressCountry":"US"},
         "hasMap":"https://www.google.com/maps/search/?api=1&query=14750%20SE%20Division%20St%2C%20Portland%2C%20OR%2097236",
-        "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"18:00"}],
-        "areaServed":["Portland","Gresham","Happy Valley","Clackamas","Beaverton","Tigard","Lake Oswego","Milwaukie"],
+        "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],
+        "areaServed":[{"@type":"City","name":"Portland"},{"@type":"City","name":"Gresham"},{"@type":"City","name":"Happy Valley"},{"@type":"Place","name":"Clackamas"},{"@type":"City","name":"Beaverton"},{"@type":"City","name":"Tigard"},{"@type":"City","name":"Lake Oswego"},{"@type":"City","name":"Milwaukie"}],
         "knowsAbout":["Automotive locksmith service","Car key programming","Transponder key programming","Smart key programming","Residential rekeying","Smart lock installation","Commercial locksmith service","Master key systems","Panic bars","Door closers","Access control systems","Commercial door service"]
       },
       {
@@ -52,6 +59,16 @@
         "url":"https://www.northwestsecurityandlock.com/",
         "name":"Northwest Security & Lock",
         "publisher":{"@id":"https://www.northwestsecurityandlock.com/#business"},
+        "inLanguage":"en-US"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://www.northwestsecurityandlock.com/#webpage",
+        "url":"https://www.northwestsecurityandlock.com/",
+        "name":"Portland Locksmith for Auto, Home & Business | Northwest Security & Lock",
+        "isPartOf":{"@id":"https://www.northwestsecurityandlock.com/#website"},
+        "about":{"@id":"https://www.northwestsecurityandlock.com/#business"},
+        "primaryImageOfPage":{"@type":"ImageObject","url":"https://www.northwestsecurityandlock.com/01_service_van_4x.png"},
         "inLanguage":"en-US"
       }
     ]
@@ -385,7 +402,7 @@
           <h2>Visit the shop or request mobile service.</h2>
           <address>14750 SE Division St<br>Portland, OR 97236</address>
           <div class="location-details">
-            <p><strong>Shop hours</strong>Mon–Sat: 7:00 AM–6:00 PM</p>
+            <p><strong>Shop hours</strong>Monday–Friday: 9:00 AM–5:00 PM</p>
             <p><strong>Emergency service</strong>Available 24/7 by phone</p>
             <p><strong>Mobile coverage</strong>Portland, Gresham, Happy Valley, Clackamas, Beaverton, Tigard, Lake Oswego, Milwaukie and nearby areas</p>
           </div>
@@ -460,7 +477,7 @@
         <h3>Contact</h3>
         <a href="mailto:pnwlocksmithor@gmail.com">pnwlocksmithor@gmail.com</a>
         <a href="https://www.google.com/maps/dir/?api=1&destination=14750%20SE%20Division%20St%2C%20Portland%2C%20OR%2097236" rel="noopener">14750 SE Division St<br>Portland, OR 97236</a>
-        <span>Mon–Sat: 7:00 AM–6:00 PM</span>
+        <span>Monday–Friday: 9:00 AM–5:00 PM</span>
         <span>Emergency service available 24/7</span>
       </div>
     </div>
@@ -478,7 +495,7 @@
       <button class="modal-close" type="button" aria-label="Close request form" data-close-modal>×</button>
       <p class="eyebrow dark">Request service</p>
       <h2 id="request-title">Tell us what you need.</h2>
-      <p class="modal-intro">For an emergency, call now. For non-emergency service, complete the details below and your email app will open with the request ready to send.</p>
+      <p class="modal-intro">For an emergency, call now. For non-emergency service, complete the form and the request will be sent directly to Northwest Security & Lock.</p>
       <form id="service-request-form">
         <div class="request-form-grid">
           <label>Full name<input type="text" name="name" autocomplete="name" required></label>
@@ -502,7 +519,7 @@
           <label class="full-field">Vehicle or property details<textarea name="details" rows="5" placeholder="For a vehicle: year, make, model, key type and whether all keys are lost. For a property: door, lock, hardware or access-control details." required></textarea></label>
         </div>
         <div class="request-form-actions">
-          <button class="button button-gold" type="submit">Prepare Email Request</button>
+          <button class="button button-gold" type="submit">Submit Service Request</button>
           <a href="tel:+15037601402">Emergency? Call (503) 760-1402</a>
         </div>
       </form>
@@ -510,6 +527,5 @@
   </div>
 
   <script src="script.js" defer></script>
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>

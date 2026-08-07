@@ -34,10 +34,10 @@
   .review-summary .review-stars { font-size: 15px !important; }
   .review-summary strong { font-size: 12px !important; }
   .review-summary > span:last-child { width: 100%; font-size: 11px !important; }
-  .home-review-grid { gap: 12px !important; animation: reviewsAutoDrift 34s linear infinite alternate !important; width: max-content !important; overflow: visible !important; padding: 2px 14px 8px 0; scroll-snap-type: none !important; scrollbar-width: none; will-change: transform !important; }
-  .home-review-grid::-webkit-scrollbar { display: none; }
-  .home-review-grid .review-card { flex: 0 0 86vw !important; width: 86vw !important; min-height: 280px !important; padding: 22px !important; scroll-snap-align: none !important; border-radius: 16px !important; }
-  .review-card blockquote { font-size: 14px !important; line-height: 1.62 !important; margin: 14px 0 22px !important; }
+  .home-review-grid { gap: 12px !important; width: 100% !important; overflow-x: scroll !important; overflow-y: hidden !important; padding: 2px 14px 8px 0; scroll-snap-type: none !important; scroll-behavior: auto !important; scrollbar-width: none !important; animation: none !important; transform: none !important; }
+  .home-review-grid::-webkit-scrollbar { display: none !important; }
+  .home-review-grid .review-card { flex: 0 0 70vw !important; width: 70vw !important; min-height: 280px !important; padding: 20px !important; scroll-snap-align: none !important; border-radius: 16px !important; }
+  .review-card blockquote { font-size: 13.5px !important; line-height: 1.58 !important; margin: 14px 0 20px !important; }
   .review-card-footer { gap: 10px !important; }
   .google-mark { font-size: 9px !important; }
   .reviews-home-actions { display: grid !important; gap: 9px !important; margin-top: 24px !important; }
@@ -111,6 +111,6 @@
   .seo-logo img { width: 116px !important; }
   .seo-call { font-size: 10px !important; padding: 0 8px !important; }
   .hero-copy h1 { font-size: 2.3rem !important; }
-  .home-review-grid .review-card { flex-basis: 88vw !important; width: 88vw !important; }
+  .home-review-grid .review-card { flex-basis: 72vw !important; width: 72vw !important; }
   .mobile-action-dock { grid-template-columns: minmax(0, 1fr) 108px !important; }
 }

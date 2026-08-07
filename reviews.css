@@ -8,7 +8,6 @@
 .reviews-home-head p:last-child{max-width:430px;margin:0 0 8px;color:rgba(255,255,255,.64);font-size:1rem;line-height:1.75}
 .review-summary{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}.review-stars{color:#f0a91f;letter-spacing:.09em;font-size:18px;text-shadow:0 0 24px rgba(240,169,31,.22)}.review-summary strong{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:14px}.review-summary span{color:rgba(255,255,255,.52);font-size:13px}
 
-/* Home reviews automatically drift across the screen and reverse, so there is never a dead blank area. */
 .home-review-grid{display:flex;gap:18px;width:max-content;max-width:none;animation:reviewsAutoDrift 28s ease-in-out infinite alternate;will-change:transform}
 .home-review-grid:hover,.home-review-grid:focus-within{animation-play-state:paused}
 .home-review-grid .review-card{width:min(390px,82vw);flex:0 0 min(390px,82vw)}
@@ -36,11 +35,19 @@
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}.reviews-grid.filtered{grid-template-columns:repeat(2,minmax(0,1fr));max-width:930px;margin-inline:auto}.reviews-page .review-card{color:#fff;min-height:315px;display:flex;flex-direction:column;background:linear-gradient(145deg,#101c22,#0a1318);border-color:rgba(255,255,255,.1)}.reviews-page .review-card blockquote{flex:1;font-size:15.5px}.review-card[hidden]{display:none!important}.load-more-wrap{text-align:center;margin-top:38px}.load-more-wrap:has(.button[hidden]){display:none}.load-more-wrap .button{min-width:230px;background:linear-gradient(180deg,#f0bb58,#d29a35);color:#11171a;border:0}.load-more-wrap .button:hover{box-shadow:0 16px 34px rgba(210,154,53,.22)}
 .reviews-cta{position:relative;overflow:hidden;margin-top:70px;padding:42px;border-radius:20px;background:linear-gradient(135deg,#101d24,#0a1318);border:1px solid rgba(255,255,255,.1);color:#fff;display:flex;justify-content:space-between;gap:30px;align-items:center;box-shadow:0 26px 70px rgba(0,0,0,.26)}.reviews-cta:after{content:"★★★★★";position:absolute;right:24px;bottom:-10px;color:rgba(240,187,88,.08);font-size:70px;letter-spacing:.03em;white-space:nowrap}.reviews-cta>div,.reviews-cta>a{position:relative;z-index:1}.reviews-cta h2{margin:0 0 8px;font-size:clamp(1.8rem,3vw,3rem)}.reviews-cta p{margin:0;color:rgba(255,255,255,.62)}
 
-/* Keep the service-request form impossible to miss without covering content. */
 .hero .open-request{position:fixed;right:22px;bottom:22px;z-index:160;min-width:210px;min-height:62px;padding:9px 22px 8px;background:linear-gradient(180deg,#f0bb58,#d29a35);border:1px solid rgba(255,255,255,.28);color:#10161a;box-shadow:0 18px 48px rgba(0,0,0,.34),0 0 0 5px rgba(240,187,88,.08);font-size:17px;line-height:1.05}
 .hero .open-request:before{content:"Need a locksmith?";display:block;margin-right:10px;font-family:Inter,system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:none;opacity:.72}
 .hero .open-request:hover{background:linear-gradient(180deg,#ffd074,#e5a63a);box-shadow:0 22px 58px rgba(0,0,0,.42),0 0 0 6px rgba(240,187,88,.12)}
 .hero .open-request:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* Force every rating star to render as a solid yellow star, including Safari/WebKit. */
+.review-stars{
+  color:#ffb400!important;
+  -webkit-text-fill-color:#ffb400!important;
+  font-family:Arial,"Arial Unicode MS",sans-serif!important;
+  font-weight:900!important;
+  text-shadow:0 0 18px rgba(255,180,0,.32)!important;
+}
 
 @media(max-width:950px){.reviews-grid{grid-template-columns:repeat(2,1fr)}.reviews-grid.filtered{grid-template-columns:repeat(2,1fr);max-width:none}.reviews-home-head,.reviews-cta{align-items:flex-start;flex-direction:column}.reviews-toolbar{top:74px}.home-review-grid{animation-duration:34s}}
 @media(max-width:620px){.reviews-grid,.reviews-grid.filtered{grid-template-columns:1fr}.review-card{padding:21px}.reviews-page-hero{padding:72px 0 60px}.reviews-page-hero h1{font-size:clamp(2.7rem,12vw,4.5rem)}.reviews-home-head{gap:18px}.reviews-cta{padding:28px}.review-summary{gap:9px}.reviews-toolbar{position:relative;top:auto;margin:0 0 24px;padding:0;border:0;background:transparent;backdrop-filter:none;box-shadow:none}.review-filters{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}.review-filters::-webkit-scrollbar{display:none}.review-filter{white-space:nowrap}.home-review-grid .review-card{width:84vw;flex-basis:84vw}.home-review-grid{animation-duration:30s}.hero .open-request{left:12px;right:12px;bottom:12px;width:auto;min-height:56px;border-radius:10px}.hero .open-request:before{display:inline}}

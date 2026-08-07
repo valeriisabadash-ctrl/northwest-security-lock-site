@@ -34,6 +34,7 @@
 
   addStylesheet('link[data-mobile-layout]', 'mobile.css?v=20260716-9', 'mobileLayout');
   addStylesheet('link[data-final-cta-fix]', 'final-cta-fix.css?v=20260723-1', 'finalCtaFix');
+  addStylesheet('link[data-reviews-layout]', 'reviews.css?v=20260806-1', 'reviewsLayout');
 
   const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');
@@ -106,8 +107,53 @@
     navigation.insertBefore(faqLink, contactLink || null);
   };
 
+  const addReviewsLink = (navigation) => {
+    if (!navigation || navigation.querySelector('a[href="/reviews"]')) return;
+    const reviewsLink = document.createElement('a');
+    reviewsLink.href = '/reviews';
+    reviewsLink.textContent = 'Reviews';
+    const contactLink = navigation.querySelector('a[href="/contact"]');
+    navigation.insertBefore(reviewsLink, contactLink || null);
+  };
+
   addFaqLink(nav);
   addFaqLink(seoNav);
+  addReviewsLink(nav);
+  addReviewsLink(seoNav);
+
+  const injectHomepageReviews = () => {
+    if (window.location.pathname !== '/' && !window.location.pathname.endsWith('/index.html')) return;
+    if (document.querySelector('.reviews-home')) return;
+    const proof = document.querySelector('#proof');
+    if (!proof) return;
+
+    const section = document.createElement('section');
+    section.className = 'section reviews-home';
+    section.id = 'reviews';
+    section.innerHTML = `
+      <div class="container">
+        <div class="reviews-home-head">
+          <div>
+            <p class="eyebrow">Customer reviews</p>
+            <h2>Portland customers keep coming back for a reason.</h2>
+            <div class="review-summary"><span class="review-stars" aria-label="Five stars">★★★★★</span><strong>Hundreds of Google reviews</strong><span>Real local customer feedback</span></div>
+          </div>
+          <p>From hard-to-copy keys to commercial rekeys and car-key programming, these reviews show the kind of problems our team solves every day.</p>
+        </div>
+        <div class="home-review-grid">
+          <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Exceptional service! Northwest Security & Lock saved me over $100 compared to what the traveling locksmith quoted me. The team was efficient and professional.”</blockquote><div class="review-card-footer"><div><strong>Edward Irving Hughes</strong><span>Automotive customer</span></div><span class="google-mark">Google Review</span></div></article>
+          <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“I went in expecting to replace the ignition in my Honda CR-V. Sam diagnosed the real issue as worn keys, made two new ones, and saved me a bunch of money.”</blockquote><div class="review-card-footer"><div><strong>Tom Burgess</strong><span>Honda CR-V</span></div><span class="google-mark">Google Review</span></div></article>
+          <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Sam and his team are incredible. They’ve fixed every situation for my business and for me personally. Very professional, reasonable, affordable, and family owned.”</blockquote><div class="review-card-footer"><div><strong>Greg Kenney</strong><span>Business customer</span></div><span class="google-mark">Google Review</span></div></article>
+          <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Been coming here for 10+ years. Always great service and quick turnaround for my bars, rentals, and personal keys and cars.”</blockquote><div class="review-card-footer"><div><strong>Ryan Cassidy</strong><span>Repeat customer</span></div><span class="google-mark">Google Review</span></div></article>
+          <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Sam was the only locksmith out of five I visited who could make my key. He got it done in under a minute.”</blockquote><div class="review-card-footer"><div><strong>Katie</strong><span>Automotive customer</span></div><span class="google-mark">Google Review</span></div></article>
+          <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Andy was extremely professional. There was a billing mix-up, but as soon as we let them know, they refunded the deposit and made it right.”</blockquote><div class="review-card-footer"><div><strong>Beverley Schaefbauer</strong><span>Local customer</span></div><span class="google-mark">Google Review</span></div></article>
+        </div>
+        <div class="reviews-home-actions"><a class="button button-gold" href="/reviews">Read Customer Reviews</a><a class="button button-outline" href="https://share.google/SjMCK2ZooWFtqBIn6" target="_blank" rel="noopener">Leave a Google Review</a></div>
+      </div>`;
+    proof.insertAdjacentElement('afterend', section);
+  };
+
+  injectHomepageReviews();
 
   const replaceShopHours = () => {
     const replacements = new Map([

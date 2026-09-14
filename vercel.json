@@ -3,7 +3,16 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "images": {
-    "sizes": [320, 480, 640, 828, 1080, 1280, 1600, 1920],
+    "sizes": [
+      320,
+      480,
+      640,
+      828,
+      1080,
+      1280,
+      1600,
+      1920
+    ],
     "localPatterns": [
       {
         "pathname": "^/.*\\.(png|webp|jpg|jpeg)$",
@@ -11,8 +20,16 @@
       }
     ],
     "minimumCacheTTL": 2678400,
-    "qualities": [60, 72, 80, 90],
-    "formats": ["image/avif", "image/webp"],
+    "qualities": [
+      60,
+      72,
+      80,
+      90
+    ],
+    "formats": [
+      "image/avif",
+      "image/webp"
+    ],
     "dangerouslyAllowSVG": false,
     "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
     "contentDispositionType": "inline"
@@ -21,9 +38,34 @@
     {
       "source": "/:path*",
       "has": [
-        { "type": "header", "key": "host", "value": "northwestsecurityandlock.com" }
+        {
+          "type": "host",
+          "value": "northwestsecurityandlocks.com"
+        }
       ],
-      "destination": "https://www.northwestsecurityandlock.com/:path*",
+      "destination": "https://www.northwestsecurityandlocks.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "northwestsecurityandlock.com"
+        }
+      ],
+      "destination": "https://www.northwestsecurityandlocks.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.northwestsecurityandlock.com"
+        }
+      ],
+      "destination": "https://www.northwestsecurityandlocks.com/:path*",
       "permanent": true
     },
     {
@@ -51,50 +93,87 @@
     {
       "source": "/(.*)",
       "has": [
-        { "type": "header", "key": "host", "value": ".*\\.vercel\\.app" }
+        {
+          "type": "header",
+          "key": "host",
+          "value": ".*\\.vercel\\.app"
+        }
       ],
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(self)" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(self)"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     },
     {
       "source": "/:path*.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     },
     {
       "source": "/:path*.js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     },
     {
       "source": "/:path*.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
       ]
     },
     {
       "source": "/:path*.webp",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
       ]
     },
     {
       "source": "/:path*.svg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
       ]
     }
   ]

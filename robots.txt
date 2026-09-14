@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.northwestsecurityandlock.com/sitemap.xml
+Sitemap: https://www.northwestsecurityandlocks.com/sitemap.xml

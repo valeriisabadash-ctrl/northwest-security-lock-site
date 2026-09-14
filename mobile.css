@@ -147,7 +147,7 @@
     background:
       linear-gradient(90deg, rgba(4, 9, 13, 0.78) 0%, rgba(4, 9, 13, 0.52) 43%, rgba(4, 9, 13, 0.42) 100%),
       linear-gradient(180deg, rgba(4, 9, 13, 0.1) 0%, rgba(4, 9, 13, 0.42) 100%),
-      url("hero-bg-premium.png") 58% center / cover no-repeat !important;
+      url("assets/hero-bg-premium-optimized.webp") 58% center / cover no-repeat !important;
     overflow: hidden;
   }
 

@@ -6,7 +6,7 @@
   background-color:#081014 !important;
   background-image:
     linear-gradient(90deg,rgba(4,10,13,.90) 0%,rgba(5,12,15,.68) 48%,rgba(4,10,13,.88) 100%),
-    url("mountain.png") !important;
+    url("assets/mountain-optimized.webp") !important;
   background-position:center center,center center !important;
   background-size:cover,cover !important;
   background-repeat:no-repeat,no-repeat !important;
@@ -44,7 +44,7 @@
 }
 
 /* Any use of the service van across the site should show the full vehicle. */
-img[src*="01_service_van_4x.png"]{
+img[src*="assets/01_service_van_4x-optimized.webp"]{
   object-fit:contain !important;
   object-position:center center !important;
   background:#081014;
@@ -56,14 +56,14 @@ img[src*="01_service_van_4x.png"]{
   grid-row:span 1 !important;
 }
 
-.gallery-grid .gallery-large img[src*="01_service_van_4x.png"]{
+.gallery-grid .gallery-large img[src*="assets/01_service_van_4x-optimized.webp"]{
   object-fit:cover !important;
   object-position:center center !important;
 }
 
 /* Gallery: show the full before/after lock photos instead of blowing them up and chopping them off. */
-.gallery-grid img[src*="07_before_lock_hd.png"],
-.gallery-grid img[src*="08_after_lock_hd.png"]{
+.gallery-grid img[src*="assets/07_before_lock_hd-optimized.webp"],
+.gallery-grid img[src*="assets/08_after_lock_hd-optimized.webp"]{
   object-fit:contain !important;
   object-position:center center !important;
   background:#081014;
@@ -123,7 +123,7 @@ img[src*="01_service_van_4x.png"]{
     grid-row:auto !important;
   }
 
-  .gallery-grid .gallery-large img[src*="01_service_van_4x.png"]{
+  .gallery-grid .gallery-large img[src*="assets/01_service_van_4x-optimized.webp"]{
     object-fit:contain !important;
   }
 

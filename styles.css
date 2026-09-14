@@ -76,7 +76,7 @@ button{color:inherit}
 .section-heading h2,.capability-copy h2,.proof-copy h2,.location-copy h2,.faq-intro h2,.final-cta h2{font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(2.35rem,4.2vw,4.5rem);line-height:1.09;letter-spacing:-.035em;margin:0}
 .section-heading>p{margin:0;color:var(--muted);font-size:1.04rem}
 
-.hero{position:relative;isolation:isolate;min-height:720px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(4,9,13,.78) 0%,rgba(4,9,13,.52) 43%,rgba(4,9,13,.42) 100%),linear-gradient(180deg,rgba(4,9,13,.10) 0%,rgba(4,9,13,.42) 100%),url("hero-bg-premium.png") center 48%/cover no-repeat;color:#fff;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -90px 120px rgba(0,0,0,.28)}
+.hero{position:relative;isolation:isolate;min-height:720px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(4,9,13,.78) 0%,rgba(4,9,13,.52) 43%,rgba(4,9,13,.42) 100%),linear-gradient(180deg,rgba(4,9,13,.10) 0%,rgba(4,9,13,.42) 100%),url("assets/hero-bg-premium-optimized.webp") center 48%/cover no-repeat;color:#fff;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -90px 120px rgba(0,0,0,.28)}
 .hero-overlay{position:absolute;inset:0;z-index:-1;background:transparent}
 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 28% 42%,rgba(215,154,45,.18),transparent 34%);pointer-events:none}
 .hero:after{content:"";position:absolute;z-index:-1;width:620px;height:620px;right:-180px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(210,154,53,.22),transparent 67%)}
@@ -105,7 +105,7 @@ button{color:inherit}
 .trust-bar p{margin:0;color:rgba(255,255,255,.58);font-size:12px;line-height:1.5}
 .trust-bar strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}
 
-.emergency-strip{position:relative;z-index:1;isolation:isolate;background-image:linear-gradient(90deg,rgba(3,8,12,.82) 0%,rgba(4,10,14,.68) 28%,rgba(4,10,14,.26) 44%,rgba(4,10,14,.34) 58%,rgba(4,10,14,.70) 74%,rgba(3,8,12,.84) 100%),linear-gradient(180deg,rgba(2,6,9,.20) 0%,rgba(2,6,9,.12) 48%,rgba(2,6,9,.60) 100%),url("mountain.png");background-position:center center,center center,center 26%;background-size:cover,cover,cover;background-repeat:no-repeat;color:#fff;border-top:1px solid rgba(255,255,255,.24);border-bottom:0;box-shadow:inset 0 20px 42px rgba(0,0,0,.28)}
+.emergency-strip{position:relative;z-index:1;isolation:isolate;background-image:linear-gradient(90deg,rgba(3,8,12,.82) 0%,rgba(4,10,14,.68) 28%,rgba(4,10,14,.26) 44%,rgba(4,10,14,.34) 58%,rgba(4,10,14,.70) 74%,rgba(3,8,12,.84) 100%),linear-gradient(180deg,rgba(2,6,9,.20) 0%,rgba(2,6,9,.12) 48%,rgba(2,6,9,.60) 100%),url("assets/mountain-optimized.webp");background-position:center center,center center,center 26%;background-size:cover,cover,cover;background-repeat:no-repeat;color:#fff;border-top:1px solid rgba(255,255,255,.24);border-bottom:0;box-shadow:inset 0 20px 42px rgba(0,0,0,.28)}
 .emergency-strip:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 30%),radial-gradient(circle at 45% 86%,rgba(222,157,45,.055),transparent 28%);pointer-events:none}
 .emergency-strip-inner{min-height:155px;display:flex;align-items:center;justify-content:space-between;gap:40px}
 .emergency-strip h2{margin:0;font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(1.6rem,3vw,2.75rem)}
@@ -214,7 +214,7 @@ button{color:inherit}
 .faq-list details[open] summary:after{content:"−"}
 .faq-list p{margin:13px 0 0;color:var(--muted);font-size:14px}
 
-.final-cta{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(4,10,13,.98),rgba(5,12,15,.86)),url("mountain.png") 64% 42%/650px auto no-repeat;color:#fff;padding:76px 0}
+.final-cta{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(4,10,13,.98),rgba(5,12,15,.86)),url("assets/mountain-optimized.webp") 64% 42%/650px auto no-repeat;color:#fff;padding:76px 0}
 .final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:50px}
 .final-cta h2{font-size:clamp(2rem,4vw,3.7rem)}
 .final-cta-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}

@@ -615,6 +615,11 @@
       <h2 id="request-title">Tell us what you need.</h2>
       <p class="modal-intro">For an emergency, call now. For non-emergency service, complete the form and the request will be sent directly to Northwest Security & Lock.</p>
       <form id="service-request-form" action="https://formsubmit.co/pnwlocksmithor@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New website service request — Northwest Security & Lock">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://www.northwestsecurityandlocks.com/request-sent">
+        <input type="hidden" name="_url" value="https://www.northwestsecurityandlocks.com/">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="request-form-grid">
           <label>Full name<input type="text" name="name" autocomplete="name" required></label>
           <label>Phone number<input type="tel" name="phone" autocomplete="tel" required></label>
@@ -644,6 +649,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260917-form-api" defer></script>
+  <script src="script.js?v=20260917-native-submit" defer></script>
 </body>
 </html>

@@ -31,7 +31,11 @@
     });
     let result={};
     try{result=await response.json();}catch(_){}
-    if(!response.ok||result.ok!==true)throw new Error(result.message||'The service request could not be delivered right now.');
+    if(!response.ok||result.ok!==true){
+      const error=new Error(result.message||'The service request could not be delivered right now.');
+      error.skipRelay=response.status===400;
+      throw error;
+    }
     return result;
   };
   const sendViaRelay=async payload=>{
@@ -54,6 +58,7 @@
     try{
       return await sendDirect(payload);
     }catch(directError){
+      if(directError?.skipRelay)throw directError;
       console.warn('Northwest direct form delivery failed; trying backup relay.',directError);
       return await sendViaRelay(payload);
     }

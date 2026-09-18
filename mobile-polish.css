@@ -116,3 +116,7 @@
   .home-review-grid .review-card { flex-basis: 72vw !important; width: 72vw !important; }
   .mobile-action-dock { grid-template-columns: minmax(0, 1fr) 108px !important; }
 }
+
+/* Keep quick actions from covering the service request dialog. */
+body.modal-open .mobile-action-dock { display: none !important; }
+.request-form-actions [hidden] { display: none !important; }

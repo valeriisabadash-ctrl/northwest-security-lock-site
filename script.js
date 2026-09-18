@@ -14,6 +14,31 @@
   }; injectHomepageReviews();
   const closeNavigation=()=>{nav?.classList.remove('open');menuButton?.setAttribute('aria-expanded','false');dropdown?.classList.remove('open');dropdownButton?.setAttribute('aria-expanded','false');body.classList.remove('menu-open');}; menuButton?.addEventListener('click',()=>{const open=nav?.classList.toggle('open')??false;menuButton.setAttribute('aria-expanded',String(open));body.classList.toggle('menu-open',open);});dropdownButton?.addEventListener('click',e=>{e.preventDefault();const open=dropdown?.classList.toggle('open')??false;dropdownButton.setAttribute('aria-expanded',String(open));});document.querySelectorAll('.main-nav a, .seo-links a').forEach(a=>a.addEventListener('click',closeNavigation));
   const chooseService=(service='')=>{if(!serviceSelect||!service)return;const n=service.toLowerCase(),option=Array.from(serviceSelect.options).find(i=>{const t=i.text.toLowerCase();return t===n||t.includes(n)||n.includes(t);});if(option)serviceSelect.value=option.value;}; const openModal=(service='')=>{if(!modal)return;closeNavigation();setFormStatus();emailFallback.hidden=true;resetSubmitButton();chooseService(service);modal.classList.add('open');modal.setAttribute('aria-hidden','false');body.classList.add('modal-open');setTimeout(()=>modal.querySelector('input, select, textarea, button')?.focus(),80);}; const closeModal=()=>{if(!modal)return;modal.classList.remove('open');modal.setAttribute('aria-hidden','true');body.classList.remove('modal-open');};document.querySelectorAll('.open-request').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.service||'')));document.querySelectorAll('[data-close-modal]').forEach(e=>e.addEventListener('click',closeModal));document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeNavigation();}});
+  const relayOrigin='https://momentummatrix.ai';
+  const relayFrame=document.createElement('iframe');
+  relayFrame.id='northwest-form-relay';
+  relayFrame.title='Secure form relay';
+  relayFrame.src=relayOrigin+'/form-relay.html';
+  relayFrame.hidden=true;
+  relayFrame.setAttribute('aria-hidden','true');
+  const relayReady=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('The secure form relay could not load.')),12000);relayFrame.addEventListener('load',()=>{clearTimeout(timer);resolve(relayFrame);},{once:true});});
+  document.body.appendChild(relayFrame);
+  const sendViaRelay=async payload=>{
+    await relayReady;
+    const requestId=(globalThis.crypto?.randomUUID?.()||('lead-'+Date.now()+'-'+Math.random().toString(36).slice(2)));
+    return await new Promise((resolve,reject)=>{
+      const timer=setTimeout(()=>{window.removeEventListener('message',onMessage);reject(new Error('The request timed out. Please try again.'));},20000);
+      const onMessage=event=>{
+        if(event.origin!==relayOrigin||event.source!==relayFrame.contentWindow)return;
+        const data=event.data||{};
+        if(data.type!=='northwest-lead-result'||data.requestId!==requestId)return;
+        clearTimeout(timer);window.removeEventListener('message',onMessage);
+        if(data.ok===true)resolve(data);else reject(new Error(data.message||'The request could not be delivered right now.'));
+      };
+      window.addEventListener('message',onMessage);
+      relayFrame.contentWindow?.postMessage({type:'northwest-lead-submit',requestId,payload},relayOrigin);
+    });
+  };
   requestForm?.addEventListener('invalid',()=>{setFormStatus('Please complete every required field before submitting your request.','error');},true);
   requestForm?.addEventListener('input',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
   requestForm?.addEventListener('change',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
@@ -25,13 +50,11 @@
     if(honeyField?.value)return;
     if(!navigator.onLine){setFormStatus('Your request was not sent because this device appears to be offline. Check your connection and try again, or call (503) 760-1402.','error');resetSubmitButton();return;}
     const data=new FormData(requestForm);
-    const payload={name:String(data.get('name')||''),phone:String(data.get('phone')||''),location:String(data.get('location')||''),service:String(data.get('service')||''),urgency:String(data.get('urgency')||''),details:String(data.get('details')||''),_honey:String(data.get('_honey')||''),sourcePage:window.location.href};
+    const payload={name:String(data.get('name')||''),phone:String(data.get('phone')||''),location:String(data.get('location')||''),service:String(data.get('service')||''),urgency:String(data.get('urgency')||''),details:String(data.get('details')||''),sourcePage:window.location.href};
     setFormStatus('Sending your request…','sending');
     if(submitButton){submitButton.disabled=true;submitButton.setAttribute('aria-busy','true');submitButton.textContent='Sending Request...';}
     try{
-      const response=await fetch('/api/service-request',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
-      let result={};try{result=await response.json();}catch(_){}
-      if(!response.ok||result.ok!==true)throw new Error(result.message||'Unable to submit request.');
+      await sendViaRelay(payload);
       requestForm.reset();
       setFormStatus('Request sent successfully. Northwest Security & Lock will contact you shortly.','success');
       if(submitButton){submitButton.textContent='Request Sent';submitButton.disabled=true;submitButton.removeAttribute('aria-busy');}

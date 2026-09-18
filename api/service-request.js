@@ -9,6 +9,10 @@ function digitsOnly(value) {
   return String(value || '').replace(/\D/g, '');
 }
 
+function isValidEmail(value) {
+  return !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || ''));
+}
+
 function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
@@ -30,9 +34,11 @@ async function sendLead(submission) {
     '',
     `Name: ${submission.name}`,
     `Phone: ${submission.phone}`,
+    `Email: ${submission.email || 'Not provided'}`,
     `City or ZIP: ${submission.location}`,
     `Service: ${submission.service}`,
     `Urgency: ${submission.urgency}`,
+    `Job type: ${submission.requestType || 'Not provided'}`,
     '',
     'Details:',
     submission.details,
@@ -47,9 +53,11 @@ async function sendLead(submission) {
       <table style="width:100%;border-collapse:collapse">
         <tr><td style="padding:8px 0;font-weight:700;width:140px">Name</td><td>${escapeHtml(submission.name)}</td></tr>
         <tr><td style="padding:8px 0;font-weight:700">Phone</td><td>${escapeHtml(submission.phone)}</td></tr>
+        <tr><td style="padding:8px 0;font-weight:700">Email</td><td>${escapeHtml(submission.email || 'Not provided')}</td></tr>
         <tr><td style="padding:8px 0;font-weight:700">City or ZIP</td><td>${escapeHtml(submission.location)}</td></tr>
         <tr><td style="padding:8px 0;font-weight:700">Service</td><td>${escapeHtml(submission.service)}</td></tr>
         <tr><td style="padding:8px 0;font-weight:700">Urgency</td><td>${escapeHtml(submission.urgency)}</td></tr>
+        <tr><td style="padding:8px 0;font-weight:700">Job type</td><td>${escapeHtml(submission.requestType || 'Not provided')}</td></tr>
       </table>
       <div style="margin-top:20px">
         <div style="font-weight:700;margin-bottom:6px">Details</div>
@@ -71,6 +79,7 @@ async function sendLead(submission) {
       subject,
       text,
       html,
+      reply_to: submission.email || undefined,
       tags: [
         { name: 'source', value: 'northwest-website' },
         { name: 'service', value: clean(submission.service, 40).toLowerCase().replace(/[^a-z0-9_-]/g, '-') || 'unknown' }
@@ -108,9 +117,11 @@ module.exports = async function handler(req, res) {
     createdAt: new Date().toISOString(),
     name: clean(body.name, 120),
     phone,
+    email: clean(body.email, 320),
     location: clean(body.location, 120),
     service: clean(body.service, 120),
     urgency: clean(body.urgency, 120),
+    requestType: clean(body.request_type || body.requestType, 120),
     details: clean(body.details, 4000),
     sourcePage: clean(body.sourcePage || 'https://www.northwestsecurityandlocks.com/', 500)
   };
@@ -122,6 +133,10 @@ module.exports = async function handler(req, res) {
   const phoneDigits = digitsOnly(phone);
   if (phoneDigits.length < 10 || phoneDigits.length > 15) {
     return res.status(400).json({ ok: false, message: 'Please enter a valid phone number.' });
+  }
+
+  if (!isValidEmail(submission.email)) {
+    return res.status(400).json({ ok: false, message: 'Please enter a valid email address or leave it blank.' });
   }
 
   try {

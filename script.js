@@ -17,6 +17,42 @@
   requestForm?.addEventListener('invalid',()=>{setFormStatus('Please complete every required field before submitting your request.','error');},true);
   requestForm?.addEventListener('input',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
   requestForm?.addEventListener('change',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
-  requestForm?.addEventListener('submit',e=>{emailFallback.hidden=true;if(!navigator.onLine){e.preventDefault();setFormStatus('Your request was not sent because this device appears to be offline. Check your connection and try again, or call (503) 760-1402.','error');resetSubmitButton();return;}setFormStatus('Sending your request… Please wait for the confirmation page before closing this window.','sending');if(submitButton){submitButton.disabled=true;submitButton.setAttribute('aria-busy','true');submitButton.textContent='Sending Request...';}});
+  requestForm?.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(submitButton?.disabled)return;
+    emailFallback.hidden=true;
+    if(!requestForm.checkValidity()){requestForm.reportValidity();setFormStatus('Please complete every required field before submitting your request.','error');return;}
+    if(honeyField?.value)return;
+    if(!navigator.onLine){setFormStatus('Your request was not sent because this device appears to be offline. Check your connection and try again, or call (503) 760-1402.','error');resetSubmitButton();return;}
+    const data=new FormData(requestForm);
+    const service=String(data.get('service')||'General Locksmith Service');
+    data.set('_subject',`New website service request — ${service}`);
+    data.set('_template','table');
+    data.set('_url',window.location.href);
+    data.delete('_next');
+    setFormStatus('Sending your request…','sending');
+    if(submitButton){submitButton.disabled=true;submitButton.setAttribute('aria-busy','true');submitButton.textContent='Sending Request...';}
+    try{
+      const response=await fetch('https://formsubmit.co/ajax/pnwlocksmithor@gmail.com',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(Object.fromEntries(data.entries()))
+      });
+      let result={};
+      try{result=await response.json();}catch(_){}
+      if(!response.ok||(result.success!==true&&result.success!=='true'))throw new Error(result.message||'Unable to submit request.');
+      requestForm.reset();
+      setFormStatus('Request sent successfully. Northwest Security & Lock will contact you shortly.','success');
+      if(submitButton){submitButton.textContent='Request Sent';submitButton.disabled=true;submitButton.removeAttribute('aria-busy');}
+      setTimeout(resetSubmitButton,3000);
+    }catch(error){
+      console.error('Service request submission failed:',error);
+      const details=['Name: '+String(data.get('name')||''),'Phone: '+String(data.get('phone')||''),'City or ZIP: '+String(data.get('location')||''),'Service: '+service,'Urgency: '+String(data.get('urgency')||''),'Details: '+String(data.get('details')||'')].join('\n');
+      emailFallback.href='mailto:pnwlocksmithor@gmail.com?subject='+encodeURIComponent('Locksmith service request — '+service)+'&body='+encodeURIComponent(details);
+      emailFallback.hidden=false;
+      setFormStatus('Your request could not be sent. Your details are still here. Please try again, email the details instead, or call (503) 760-1402.','error');
+      resetSubmitButton();
+    }
+  });
   const params=new URLSearchParams(window.location.search);if(params.get('request')==='1')setTimeout(()=>openModal(params.get('service')||''),180);window.addEventListener('resize',()=>{if(!window.matchMedia('(max-width: 900px)').matches)closeNavigation();});
 })();

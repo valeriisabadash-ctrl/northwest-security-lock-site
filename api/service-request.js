@@ -22,7 +22,6 @@ async function sendLead(submission) {
   form.append('_subject', `Northwest Security & Lock website lead - ${submission.service}`);
   form.append('_template', 'table');
   form.append('_cc', CLIENT_EMAIL);
-  form.append('_url', 'https://www.northwestsecurityandlocks.com/');
 
   const response = await fetch(`https://formsubmit.co/${encodeURIComponent(LEAD_EMAIL_TO)}`, {
     method: 'POST',

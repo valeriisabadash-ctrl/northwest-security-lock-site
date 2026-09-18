@@ -23,6 +23,17 @@
   relayFrame.setAttribute('aria-hidden','true');
   const relayReady=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('The secure form relay could not load.')),12000);relayFrame.addEventListener('load',()=>{clearTimeout(timer);resolve(relayFrame);},{once:true});});
   document.body.appendChild(relayFrame);
+  const sendDirect=async payload=>{
+    const response=await fetch('/api/service-request',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    let result={};
+    try{result=await response.json();}catch(_){}
+    if(!response.ok||result.ok!==true)throw new Error(result.message||'The service request could not be delivered right now.');
+    return result;
+  };
   const sendViaRelay=async payload=>{
     await relayReady;
     const requestId=(globalThis.crypto?.randomUUID?.()||('lead-'+Date.now()+'-'+Math.random().toString(36).slice(2)));
@@ -39,6 +50,14 @@
       relayFrame.contentWindow?.postMessage({type:'northwest-lead-submit',requestId,payload},relayOrigin);
     });
   };
+  const sendServiceRequest=async payload=>{
+    try{
+      return await sendDirect(payload);
+    }catch(directError){
+      console.warn('Northwest direct form delivery failed; trying backup relay.',directError);
+      return await sendViaRelay(payload);
+    }
+  };
   requestForm?.addEventListener('invalid',()=>{setFormStatus('Please complete every required field before submitting your request.','error');},true);
   requestForm?.addEventListener('input',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
   requestForm?.addEventListener('change',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
@@ -50,18 +69,18 @@
     if(honeyField?.value)return;
     if(!navigator.onLine){setFormStatus('Your request was not sent because this device appears to be offline. Check your connection and try again, or call (503) 760-1402.','error');resetSubmitButton();return;}
     const data=new FormData(requestForm);
-    const payload={name:String(data.get('name')||''),phone:String(data.get('phone')||''),location:String(data.get('location')||''),service:String(data.get('service')||''),urgency:String(data.get('urgency')||''),details:String(data.get('details')||''),sourcePage:window.location.href};
+    const payload={name:String(data.get('name')||''),phone:String(data.get('phone')||''),email:String(data.get('email')||''),location:String(data.get('location')||''),service:String(data.get('service')||''),urgency:String(data.get('urgency')||''),requestType:String(data.get('request_type')||''),details:String(data.get('details')||''),sourcePage:window.location.href};
     setFormStatus('Sending your request…','sending');
     if(submitButton){submitButton.disabled=true;submitButton.setAttribute('aria-busy','true');submitButton.textContent='Sending Request...';}
     try{
-      await sendViaRelay(payload);
+      await sendServiceRequest(payload);
       requestForm.reset();
       setFormStatus('Request sent successfully. Northwest Security & Lock will contact you shortly.','success');
       if(submitButton){submitButton.textContent='Request Sent';submitButton.disabled=true;submitButton.removeAttribute('aria-busy');}
       setTimeout(resetSubmitButton,3000);
     }catch(error){
       console.error('Service request submission failed:',error);
-      const details=['Name: '+payload.name,'Phone: '+payload.phone,'City or ZIP: '+payload.location,'Service: '+payload.service,'Urgency: '+payload.urgency,'Details: '+payload.details].join('\n');
+      const details=['Name: '+payload.name,'Phone: '+payload.phone,'Email: '+(payload.email||'Not provided'),'City or ZIP: '+payload.location,'Service: '+payload.service,'Urgency: '+payload.urgency,'Job type: '+(payload.requestType||'Not provided'),'Details: '+payload.details].join('\n');
       emailFallback.href='mailto:pnwlocksmithor@gmail.com?subject='+encodeURIComponent('Locksmith service request — '+payload.service)+'&body='+encodeURIComponent(details);
       emailFallback.hidden=false;
       setFormStatus(error?.message||'Your request could not be sent. Your details are still here. Please try again, email the details instead, or call (503) 760-1402.','error');

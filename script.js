@@ -23,21 +23,6 @@
   relayFrame.setAttribute('aria-hidden','true');
   const relayReady=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('The secure form relay could not load.')),12000);relayFrame.addEventListener('load',()=>{clearTimeout(timer);resolve(relayFrame);},{once:true});});
   document.body.appendChild(relayFrame);
-  const sendDirect=async payload=>{
-    const response=await fetch('/api/service-request',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    });
-    let result={};
-    try{result=await response.json();}catch(_){}
-    if(!response.ok||result.ok!==true){
-      const error=new Error(result.message||'The service request could not be delivered right now.');
-      error.skipRelay=response.status===400;
-      throw error;
-    }
-    return result;
-  };
   const sendViaRelay=async payload=>{
     await relayReady;
     const requestId=(globalThis.crypto?.randomUUID?.()||('lead-'+Date.now()+'-'+Math.random().toString(36).slice(2)));
@@ -54,15 +39,6 @@
       relayFrame.contentWindow?.postMessage({type:'northwest-lead-submit',requestId,payload},relayOrigin);
     });
   };
-  const sendServiceRequest=async payload=>{
-    try{
-      return await sendDirect(payload);
-    }catch(directError){
-      if(directError?.skipRelay)throw directError;
-      console.warn('Northwest direct form delivery failed; trying backup relay.',directError);
-      return await sendViaRelay(payload);
-    }
-  };
   requestForm?.addEventListener('invalid',()=>{setFormStatus('Please complete every required field before submitting your request.','error');},true);
   requestForm?.addEventListener('input',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
   requestForm?.addEventListener('change',()=>{if(formStatus?.classList.contains('form-status-error'))setFormStatus();});
@@ -78,7 +54,7 @@
     setFormStatus('Sending your request…','sending');
     if(submitButton){submitButton.disabled=true;submitButton.setAttribute('aria-busy','true');submitButton.textContent='Sending Request...';}
     try{
-      await sendServiceRequest(payload);
+      await sendViaRelay(payload);
       requestForm.reset();
       setFormStatus('Request sent successfully. Northwest Security & Lock will contact you shortly.','success');
       if(submitButton){submitButton.textContent='Request Sent';submitButton.disabled=true;submitButton.removeAttribute('aria-busy');}

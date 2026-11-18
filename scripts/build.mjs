@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { load } from 'cheerio';
 import { transform } from 'esbuild';
+import { createPageGraph } from './schema.mjs';
 
 const root = process.cwd();
 const out = path.join(root, 'dist');
@@ -89,51 +90,17 @@ for (const entry of entries.filter(e => e.isFile() && e.name.endsWith('.html')))
     if ($('footer').length) $('footer').append(resourceNav);
     else $('main').after(`<footer class="site-footer">${resourceNav}<p class="container">Northwest Security &amp; Lock · 14750 SE Division St, Portland, OR 97236 · <a href="tel:+15037601402">(503) 760-1402</a></p></footer>`);
 
-    const graph = [structuredClone(business), {
-      '@type': 'WebSite', '@id': origin + '/#website', url: business.url,
-      name: business.name, publisher: { '@id': business['@id'] }, inLanguage: 'en-US'
-    }];
-    const questions = [];
-    $('main details').each((_, detail) => {
-      const summary = $(detail).children('summary').first();
-      const answer = $(detail).clone();
-      answer.children('summary').remove();
-      const questionText = plain(summary.text()), answerText = plain(answer.text());
-      if (questionText && answerText) questions.push({ '@type': 'Question', name: questionText, acceptedAnswer: { '@type': 'Answer', text: answerText } });
-    });
-    let types = Array.isArray(page.pageType) ? [...page.pageType] : [page.pageType];
-    types = types.filter(t => t !== 'FAQPage');
-    if (questions.length) types.push('FAQPage');
-    if (!types.length) types.push('WebPage');
-    const webpage = {
-      '@type': types.length === 1 ? types[0] : types,
-      '@id': url + '#webpage', url, name: title, description,
-      isPartOf: { '@id': origin + '/#website' }, about: { '@id': business['@id'] },
-      publisher: { '@id': business['@id'] }, inLanguage: 'en-US'
-    };
-    if (questions.length) webpage.mainEntity = questions;
-    else if (page.services.length) webpage.mainEntity = page.services.map(service => ({ '@id': service['@id'] }));
-    else if (page.path === '/about' || page.path === '/contact') webpage.mainEntity = { '@id': business['@id'] };
-
     if (page.path !== '/') {
       const crumbs = page.breadcrumb.map((crumb, i) => ({ ...crumb, position: i + 1 }));
       if (!crumbs.length) throw new Error('Missing breadcrumb data for ' + name);
       $('.breadcrumbs, .site-breadcrumbs').remove();
       const html = `<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol>${crumbs.map((crumb, i) => `<li>${i === crumbs.length - 1 ? `<span aria-current="page">${escape(crumb.name)}</span>` : `<a href="${escape(new URL(crumb.item).pathname)}">${escape(crumb.name)}</a>`}</li>`).join('')}</ol></nav>`;
       $('main').prepend(html);
-      webpage.breadcrumb = { '@id': url + '#breadcrumb' };
-      graph.push({ '@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: crumbs });
     }
-    if (page.path === '/service-areas') {
-      webpage['@type'] = questions.length ? ['CollectionPage', 'FAQPage'] : 'CollectionPage';
-      graph.push({ '@type': 'ItemList', '@id': url + '#locations', itemListElement: Object.values(pages).filter(p => p.path.startsWith('/locksmith-')).map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.breadcrumb.at(-1).name, url: absolute(p.path) })) });
-      webpage.mentions = { '@id': url + '#locations' };
-      if (!questions.length) webpage.mainEntity = { '@id': url + '#locations' };
-    }
-    graph.push(webpage, ...structuredClone(page.services));
+    const schema = createPageGraph({ $, business, page, pages });
     // Schema comes from the build, so crawlers receive complete JSON-LD without JavaScript.
     $('script[type="application/ld+json"]').remove();
-    $('head').append(`<script type="application/ld+json">${json({ '@context': 'https://schema.org', '@graph': graph })}</script>`);
+    $('head').append(`<script type="application/ld+json">${json(schema)}</script>`);
     summaries.push({ url, title, description, lastModified: page.lastModified });
   }
 

@@ -13,7 +13,9 @@ Vercel builds with `npm run build` and serves **dist/**. Do not deploy the repos
 - Edit visible content in the root HTML files. Keep established, descriptive URL slugs.
 - `data/business.json` is the shared source for verified business name, contact details, shop hours, emergency phone availability, address and coverage.
 - `data/pages.json` defines page types, service nodes, breadcrumb hierarchy and meaningful modification dates. Update `lastModified` when changing a page's content; do not reset dates on every build.
-- `scripts/build.mjs` embeds a complete Schema.org JSON-LD graph in each HTML response. FAQ questions and answers are extracted from visible `main details` elements. The same breadcrumb data creates visible navigation and BreadcrumbList markup.
+- `scripts/schema.mjs` creates the graph, and `scripts/build.mjs` embeds it in each HTML response. Service pages identify their own service as the main entity; the homepage, About and Contact pages identify the business. Only the dedicated FAQ page uses `FAQPage`. Supporting questions on other pages belong to a `WebPageElement`, so they do not replace the page's primary topic.
+- Questions and answers come from visible `main details` elements, with stable question anchors. Service coverage uses the verified Oregon City/Place data. The homepage service directory and service-area collection include only visibly linked pages. Page images and captions come from the first main-content image; no image is invented for pages without one.
+- Each page's graph resolves its own entity references. Service/provider, page/website, page/service, image and FAQ relationships are checked automatically. The same breadcrumb data creates visible navigation and BreadcrumbList markup.
 - The build generates `sitemap.xml` and `llms.txt`. The latter is a supplementary content directory, not a ranking guarantee or a replacement for the sitemap and crawlable HTML.
 - `robots.txt` allows crawling. Confirmation and 404 pages remain noindex; Vercel preview hosts retain the existing noindex response rule.
 - Fonts are served locally under `assets/fonts/`; their original SIL Open Font licenses are included. CSS is combined in its original cascade order and minified. Local CSS and JS receive content-hashed filenames. Old resource filenames remain available in minified form for cached HTML.
@@ -21,6 +23,8 @@ Vercel builds with `npm run build` and serves **dist/**. Do not deploy the repos
 - Request links use fragments to avoid duplicate query-string pages. Existing `?request=1&service=...` links remain supported. The secure request relay initializes only when the form is opened or submitted.
 
 Do not add invented prices, credentials, locations, reviews or ratings. Mobile service areas are not separate physical storefronts. Google Search Console and Analytics account access requires verifying valerii@momentummatrix.ai; ordinary source changes do not access those services.
+
+Schema is descriptive, not a promise of rich results or AI citations. Google retired FAQ rich results in May 2026; visible questions still have useful semantic markup. Reference: https://developers.google.com/search/updates and https://developers.google.com/search/docs/appearance/structured-data/sd-policies.
 
 ## Verification
 

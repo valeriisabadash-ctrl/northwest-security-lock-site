@@ -7,7 +7,7 @@ const origin = 'https://www.northwestsecurityandlocks.com';
 const pages = JSON.parse(await readFile('data/pages.json', 'utf8'));
 const files = Object.keys(pages);
 const documents = new Map();
-const titles = new Set(), descriptions = new Set(), ids = new Set();
+const titles = new Set(), descriptions = new Set();
 const incoming = new Map(Object.values(pages).map(p => [p.path, new Set()]));
 let businessJSON, serviceCount = 0, questionCount = 0;
 const text = value => value.replace(/\s+/g, ' ').trim();
@@ -36,20 +36,64 @@ for (const file of files) {
   const page = graph.find(n => n['@id'] === url + '#webpage');
   assert(page, `${file}: connected webpage node`);
   assert.equal(page.name, title); assert.equal(page.description, description);
+  assert.equal(page['@type'], config.pageType, `${file}: page keeps its specific purpose`);
+  assert.equal(page.dateModified, config.lastModified, `${file}: maintained modification date`);
+  assert.equal(page.isPartOf['@id'], origin + '/#website');
+  if (['/', '/about', '/contact'].includes(config.path)) assert.equal(page.mainEntity['@id'], business[0]['@id'], `${file}: business is the main topic`);
+  if (config.path === '/') assert.equal(graph.filter(n => n['@type'] === 'Service').length, 0, 'Homepage must not carry unrelated local service nodes');
   const pageIds = graph.map(n => n['@id']);
   assert.equal(new Set(pageIds).size, pageIds.length, `${file}: unique schema IDs`);
-  pageIds.forEach(id => { assert(id, `${file}: schema node ID`); ids.add(id); });
+  pageIds.forEach(id => assert(id && id.startsWith(origin + '/'), `${file}: absolute canonical schema node ID`));
   const services = graph.filter(n => n['@type'] === 'Service');
   serviceCount += services.length;
   for (const service of services) {
     assert.equal(service.provider['@id'], business[0]['@id'], `${file}: service provider`);
-    assert(service.name && service.serviceType, `${file}: service description`);
+    assert(service.name && service.serviceType && service.description, `${file}: complete service description`);
+    assert.equal(service.url, url, `${file}: service belongs to this page`);
+    assert.equal(service.mainEntityOfPage['@id'], page['@id'], `${file}: service points back to its page`);
+    assert(page.mainEntity.some(n => n['@id'] === service['@id']), `${file}: service remains a primary entity`);
+    assert(page.about.some(n => n['@id'] === service['@id']), `${file}: page is about its service`);
+    assert(Array.isArray(service.areaServed) && service.areaServed.length, `${file}: typed service coverage`);
+    for (const area of service.areaServed) {
+      assert(['City', 'Place'].includes(area['@type']) && area.name.endsWith(', Oregon'), `${file}: explicit Oregon coverage`);
+      assert(business[0].areaServed.some(known => known.name === area.name && known['@type'] === area['@type']), `${file}: coverage comes from verified business areas`);
+      assert(!area.address, `${file}: mobile coverage is not an invented storefront`);
+    }
+    assert.equal(service.availableChannel.servicePhone.telephone, business[0].telephone);
+    assert.equal(service.availableChannel.serviceUrl, url);
   }
-  const questions = Array.isArray(page.mainEntity) ? page.mainEntity.filter(n => n['@type'] === 'Question') : [];
+  assert.equal(services.length, config.services.length, `${file}: service coverage`);
+  const primaryImage = graph.find(n => n['@type'] === 'ImageObject');
+  if ($('main img[src]').length) {
+    assert(primaryImage, `${file}: representative image schema`);
+    assert.equal(page.primaryImageOfPage['@id'], primaryImage['@id']);
+    assert.equal(primaryImage.contentUrl, new URL($('main img[src]').first().attr('src'), origin + '/').href);
+    assert.equal(primaryImage.caption, $('main img[src]').first().attr('alt'));
+  } else assert(!page.primaryImageOfPage, `${file}: no invented page image`);
+  for (const list of graph.filter(n => n['@type'] === 'ItemList')) {
+    assert.equal(list.numberOfItems, list.itemListElement.length);
+    const urls = list.itemListElement.map(n => n.url);
+    assert.equal(new Set(urls).size, urls.length, `${file}: unique directory entries`);
+    list.itemListElement.forEach((item, i) => {
+      assert.equal(item.position, i + 1);
+      assert($('main a[href]').toArray().some(el => new URL($(el).attr('href'), origin + '/').href === item.url), `${file}: directory entry is visibly linked`);
+    });
+    if (config.path === '/service-areas') assert.equal(page.mainEntity['@id'], list['@id'], 'Service areas are the main collection topic');
+  }
+  const faq = graph.find(n => n['@type'] === 'WebPageElement');
+  if (faq) {
+    assert.equal(page.hasPart['@id'], faq['@id']);
+    assert.equal(faq.isPartOf['@id'], page['@id']);
+    assert.equal(faq.cssSelector, 'main details');
+  }
+  const questionOwner = config.pageType === 'FAQPage' ? page : faq;
+  const questions = questionOwner?.mainEntity || [];
   assert.equal(questions.length, $('main details').length, `${file}: FAQ coverage`);
   questions.forEach((question, i) => {
     const detail = $('main details').eq(i).clone();
     assert.equal(question.name, text(detail.children('summary').text()), `${file}: visible FAQ question`);
+    assert.equal(question.url, url + '#' + detail.attr('id'), `${file}: question links to visible answer`);
+    assert.equal(question['@id'], question.url, `${file}: stable question identity`);
     detail.children('summary').remove();
     assert.equal(question.acceptedAnswer.text, text(detail.text()), `${file}: visible FAQ answer`);
   });
@@ -93,14 +137,20 @@ for (const [pathname, { $, graph, file }] of documents) {
       assert(/\.[a-f0-9]{12}\.min\.(js|css)$/.test(url.pathname), `${file}: unhashed or unminified resource`);
     }
   }
-  const refs = [];
+  const refs = [], definitions = new Map();
   const walk = value => {
     if (!value || typeof value !== 'object') return;
     if (Object.keys(value).length === 1 && value['@id']) refs.push(value['@id']);
+    else if (value['@id']) {
+      assert(!definitions.has(value['@id']), `${file}: duplicate entity definition ${value['@id']}`);
+      definitions.set(value['@id'], value);
+    }
     Object.values(value).forEach(walk);
   };
   walk(graph);
-  refs.forEach(ref => assert(ids.has(ref), `${file}: unresolved graph reference ${ref}`));
+  refs.forEach(ref => assert(definitions.has(ref), `${file}: unresolved reference in this page's graph: ${ref}`));
+  const htmlIds = $('[id]').map((_, el) => $(el).attr('id')).get();
+  assert.equal(new Set(htmlIds).size, htmlIds.length, `${file}: unique HTML anchors`);
 }
 const sparse = [...incoming].filter(([, sources]) => sources.size < 2);
 assert.equal(sparse.length, 0, `Pages with fewer than two incoming source pages: ${JSON.stringify(sparse.map(([url, sources]) => [url, [...sources]]))}`);
@@ -122,6 +172,7 @@ for (const p of Object.values(pages)) assert(llms.includes('](' + origin + p.pat
 for (const file of ['404.html', 'request-sent.html']) {
   const $ = load(await readFile('dist/' + file, 'utf8'));
   assert($('meta[name="robots"]').attr('content')?.includes('noindex'), file + ' stays out of search');
+  assert.equal($('script[type="application/ld+json"]').length, 0, file + ' has no misleading search markup');
 }
 for (const name of (await readdir('dist')).filter(n => n.endsWith('.css'))) {
   const css = await readFile('dist/' + name, 'utf8');

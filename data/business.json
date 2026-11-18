@@ -1,0 +1,125 @@
+{
+  "@type": "Locksmith",
+  "@id": "https://www.northwestsecurityandlocks.com/#business",
+  "name": "Northwest Security & Lock",
+  "url": "https://www.northwestsecurityandlocks.com/",
+  "logo": "https://www.northwestsecurityandlocks.com/logo.svg",
+  "image": "https://www.northwestsecurityandlocks.com/assets/northwest-locksmith-service-van.webp",
+  "telephone": "+15037601402",
+  "email": "pnwlocksmithor@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14750 SE Division St",
+    "addressLocality": "Portland",
+    "addressRegion": "OR",
+    "postalCode": "97236",
+    "addressCountry": "US"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=14750%20SE%20Division%20St%2C%20Portland%2C%20OR%2097236",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Portland, Oregon"
+    },
+    {
+      "@type": "Place",
+      "name": "East Portland, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Gresham, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Beaverton, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Happy Valley, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Tigard, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Lake Oswego, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Milwaukie, Oregon"
+    },
+    {
+      "@type": "Place",
+      "name": "Clackamas, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Troutdale, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Fairview, Oregon"
+    },
+    {
+      "@type": "City",
+      "name": "Wood Village, Oregon"
+    },
+    {
+      "@type": "Place",
+      "name": "Damascus, Oregon"
+    }
+  ],
+  "knowsAbout": [
+    "Automotive locksmith service",
+    "Car key replacement",
+    "Car key programming",
+    "Transponder key programming",
+    "Smart key programming",
+    "Residential locksmith service",
+    "Residential rekeying",
+    "Smart lock installation",
+    "Commercial locksmith service",
+    "Master key systems",
+    "Panic bars",
+    "Door closers",
+    "Access control systems",
+    "Commercial door service"
+  ],
+  "description": "Automotive, residential and commercial locksmith services from a Portland shop, with mobile service across the Portland metro area.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Emergency locksmith service",
+    "telephone": "+15037601402",
+    "url": "https://www.northwestsecurityandlocks.com/emergency-locksmith-portland",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+}

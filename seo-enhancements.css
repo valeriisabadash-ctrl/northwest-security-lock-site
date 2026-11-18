@@ -1,0 +1,10 @@
+.site-breadcrumbs { padding-top: 18px; padding-bottom: 18px; font-family: Inter, sans-serif; font-size: .875rem; color: #334155; }
+.site-breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; margin: 0; padding: 0; }
+.site-breadcrumbs li { display: inline-flex; align-items: center; gap: .45rem; }
+.site-breadcrumbs li + li::before { content: "/"; color: #64748b; }
+.site-breadcrumbs a { color: #334155; text-decoration: underline; text-underline-offset: .2em; }
+.site-breadcrumbs [aria-current="page"] { font-weight: 600; }
+.site-resource-links { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-top: 24px; padding-bottom: 24px; }
+.site-resource-links a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.site-resource-links a:focus-visible, .site-breadcrumbs a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+@media (max-width: 640px) { .site-breadcrumbs { font-size: .8rem; } .site-resource-links { gap: 16px 24px; padding-bottom: 80px; } }

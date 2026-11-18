@@ -1,0 +1,11 @@
+{
+  "assets/lock-rekeying-keys.webp": { "alt": "Hand holding a car key fob inside a vehicle", "width": 1200, "height": 800 },
+  "assets/commercial-lever-handle.webp": { "alt": "Glass commercial entrance with push-bar hardware and a door closer", "width": 1200, "height": 900 },
+  "assets/smart-lock-installation.webp": { "alt": "Illuminated home entrance with an electronic keypad lock", "width": 1200, "height": 1039 },
+  "assets/northwest-locksmith-service-van.webp": { "alt": "Black van with Northwest Security and Lock branding", "width": 1200, "height": 579 },
+  "assets/residential-locksmith-at-door.webp": { "alt": "Locksmith using a screwdriver on a door lever lock", "width": 367, "height": 414 },
+  "assets/commercial-door-hardware.webp": { "alt": "Silver keyed lever handle and latch on an open door", "width": 359, "height": 414 },
+  "assets/door-lock-before-replacement.webp": { "alt": "Door lock cylinder and escutcheon marked before replacement", "width": 373, "height": 411 },
+  "assets/door-lock-after-replacement.webp": { "alt": "Door lock cylinder and escutcheon marked after replacement", "width": 373, "height": 411 },
+  "logo.svg": { "alt": "Northwest Security & Lock", "width": 180, "height": 99 }
+}

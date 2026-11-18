@@ -19,6 +19,10 @@ Vercel builds with `npm run build` and serves **dist/**. Do not deploy the repos
 - The build generates `sitemap.xml` and `llms.txt`. The latter is a supplementary content directory, not a ranking guarantee or a replacement for the sitemap and crawlable HTML.
 - `robots.txt` allows crawling. Confirmation and 404 pages remain noindex; Vercel preview hosts retain the existing noindex response rule.
 - Fonts are served locally under `assets/fonts/`; their original SIL Open Font licenses are included. CSS is combined in its original cascade order and minified. Local CSS and JS receive content-hashed filenames. Old resource filenames remain available in minified form for cached HTML.
+- `scripts/html.mjs` normalizes metadata and semantic HTML in the generated pages: one robots directive and canonical, matching Open Graph/Twitter text, early UTF-8, named navigation and sidebars, focusable skip targets, and correctly nested card/FAQ headings. Edit titles and descriptions in the source HTML; social metadata is synchronized during the build.
+- `data/images.json` contains visually reviewed alt text and actual image dimensions. Describe the picture without inventing a city, work history or equipment that is not visible. Decorative images can explicitly retain `alt=""`.
+- The sitemap includes all 30 canonical pages and the images actually shown in their main content. It omits utility, query-string and redirect URLs. `lastmod` uses the maintained page date, never the build time. Robots and sitemap responses use explicit content types and a one-hour revalidation policy.
+- The contact-options data table has a caption, row and column headings, and a named horizontal-scrolling region that works with a keyboard on small screens.
 - Eight image filenames were changed to descriptive kebab-case names. Permanent redirects preserve their former URLs.
 - Request links use fragments to avoid duplicate query-string pages. Existing `?request=1&service=...` links remain supported. The secure request relay initializes only when the form is opened or submitted.
 
@@ -28,4 +32,4 @@ Schema is descriptive, not a promise of rich results or AI citations. Google ret
 
 ## Verification
 
-`npm test` checks all 30 canonical pages, metadata, local links and fragments, image/style references, incoming links, business consistency, service references, visible FAQ correspondence, breadcrumbs and crawl files. Browser tests cover all pages at mobile and desktop widths, navigation, old/new form links and a mocked form relay. They do not send a customer request.
+`npm test` checks all 30 canonical pages, metadata, local links and fragments, image/style references, incoming links, business consistency, service references, visible FAQ correspondence, breadcrumbs and crawl files. It also checks all 32 HTML documents for semantic structure, landmark labels, heading order, image alternatives, utility-page noindex behavior and table headers. Browser tests cover all pages at mobile and desktop widths, keyboard skip links, table scrolling, navigation, old/new form links and a mocked form relay. They do not send a customer request.

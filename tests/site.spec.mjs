@@ -74,3 +74,31 @@ test('structured data and breadcrumbs are present without client JavaScript', as
   expect(JSON.parse(await page.locator('script[type="application/ld+json"]').textContent())['@graph'].some(node => node['@type'] === 'Locksmith')).toBe(true);
   await context.close();
 });
+
+test('keyboard skip links move focus to the named main landmark', async ({ page }) => {
+  for (const path of ['/', '/contact', '/car-key-replacement-portland', '/request-sent', '/not-a-real-page']) {
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+    await page.keyboard.press('Tab');
+    await expect(page.locator('.skip-link')).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('main')).toBeFocused();
+    await expect(page.getByRole('main')).toHaveAccessibleName(await page.locator('h1').textContent());
+  }
+});
+
+test('contact table exposes headings and scrolls with the keyboard on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/contact');
+  const region = page.getByRole('region', { name: 'Contact options and availability' });
+  const table = page.getByRole('table', { name: 'Contact options and availability' });
+  await expect(table.getByRole('columnheader')).toHaveCount(3);
+  await expect(table.getByRole('rowheader')).toHaveCount(3);
+  await region.focus();
+  await expect(region).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await expect.poll(() => region.evaluate(el => el.scrollLeft)).toBeGreaterThan(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await region.screenshot({ path: '../outputs/contact-table-mobile.png' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await region.screenshot({ path: '../outputs/contact-table-desktop.png' });
+});

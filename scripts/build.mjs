@@ -4,11 +4,13 @@ import path from 'node:path';
 import { load } from 'cheerio';
 import { transform } from 'esbuild';
 import { createPageGraph } from './schema.mjs';
+import { optimizeDocument, setMeta } from './html.mjs';
 
 const root = process.cwd();
 const out = path.join(root, 'dist');
 const business = JSON.parse(await readFile('data/business.json', 'utf8'));
 const pages = JSON.parse(await readFile('data/pages.json', 'utf8'));
+const images = JSON.parse(await readFile('data/images.json', 'utf8'));
 const origin = new URL(business.url).origin;
 const absolute = value => new URL(value, business.url).href;
 const plain = value => value.replace(/\s+/g, ' ').trim();
@@ -48,6 +50,7 @@ for (const entry of entries.filter(e => e.isFile() && e.name.endsWith('.html')))
   const name = entry.name;
   const $ = load(await readFile(name, 'utf8'));
   const page = pages[name];
+  if (!page && !['404.html', 'request-sent.html'].includes(name)) throw new Error('Missing page configuration: ' + name);
   $('link[href*="fonts.googleapis.com/css"]').attr('href', 'fonts.css');
   $('link[rel="preconnect"][href*="fonts."]').remove();
   $('head').append('<link rel="preload" href="/assets/fonts/libre-baskerville-43bd400c.woff2" as="font" type="font/woff2" crossorigin>');
@@ -75,17 +78,21 @@ for (const entry of entries.filter(e => e.isFile() && e.name.endsWith('.html')))
     const description = $('meta[name="description"]').attr('content');
     $('link[rel="canonical"]').attr('href', url);
     $('meta[name="robots"]').attr('content', 'index,follow,max-image-preview:large,max-snippet:-1');
-    const meta = (selector, attrs) => {
-      const found = $(selector);
-      if (found.length) found.attr(attrs); else $('<meta>').attr(attrs).appendTo('head');
-    };
+    const meta = (selector, attrs) => setMeta($, selector, attrs);
     meta('meta[property="og:url"]', { property: 'og:url', content: url });
     meta('meta[property="og:title"]', { property: 'og:title', content: title });
     meta('meta[property="og:description"]', { property: 'og:description', content: description });
     meta('meta[property="og:site_name"]', { property: 'og:site_name', content: business.name });
     meta('meta[property="og:image"]', { property: 'og:image', content: business.image });
-    meta('meta[property="og:image:alt"]', { property: 'og:image:alt', content: 'Northwest Security & Lock mobile locksmith service van' });
+    const socialImage = images[new URL(business.image).pathname.slice(1)];
+    meta('meta[property="og:image:alt"]', { property: 'og:image:alt', content: socialImage.alt });
+    meta('meta[property="og:image:width"]', { property: 'og:image:width', content: String(socialImage.width) });
+    meta('meta[property="og:image:height"]', { property: 'og:image:height', content: String(socialImage.height) });
+    meta('meta[property="og:locale"]', { property: 'og:locale', content: 'en_US' });
     meta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });
+    for (const [key, value] of Object.entries({ title, description, image: business.image, 'image:alt': socialImage.alt })) {
+      meta(`meta[name="twitter:${key}"]`, { name: 'twitter:' + key, content: value });
+    }
 
     if ($('footer').length) $('footer').append(resourceNav);
     else $('main').after(`<footer class="site-footer">${resourceNav}<p class="container">Northwest Security &amp; Lock · 14750 SE Division St, Portland, OR 97236 · <a href="tel:+15037601402">(503) 760-1402</a></p></footer>`);
@@ -97,12 +104,14 @@ for (const entry of entries.filter(e => e.isFile() && e.name.endsWith('.html')))
       const html = `<nav class="site-breadcrumbs container" aria-label="Breadcrumb"><ol>${crumbs.map((crumb, i) => `<li>${i === crumbs.length - 1 ? `<span aria-current="page">${escape(crumb.name)}</span>` : `<a href="${escape(new URL(crumb.item).pathname)}">${escape(crumb.name)}</a>`}</li>`).join('')}</ol></nav>`;
       $('main').prepend(html);
     }
+    optimizeDocument({ $, page, business, images });
     const schema = createPageGraph({ $, business, page, pages });
     // Schema comes from the build, so crawlers receive complete JSON-LD without JavaScript.
     $('script[type="application/ld+json"]').remove();
     $('head').append(`<script type="application/ld+json">${json(schema)}</script>`);
-    summaries.push({ url, title, description, lastModified: page.lastModified });
-  }
+    const pageImages = [...new Set($('main img[src]').toArray().filter(el => $(el).attr('alt') !== '').map(el => absolute($(el).attr('src'))))];
+    summaries.push({ url, title, description, lastModified: page.lastModified, images: pageImages });
+  } else optimizeDocument({ $, page, business, images });
 
   $('head').append('<link rel="stylesheet" href="seo-enhancements.css">');
   const localStyles = $('link[rel="stylesheet"]').toArray().filter(el => new URL($(el).attr('href'), business.url).origin === origin);
@@ -130,7 +139,8 @@ for (const entry of entries.filter(e => e.isFile() && e.name.endsWith('.html')))
   await writeFile(path.join(out, name), $.html());
 }
 
-await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${summaries.map(p => `  <url><loc>${escape(p.url)}</loc><lastmod>${p.lastModified}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+summaries.sort((a, b) => a.url.localeCompare(b.url));
+await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${summaries.map(p => `  <url><loc>${escape(p.url)}</loc><lastmod>${p.lastModified}</lastmod>${p.images.map(src => `<image:image><image:loc>${escape(src)}</image:loc></image:image>`).join('')}</url>`).join('\n')}\n</urlset>\n`);
 await cp('robots.txt', path.join(out, 'robots.txt'));
 await writeFile(path.join(out, 'llms.txt'), `# Northwest Security & Lock\n\n> Portland, Oregon locksmith shop providing automotive, residential and commercial locksmith services, with mobile service across the Portland metro area.\n\n## Business information\n\n- Official website: ${business.url}\n- Phone: ${business.telephone}\n- Email: ${business.email}\n- Shop: 14750 SE Division St, Portland, OR 97236, United States\n- Shop hours: Monday–Friday, 9:00 AM–5:00 PM, America/Los_Angeles\n- Emergency service: available by phone 24/7; call to confirm dispatch availability, compatibility and pricing.\n- The Portland shop is the physical location. Service-area pages describe mobile coverage, not additional storefronts.\n\n## Services and customer information\n\n${summaries.filter(p => !new URL(p.url).pathname.startsWith('/locksmith-')).map(p => `- [${p.title}](${p.url}): ${p.description}`).join('\n')}\n\n## Mobile service areas\n\n${summaries.filter(p => new URL(p.url).pathname.startsWith('/locksmith-')).map(p => `- [${p.title}](${p.url}): ${p.description}`).join('\n')}\n`);
 console.log(`Built ${summaries.length} indexable pages with shared JSON-LD, ${summaries.length - 1} breadcrumb trails and llms.txt.`);

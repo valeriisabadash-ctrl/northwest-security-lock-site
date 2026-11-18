@@ -1,0 +1,1276 @@
+{
+  "about.html": {
+    "path": "/about",
+    "pageType": "AboutPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.northwestsecurityandlocks.com/about"
+      }
+    ],
+    "services": [],
+    "lastModified": "2026-11-17"
+  },
+  "access-control-portland.html": {
+    "path": "/access-control-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Commercial Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Access Control Portland",
+        "item": "https://www.northwestsecurityandlocks.com/access-control-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/access-control-portland#service",
+        "name": "Access Control Systems in Portland",
+        "serviceType": "Commercial access control, keypads, cards, fobs, electric strikes and magnetic locks",
+        "url": "https://www.northwestsecurityandlocks.com/access-control-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/access-control-portland#webpage"
+        },
+        "description": "Access control in Portland, OR for keypads, cards, fobs, electric strikes, magnetic locks, Trilogy programming and commercial entry systems. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "automotive-locksmith-portland.html": {
+    "path": "/automotive-locksmith-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automotive Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland#service",
+        "name": "Automotive Locksmith Service in Portland",
+        "serviceType": "Automotive locksmith, car-key replacement and programming",
+        "url": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": [
+          "Portland",
+          "Gresham",
+          "Happy Valley",
+          "Clackamas",
+          "Beaverton",
+          "Tigard",
+          "Lake Oswego",
+          "Milwaukie"
+        ],
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland#webpage"
+        },
+        "description": "Automotive locksmith in Portland, OR for car lockouts, replacement keys, transponder and smart-key programming, key fobs, ignition repair and all-keys-lost service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "car-key-programming-portland.html": {
+    "path": "/car-key-programming-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automotive Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Car Key Programming Portland",
+        "item": "https://www.northwestsecurityandlocks.com/car-key-programming-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/car-key-programming-portland#service",
+        "name": "Car Key Programming in Portland",
+        "serviceType": "Transponder, smart key, proximity key, push-to-start and immobilizer programming",
+        "url": "https://www.northwestsecurityandlocks.com/car-key-programming-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/car-key-programming-portland#webpage"
+        },
+        "description": "Car key programming in Portland, OR for transponder keys, smart keys, proximity keys, push-to-start systems, immobilizers and all-keys-lost situations. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "car-key-replacement-portland.html": {
+    "path": "/car-key-replacement-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automotive Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Car Key Replacement Portland",
+        "item": "https://www.northwestsecurityandlocks.com/car-key-replacement-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/car-key-replacement-portland#service",
+        "name": "Car Key Replacement in Portland",
+        "serviceType": "Lost car keys, spare keys, transponder keys, smart keys and all-keys-lost replacement",
+        "url": "https://www.northwestsecurityandlocks.com/car-key-replacement-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/car-key-replacement-portland#webpage"
+        },
+        "description": "Car key replacement in Portland, OR for lost keys, spare keys, transponder keys, smart keys, proximity keys and all-keys-lost situations. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "commercial-door-service-portland.html": {
+    "path": "/commercial-door-service-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Commercial Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Commercial Door Service Portland",
+        "item": "https://www.northwestsecurityandlocks.com/commercial-door-service-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/commercial-door-service-portland#service",
+        "name": "Commercial Door Service in Portland",
+        "serviceType": "Commercial door repair, closers, panic hardware, alignment, hinges and door hardware",
+        "url": "https://www.northwestsecurityandlocks.com/commercial-door-service-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/commercial-door-service-portland#webpage"
+        },
+        "description": "Commercial door service in Portland, OR for door alignment, closers, panic bars, exit devices, continuous hinges, sweeps, thresholds and hardware replacement. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "commercial-locksmith-portland.html": {
+    "path": "/commercial-locksmith-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Commercial Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland#service",
+        "name": "Commercial Locksmith and Door Service in Portland",
+        "serviceType": "Commercial locksmith, door hardware and access control",
+        "url": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": [
+          "Portland",
+          "Gresham",
+          "Happy Valley",
+          "Clackamas",
+          "Beaverton",
+          "Tigard",
+          "Lake Oswego",
+          "Milwaukie"
+        ],
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland#webpage"
+        },
+        "description": "Commercial locksmith in Portland, OR for rekeying, master keys, panic bars, door closers, IC cores, access control, electric strikes and commercial door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "contact.html": {
+    "path": "/contact",
+    "pageType": "ContactPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://www.northwestsecurityandlocks.com/contact"
+      }
+    ],
+    "services": [],
+    "lastModified": "2026-11-17"
+  },
+  "emergency-locksmith-portland.html": {
+    "path": "/emergency-locksmith-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Emergency Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/emergency-locksmith-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/emergency-locksmith-portland#service",
+        "name": "24/7 Emergency Locksmith in Portland",
+        "serviceType": "Emergency locksmith and lockout service",
+        "url": "https://www.northwestsecurityandlocks.com/emergency-locksmith-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Gresham, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Happy Valley, Oregon"
+          },
+          {
+            "@type": "Place",
+            "name": "Clackamas, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Beaverton, Oregon"
+          }
+        ],
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/emergency-locksmith-portland#webpage"
+        },
+        "description": "24/7 emergency locksmith in Portland, OR for home, business, car and trunk lockouts, broken keys, lost-key rekeying and urgent locksmith service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "faq.html": {
+    "path": "/faq",
+    "pageType": "FAQPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FAQ",
+        "item": "https://www.northwestsecurityandlocks.com/faq"
+      }
+    ],
+    "services": [],
+    "lastModified": "2026-11-17"
+  },
+  "ignition-repair-portland.html": {
+    "path": "/ignition-repair-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automotive Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Ignition Repair Portland",
+        "item": "https://www.northwestsecurityandlocks.com/ignition-repair-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/ignition-repair-portland#service",
+        "name": "Ignition Repair in Portland",
+        "serviceType": "Vehicle ignition repair, replacement and broken-key extraction",
+        "url": "https://www.northwestsecurityandlocks.com/ignition-repair-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/ignition-repair-portland#webpage"
+        },
+        "description": "Ignition repair in Portland, OR for stuck or broken keys, worn ignition cylinders, keys that will not turn and compatible ignition replacement. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "index.html": {
+    "path": "/",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#emergency-lockout",
+        "name": "Emergency Lockout Service in Gresham, Oregon",
+        "serviceType": "Emergency Lockout Service",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Gresham, Oregon"
+        },
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-gresham"
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "key-duplication-portland.html": {
+    "path": "/key-duplication-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Key Duplication Portland",
+        "item": "https://www.northwestsecurityandlocks.com/key-duplication-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/key-duplication-portland#service",
+        "name": "Key Duplication in Portland",
+        "url": "https://www.northwestsecurityandlocks.com/key-duplication-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/key-duplication-portland#webpage"
+        },
+        "description": "Need spare keys in Portland? Visit Northwest Security & Lock on SE Division St for compatible home, business and car keys. Call to confirm your key type.",
+        "serviceType": "Key Duplication"
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "key-fob-programming-portland.html": {
+    "path": "/key-fob-programming-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automotive Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Key Fob Programming Portland",
+        "item": "https://www.northwestsecurityandlocks.com/key-fob-programming-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/key-fob-programming-portland#service",
+        "name": "Key Fob Programming in Portland",
+        "serviceType": "Vehicle remote, proximity fob, smart key and push-to-start fob programming",
+        "url": "https://www.northwestsecurityandlocks.com/key-fob-programming-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/key-fob-programming-portland#webpage"
+        },
+        "description": "Key fob programming in Portland, OR for compatible remotes, proximity fobs, smart keys and push-to-start systems, plus replacement and pairing. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-beaverton.html": {
+    "path": "/locksmith-beaverton",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Beaverton Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-beaverton"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-beaverton#service",
+        "name": "Locksmith Service in Beaverton, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-beaverton",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Beaverton, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-beaverton#webpage"
+        },
+        "description": "Need a locksmith in Beaverton, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-clackamas.html": {
+    "path": "/locksmith-clackamas",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Clackamas Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-clackamas"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-clackamas#service",
+        "name": "Locksmith Service in Clackamas, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-clackamas",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Clackamas, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-clackamas#webpage"
+        },
+        "description": "Need a locksmith in Clackamas, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-east-portland.html": {
+    "path": "/locksmith-east-portland",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "East Portland Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-east-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-east-portland#service",
+        "name": "Locksmith Service in East Portland, Oregon",
+        "serviceType": "Shop and mobile residential, commercial, automotive and emergency locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-east-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "East Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-east-portland#webpage"
+        },
+        "description": "Need a locksmith in East Portland? Northwest Security & Lock provides shop and mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-fairview.html": {
+    "path": "/locksmith-fairview",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fairview Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-fairview"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-fairview#service",
+        "name": "Locksmith Service in Fairview, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-fairview",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Fairview, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-fairview#webpage"
+        },
+        "description": "Need a locksmith in Fairview, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-gresham.html": {
+    "path": "/locksmith-gresham",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gresham Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-gresham"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#service",
+        "name": "Locksmith Service in Gresham, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-gresham",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Gresham, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#webpage"
+        },
+        "description": "Need a locksmith in Gresham, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#emergency-lockout",
+        "name": "Emergency Lockout Service in Gresham, Oregon",
+        "serviceType": "Emergency Lockout Service",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Gresham, Oregon"
+        },
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-gresham"
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-happy-valley.html": {
+    "path": "/locksmith-happy-valley",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Happy Valley Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-happy-valley"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-happy-valley#service",
+        "name": "Locksmith Service in Happy Valley, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-happy-valley",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Happy Valley, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-happy-valley#webpage"
+        },
+        "description": "Need a locksmith in Happy Valley, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, smart locks, car keys and commercial locksmith service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-lake-oswego.html": {
+    "path": "/locksmith-lake-oswego",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Lake Oswego Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-lake-oswego"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-lake-oswego#service",
+        "name": "Locksmith Service in Lake Oswego, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-lake-oswego",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Lake Oswego, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-lake-oswego#webpage"
+        },
+        "description": "Need a locksmith in Lake Oswego, Oregon? Northwest Security & Lock provides mobile rekeying, smart locks, lockouts, car keys and commercial door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-milwaukie.html": {
+    "path": "/locksmith-milwaukie",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Milwaukie Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-milwaukie"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-milwaukie#service",
+        "name": "Locksmith Service in Milwaukie, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-milwaukie",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Milwaukie, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-milwaukie#webpage"
+        },
+        "description": "Need a locksmith in Milwaukie, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-tigard.html": {
+    "path": "/locksmith-tigard",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Tigard Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-tigard"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-tigard#service",
+        "name": "Locksmith Service in Tigard, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-tigard",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Tigard, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-tigard#webpage"
+        },
+        "description": "Need a locksmith in Tigard, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-troutdale.html": {
+    "path": "/locksmith-troutdale",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Troutdale Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-troutdale"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-troutdale#service",
+        "name": "Locksmith Service in Troutdale, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-troutdale",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Troutdale, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-troutdale#webpage"
+        },
+        "description": "Need a locksmith in Troutdale, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "locksmith-wood-village.html": {
+    "path": "/locksmith-wood-village",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Wood Village Locksmith",
+        "item": "https://www.northwestsecurityandlocks.com/locksmith-wood-village"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/locksmith-wood-village#service",
+        "name": "Locksmith Service in Wood Village, Oregon",
+        "serviceType": "Residential, commercial, automotive and emergency mobile locksmith service",
+        "url": "https://www.northwestsecurityandlocks.com/locksmith-wood-village",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Wood Village, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/locksmith-wood-village#webpage"
+        },
+        "description": "Need a locksmith in Wood Village, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "rekey-locks-portland.html": {
+    "path": "/rekey-locks-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Residential Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Lock Rekeying Portland",
+        "item": "https://www.northwestsecurityandlocks.com/rekey-locks-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/rekey-locks-portland#service",
+        "name": "Lock Rekeying in Portland",
+        "serviceType": "Residential and commercial lock rekeying",
+        "url": "https://www.northwestsecurityandlocks.com/rekey-locks-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/rekey-locks-portland#webpage"
+        },
+        "description": "Lock rekeying in Portland, OR for homes, rentals, offices and storefronts after moves, lost keys, tenant turnover or staffing changes. Call Northwest Security & Lock at (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "residential-locksmith-portland.html": {
+    "path": "/residential-locksmith-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Residential Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland#service",
+        "name": "Residential Locksmith Service in Portland",
+        "serviceType": "Residential locksmith, rekeying, smart locks and safe service",
+        "url": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": [
+          "Portland",
+          "Gresham",
+          "Happy Valley",
+          "Clackamas",
+          "Beaverton",
+          "Tigard",
+          "Lake Oswego",
+          "Milwaukie"
+        ],
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland#webpage"
+        },
+        "description": "Residential locksmith in Portland, OR for house lockouts, rekeying, deadbolts, smart locks, lock repair, tenant rekeys, specialty locks and safe service. Call (503) 760-1402."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland#lock-installation",
+        "name": "Lock Installation",
+        "serviceType": "Lock Installation",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "url": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland"
+      }
+    ],
+    "lastModified": "2026-11-17"
+  },
+  "reviews.html": {
+    "path": "/reviews",
+    "pageType": "CollectionPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Customer Reviews",
+        "item": "https://www.northwestsecurityandlocks.com/reviews"
+      }
+    ],
+    "services": [],
+    "lastModified": "2026-11-17"
+  },
+  "service-areas.html": {
+    "path": "/service-areas",
+    "pageType": "WebPage",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://www.northwestsecurityandlocks.com/service-areas"
+      }
+    ],
+    "services": [],
+    "lastModified": "2026-11-17"
+  },
+  "smart-lock-installation-portland.html": {
+    "path": "/smart-lock-installation-portland",
+    "pageType": [
+      "WebPage",
+      "FAQPage"
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.northwestsecurityandlocks.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Residential Locksmith Portland",
+        "item": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Smart Lock Installation Portland",
+        "item": "https://www.northwestsecurityandlocks.com/smart-lock-installation-portland"
+      }
+    ],
+    "services": [
+      {
+        "@type": "Service",
+        "@id": "https://www.northwestsecurityandlocks.com/smart-lock-installation-portland#service",
+        "name": "Smart Lock Installation in Portland",
+        "serviceType": "Smart locks, keypads and electronic entry installation",
+        "url": "https://www.northwestsecurityandlocks.com/smart-lock-installation-portland",
+        "provider": {
+          "@id": "https://www.northwestsecurityandlocks.com/#business"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Portland, Oregon"
+        },
+        "mainEntityOfPage": {
+          "@id": "https://www.northwestsecurityandlocks.com/smart-lock-installation-portland#webpage"
+        },
+        "description": "Smart lock installation in Portland, OR for homes, rentals, offices and businesses. Keypads, smart deadbolts, electronic levers and access upgrades. Call (503) 760-1402."
+      }
+    ],
+    "lastModified": "2026-11-17"
+  }
+}

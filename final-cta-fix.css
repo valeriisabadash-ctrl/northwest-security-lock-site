@@ -44,7 +44,7 @@
 }
 
 /* Any use of the service van across the site should show the full vehicle. */
-img[src*="assets/01_service_van_4x-optimized.webp"]{
+img[src*="assets/northwest-locksmith-service-van.webp"]{
   object-fit:contain !important;
   object-position:center center !important;
   background:#081014;
@@ -56,14 +56,14 @@ img[src*="assets/01_service_van_4x-optimized.webp"]{
   grid-row:span 1 !important;
 }
 
-.gallery-grid .gallery-large img[src*="assets/01_service_van_4x-optimized.webp"]{
+.gallery-grid .gallery-large img[src*="assets/northwest-locksmith-service-van.webp"]{
   object-fit:cover !important;
   object-position:center center !important;
 }
 
 /* Gallery: show the full before/after lock photos instead of blowing them up and chopping them off. */
-.gallery-grid img[src*="assets/07_before_lock_hd-optimized.webp"],
-.gallery-grid img[src*="assets/08_after_lock_hd-optimized.webp"]{
+.gallery-grid img[src*="assets/door-lock-before-replacement.webp"],
+.gallery-grid img[src*="assets/door-lock-after-replacement.webp"]{
   object-fit:contain !important;
   object-position:center center !important;
   background:#081014;
@@ -123,7 +123,7 @@ img[src*="assets/01_service_van_4x-optimized.webp"]{
     grid-row:auto !important;
   }
 
-  .gallery-grid .gallery-large img[src*="assets/01_service_van_4x-optimized.webp"]{
+  .gallery-grid .gallery-large img[src*="assets/northwest-locksmith-service-van.webp"]{
     object-fit:contain !important;
   }
 

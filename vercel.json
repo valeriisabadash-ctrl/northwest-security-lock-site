@@ -87,6 +87,46 @@
       "source": "/project/:path*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/assets/01_service_van_4x-optimized.webp",
+      "destination": "/assets/northwest-locksmith-service-van.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/02_locksmith_at_door_hd-optimized.webp",
+      "destination": "/assets/residential-locksmith-at-door.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/03_door_handle_hd-optimized.webp",
+      "destination": "/assets/commercial-door-hardware.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/04_smart_lock_hd-optimized.webp",
+      "destination": "/assets/smart-lock-installation.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/05_lock_and_keys_hd-optimized.webp",
+      "destination": "/assets/lock-rekeying-keys.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/06_lever_handle_hd-optimized.webp",
+      "destination": "/assets/commercial-lever-handle.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/07_before_lock_hd-optimized.webp",
+      "destination": "/assets/door-lock-before-replacement.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/08_after_lock_hd-optimized.webp",
+      "destination": "/assets/door-lock-after-replacement.webp",
+      "permanent": true
     }
   ],
   "headers": [
@@ -175,6 +215,41 @@
           "value": "public, max-age=604800, stale-while-revalidate=2592000"
         }
       ]
+    },
+    {
+      "source": "/:asset(.*\\.[a-f0-9]{12}\\.min\\.(?:css|js))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
-  ]
+  ],
+  "buildCommand": "npm run build && npm test",
+  "outputDirectory": "dist",
+  "installCommand": "npm ci --include=dev",
+  "framework": null
 }

@@ -1,0 +1,19 @@
+{
+  "name": "northwest-security-lock-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/validate.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "cheerio": "^1.2.0",
+    "esbuild": "^0.28.2"
+  }
+}

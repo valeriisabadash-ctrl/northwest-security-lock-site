@@ -11,8 +11,32 @@ export function createPageGraph({ $, business, page, pages }) {
   const websiteId = absolute('/#website');
   const title = plain($('title').text());
   const description = $('meta[name="description"]').attr('content');
-  const services = structuredClone(page.services);
-  const graph = [structuredClone(business), {
+  const serviceContactId = absolute('/#service-contact');
+  const emergencyContactId = absolute('/#emergency-contact');
+  const businessNode = structuredClone(business);
+  businessNode.address['@id'] = absolute('/#postal-address');
+  businessNode.contactPoint = [{
+    '@type': 'ContactPoint', '@id': serviceContactId,
+    contactType: 'Service enquiries', telephone: business.telephone,
+    email: business.email, url: absolute('/contact')
+  }, { ...businessNode.contactPoint, '@id': emergencyContactId }];
+
+  // Canonicals, descriptions and provider identities have one source of truth.
+  // Only service-specific facts and a stable fragment key live in page data.
+  const serviceKeys = new Set();
+  const services = page.services.map(service => {
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(service.key) || serviceKeys.has(service.key)) {
+      throw new Error(`Invalid or duplicate service key on ${page.path}: ${service.key}`);
+    }
+    serviceKeys.add(service.key);
+    return {
+      '@type': 'Service', '@id': url + '#' + service.key,
+      name: service.name, serviceType: service.serviceType,
+      description, url, provider: ref(business['@id']),
+      areaServed: structuredClone(service.areaServed)
+    };
+  });
+  const graph = [businessNode, {
     '@type': 'WebSite', '@id': websiteId, url: business.url,
     name: business.name, publisher: ref(business['@id']), inLanguage: 'en-US'
   }];
@@ -30,8 +54,9 @@ export function createPageGraph({ $, business, page, pages }) {
     for (const service of services) {
       service.mainEntityOfPage = ref(pageId);
       service.availableChannel = {
-        '@type': 'ServiceChannel', serviceUrl: url,
-        servicePhone: { '@type': 'ContactPoint', telephone: business.telephone }
+        '@type': 'ServiceChannel', '@id': service['@id'] + '-channel',
+        serviceUrl: url, providesService: ref(service['@id']),
+        servicePhone: ref(page.path === '/emergency-locksmith-portland' ? emergencyContactId : serviceContactId)
       };
     }
   } else if (['/', '/about', '/contact'].includes(page.path)) {
@@ -40,8 +65,9 @@ export function createPageGraph({ $, business, page, pages }) {
 
   const image = $('main img[src]').first();
   if (image.length) {
-    const imageId = url + '#primaryimage';
     const imageUrl = absolute(image.attr('src'));
+    // One photo keeps the same identity wherever it illustrates the site.
+    const imageId = imageUrl + '#image';
     const node = {
       '@type': 'ImageObject', '@id': imageId, url: imageUrl, contentUrl: imageUrl,
       caption: image.attr('alt'), representativeOfPage: true, inLanguage: 'en-US'

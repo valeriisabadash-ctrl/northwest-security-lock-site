@@ -8,6 +8,7 @@ const pages = JSON.parse(await readFile('data/pages.json', 'utf8'));
 const files = Object.keys(pages);
 const documents = new Map();
 const titles = new Set(), descriptions = new Set();
+const sharedDefinitions = new Map();
 const incoming = new Map(Object.values(pages).map(p => [p.path, new Set()]));
 let businessJSON, serviceCount = 0, questionCount = 0;
 const text = value => value.replace(/\s+/g, ' ').trim();
@@ -32,6 +33,23 @@ for (const file of files) {
   assert.equal(JSON.stringify(business[0]), businessJSON, `${file}: shared business facts`);
   assert.equal(business[0].telephone, '+15037601402');
   assert.equal(business[0].address.streetAddress, '14750 SE Division St');
+  assert.equal(business[0].address['@id'], origin + '/#postal-address');
+  assert(!business[0].priceRange, `${file}: no unsupported price-range claim`);
+  const contacts = business[0].contactPoint;
+  assert.equal(contacts.length, 2, `${file}: general and emergency contacts`);
+  const serviceContact = contacts.find(c => c['@id'] === origin + '/#service-contact');
+  const emergencyContact = contacts.find(c => c['@id'] === origin + '/#emergency-contact');
+  assert(serviceContact && emergencyContact, `${file}: stable shared contact identities`);
+  assert.equal(serviceContact.telephone, business[0].telephone);
+  assert.equal(serviceContact.email, business[0].email);
+  assert.equal(serviceContact.url, origin + '/contact');
+  assert.equal(emergencyContact.telephone, business[0].telephone);
+  assert.equal(emergencyContact.hoursAvailable.dayOfWeek.length, 7);
+  assert.equal(emergencyContact.hoursAvailable.opens, '00:00');
+  assert.equal(emergencyContact.hoursAvailable.closes, '23:59');
+  assert.equal(business[0].openingHoursSpecification[0].dayOfWeek.length, 5, `${file}: storefront is not marked 24/7`);
+  assert.equal(business[0].openingHoursSpecification[0].opens, '09:00');
+  assert.equal(business[0].openingHoursSpecification[0].closes, '17:00');
   assert(!business[0].aggregateRating, `${file}: no self-serving review-star markup`);
   const page = graph.find(n => n['@id'] === url + '#webpage');
   assert(page, `${file}: connected webpage node`);
@@ -50,6 +68,7 @@ for (const file of files) {
     assert.equal(service.provider['@id'], business[0]['@id'], `${file}: service provider`);
     assert(service.name && service.serviceType && service.description, `${file}: complete service description`);
     assert.equal(service.url, url, `${file}: service belongs to this page`);
+    assert.equal(service.description, description, `${file}: service description follows the page`);
     assert.equal(service.mainEntityOfPage['@id'], page['@id'], `${file}: service points back to its page`);
     assert(page.mainEntity.some(n => n['@id'] === service['@id']), `${file}: service remains a primary entity`);
     assert(page.about.some(n => n['@id'] === service['@id']), `${file}: page is about its service`);
@@ -59,7 +78,12 @@ for (const file of files) {
       assert(business[0].areaServed.some(known => known.name === area.name && known['@type'] === area['@type']), `${file}: coverage comes from verified business areas`);
       assert(!area.address, `${file}: mobile coverage is not an invented storefront`);
     }
-    assert.equal(service.availableChannel.servicePhone.telephone, business[0].telephone);
+    const phoneContact = contacts.find(c => c['@id'] === service.availableChannel.servicePhone['@id']);
+    assert(phoneContact, `${file}: service phone resolves to the business contact`);
+    assert.equal(phoneContact.telephone, business[0].telephone);
+    assert.equal(phoneContact['@id'], config.path === '/emergency-locksmith-portland' ? emergencyContact['@id'] : serviceContact['@id']);
+    assert.equal(service.availableChannel.providesService['@id'], service['@id']);
+    assert.equal(service.availableChannel['@id'], service['@id'] + '-channel');
     assert.equal(service.availableChannel.serviceUrl, url);
   }
   assert.equal(services.length, config.services.length, `${file}: service coverage`);
@@ -68,6 +92,7 @@ for (const file of files) {
     assert(primaryImage, `${file}: representative image schema`);
     assert.equal(page.primaryImageOfPage['@id'], primaryImage['@id']);
     assert.equal(primaryImage.contentUrl, new URL($('main img[src]').first().attr('src'), origin + '/').href);
+    assert.equal(primaryImage['@id'], primaryImage.contentUrl + '#image', `${file}: shared image identity`);
     assert.equal(primaryImage.caption, $('main img[src]').first().attr('alt'));
   } else assert(!page.primaryImageOfPage, `${file}: no invented page image`);
   for (const list of graph.filter(n => n['@type'] === 'ItemList')) {
@@ -149,6 +174,11 @@ for (const [pathname, { $, graph, file }] of documents) {
   };
   walk(graph);
   refs.forEach(ref => assert(definitions.has(ref), `${file}: unresolved reference in this page's graph: ${ref}`));
+  for (const [id, definition] of definitions) {
+    const serialized = JSON.stringify(definition);
+    if (sharedDefinitions.has(id)) assert.equal(serialized, sharedDefinitions.get(id), `${file}: shared entity ${id} must agree across pages`);
+    else sharedDefinitions.set(id, serialized);
+  }
   const htmlIds = $('[id]').map((_, el) => $(el).attr('id')).get();
   assert.equal(new Set(htmlIds).size, htmlIds.length, `${file}: unique HTML anchors`);
 }

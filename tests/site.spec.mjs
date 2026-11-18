@@ -75,6 +75,28 @@ test('structured data and breadcrumbs are present without client JavaScript', as
   await context.close();
 });
 
+test('service actions remain stable while web fonts load slowly', async ({ page }) => {
+  await page.setViewportSize({ width: 1350, height: 940 });
+  await page.route('**/*.woff2', async route => {
+    await new Promise(resolve => setTimeout(resolve, 500));
+    await route.continue();
+  });
+  await page.addInitScript(() => {
+    window.observedLayoutShift = 0;
+    new PerformanceObserver(list => {
+      for (const entry of list.getEntries()) {
+        if (!entry.hadRecentInput) window.observedLayoutShift += entry.value;
+      }
+    }).observe({ type: 'layout-shift', buffered: true });
+  });
+  await page.goto('/automotive-locksmith-portland');
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
+  expect(await page.evaluate(() => window.observedLayoutShift)).toBeLessThan(0.05);
+});
+
 test('keyboard skip links move focus to the named main landmark', async ({ page }) => {
   for (const path of ['/', '/contact', '/car-key-replacement-portland', '/request-sent', '/not-a-real-page']) {
     await page.goto(path, { waitUntil: 'domcontentloaded' });

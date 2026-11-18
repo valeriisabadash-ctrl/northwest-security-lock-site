@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/validate.mjs && node scripts/validate-documents.mjs",
+    "test": "node scripts/validate.mjs && node scripts/validate-documents.mjs && node scripts/audit-links.mjs",
     "dev": "node scripts/serve.mjs"
   },
   "engines": {

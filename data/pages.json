@@ -21,10 +21,7 @@
   },
   "access-control-portland.html": {
     "path": "/access-control-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -55,10 +52,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/access-control-portland#webpage"
         },
@@ -69,10 +68,7 @@
   },
   "automotive-locksmith-portland.html": {
     "path": "/automotive-locksmith-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -98,14 +94,38 @@
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
         "areaServed": [
-          "Portland",
-          "Gresham",
-          "Happy Valley",
-          "Clackamas",
-          "Beaverton",
-          "Tigard",
-          "Lake Oswego",
-          "Milwaukie"
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Gresham, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Happy Valley, Oregon"
+          },
+          {
+            "@type": "Place",
+            "name": "Clackamas, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Beaverton, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Tigard, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Lake Oswego, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Milwaukie, Oregon"
+          }
         ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/automotive-locksmith-portland#webpage"
@@ -117,10 +137,7 @@
   },
   "car-key-programming-portland.html": {
     "path": "/car-key-programming-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -151,10 +168,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/car-key-programming-portland#webpage"
         },
@@ -165,10 +184,7 @@
   },
   "car-key-replacement-portland.html": {
     "path": "/car-key-replacement-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -199,10 +215,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/car-key-replacement-portland#webpage"
         },
@@ -213,10 +231,7 @@
   },
   "commercial-door-service-portland.html": {
     "path": "/commercial-door-service-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -247,10 +262,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/commercial-door-service-portland#webpage"
         },
@@ -261,10 +278,7 @@
   },
   "commercial-locksmith-portland.html": {
     "path": "/commercial-locksmith-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -290,14 +304,38 @@
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
         "areaServed": [
-          "Portland",
-          "Gresham",
-          "Happy Valley",
-          "Clackamas",
-          "Beaverton",
-          "Tigard",
-          "Lake Oswego",
-          "Milwaukie"
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Gresham, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Happy Valley, Oregon"
+          },
+          {
+            "@type": "Place",
+            "name": "Clackamas, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Beaverton, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Tigard, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Lake Oswego, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Milwaukie, Oregon"
+          }
         ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/commercial-locksmith-portland#webpage"
@@ -329,10 +367,7 @@
   },
   "emergency-locksmith-portland.html": {
     "path": "/emergency-locksmith-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -409,10 +444,7 @@
   },
   "ignition-repair-portland.html": {
     "path": "/ignition-repair-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -443,10 +475,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/ignition-repair-portland#webpage"
         },
@@ -457,35 +491,14 @@
   },
   "index.html": {
     "path": "/",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [],
-    "services": [
-      {
-        "@type": "Service",
-        "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#emergency-lockout",
-        "name": "Emergency Lockout Service in Gresham, Oregon",
-        "serviceType": "Emergency Lockout Service",
-        "provider": {
-          "@id": "https://www.northwestsecurityandlocks.com/#business"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Gresham, Oregon"
-        },
-        "url": "https://www.northwestsecurityandlocks.com/locksmith-gresham"
-      }
-    ],
+    "services": [],
     "lastModified": "2026-11-17"
   },
   "key-duplication-portland.html": {
     "path": "/key-duplication-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -509,10 +522,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/key-duplication-portland#webpage"
         },
@@ -524,10 +539,7 @@
   },
   "key-fob-programming-portland.html": {
     "path": "/key-fob-programming-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -558,10 +570,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/key-fob-programming-portland#webpage"
         },
@@ -603,10 +617,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Beaverton, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Beaverton, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-beaverton#webpage"
         },
@@ -648,10 +664,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "Place",
-          "name": "Clackamas, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "Place",
+            "name": "Clackamas, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-clackamas#webpage"
         },
@@ -693,10 +711,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "Place",
-          "name": "East Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "Place",
+            "name": "East Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-east-portland#webpage"
         },
@@ -738,10 +758,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Fairview, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Fairview, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-fairview#webpage"
         },
@@ -783,28 +805,16 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Gresham, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Gresham, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#webpage"
         },
         "description": "Need a locksmith in Gresham, Oregon? Northwest Security & Lock provides mobile lockouts, rekeying, car keys, smart locks, commercial locks and door service. Call (503) 760-1402."
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.northwestsecurityandlocks.com/locksmith-gresham#emergency-lockout",
-        "name": "Emergency Lockout Service in Gresham, Oregon",
-        "serviceType": "Emergency Lockout Service",
-        "provider": {
-          "@id": "https://www.northwestsecurityandlocks.com/#business"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Gresham, Oregon"
-        },
-        "url": "https://www.northwestsecurityandlocks.com/locksmith-gresham"
       }
     ],
     "lastModified": "2026-11-17"
@@ -842,10 +852,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Happy Valley, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Happy Valley, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-happy-valley#webpage"
         },
@@ -887,10 +899,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Lake Oswego, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Lake Oswego, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-lake-oswego#webpage"
         },
@@ -932,10 +946,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Milwaukie, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Milwaukie, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-milwaukie#webpage"
         },
@@ -977,10 +993,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Tigard, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Tigard, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-tigard#webpage"
         },
@@ -1022,10 +1040,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Troutdale, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Troutdale, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-troutdale#webpage"
         },
@@ -1067,10 +1087,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Wood Village, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Wood Village, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/locksmith-wood-village#webpage"
         },
@@ -1081,10 +1103,7 @@
   },
   "rekey-locks-portland.html": {
     "path": "/rekey-locks-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -1115,10 +1134,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/rekey-locks-portland#webpage"
         },
@@ -1129,10 +1150,7 @@
   },
   "residential-locksmith-portland.html": {
     "path": "/residential-locksmith-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -1158,29 +1176,43 @@
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
         "areaServed": [
-          "Portland",
-          "Gresham",
-          "Happy Valley",
-          "Clackamas",
-          "Beaverton",
-          "Tigard",
-          "Lake Oswego",
-          "Milwaukie"
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Gresham, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Happy Valley, Oregon"
+          },
+          {
+            "@type": "Place",
+            "name": "Clackamas, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Beaverton, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Tigard, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Lake Oswego, Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Milwaukie, Oregon"
+          }
         ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland#webpage"
         },
         "description": "Residential locksmith in Portland, OR for house lockouts, rekeying, deadbolts, smart locks, lock repair, tenant rekeys, specialty locks and safe service. Call (503) 760-1402."
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland#lock-installation",
-        "name": "Lock Installation",
-        "serviceType": "Lock Installation",
-        "provider": {
-          "@id": "https://www.northwestsecurityandlocks.com/#business"
-        },
-        "url": "https://www.northwestsecurityandlocks.com/residential-locksmith-portland"
       }
     ],
     "lastModified": "2026-11-17"
@@ -1207,7 +1239,7 @@
   },
   "service-areas.html": {
     "path": "/service-areas",
-    "pageType": "WebPage",
+    "pageType": "CollectionPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -1227,10 +1259,7 @@
   },
   "smart-lock-installation-portland.html": {
     "path": "/smart-lock-installation-portland",
-    "pageType": [
-      "WebPage",
-      "FAQPage"
-    ],
+    "pageType": "WebPage",
     "breadcrumb": [
       {
         "@type": "ListItem",
@@ -1261,10 +1290,12 @@
         "provider": {
           "@id": "https://www.northwestsecurityandlocks.com/#business"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Portland, Oregon"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Portland, Oregon"
+          }
+        ],
         "mainEntityOfPage": {
           "@id": "https://www.northwestsecurityandlocks.com/smart-lock-installation-portland#webpage"
         },
